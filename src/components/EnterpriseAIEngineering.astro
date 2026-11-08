@@ -1,0 +1,104 @@
+---
+interface Props {lang:'de'|'en'}
+const {lang}=Astro.props;
+const de=lang==='de';
+const d=de?{
+eyebrow:'ENTERPRISE AI ENGINEERING · AGENTIC AI · INTEGRATION',
+title:'KI, die sich in Ihr Unternehmen integriert.',sub:'Nicht umgekehrt.',
+lead:'Wir entwickeln sichere KI-Anwendungen und Agentic-AI-Systeme, die über einfache Chatbots hinausgehen: intelligente Agenten planen mehrstufige Aufgaben, orchestrieren Unternehmensprozesse und interagieren kontrolliert mit Ihrer bestehenden Software.',
+promise:'Von der ersten Prozessanalyse bis zum produktiven Betrieb. Datenschutz, Sicherheit, Integration und messbare Effizienzsteigerungen sind von Anfang an Teil der Architektur.',
+primary:'AI Opportunity Assessment anfragen',secondary:'Leistungen entdecken',
+visual:'INTELLIGENT WORKFLOW ORCHESTRATION',
+systems:['ERP / SAP','CRM','Daten & APIs','Dokumente'],
+steps:['Observe','Plan','Execute','Verify'],
+governance:'POLICIES · APPROVALS · AUDIT',
+outcomes:'WERT STATT KI-HYPE',
+outcomesHeading:'Agentic AI, die echten',outcomesAccent:'Geschäftsnutzen schafft.',
+outcomesIntro:'Wir priorisieren Anwendungsfälle nach Wirkung, Integrationsaufwand und Risiko. Jede Umsetzung beginnt mit einer messbaren Ausgangsbasis.',
+metrics:[['Durchlaufzeit','Bearbeitungszeiten vor und nach der Automatisierung vergleichen'],['Automatisierungsgrad','Anteil erfolgreich unterstützter oder automatisierter Vorgänge messen'],['Qualität','Fehlerquoten, Eskalationen und manuelle Nacharbeit transparent erfassen'],['Kosten je Vorgang','Betriebs- und Modellkosten dem konkreten Nutzen gegenüberstellen']],
+offersEyebrow:'UNSERE LEISTUNGEN',offersHeading:'Von Enterprise Software',offersAccent:'zu Agentic Workflows.',
+offers:[
+['AI Software Development','Individuelle, produktionsfähige AI-Anwendungen mit klaren Schnittstellen, Tests, Monitoring und kontrollierten Berechtigungen.'],
+['Agentic AI & Multi-Agent Systems','Zielgerichtete Agenten, die Aufgaben zerlegen, Werkzeuge aufrufen, Ergebnisse überprüfen und bei Bedarf Menschen einbeziehen.'],
+['Enterprise AI Integration','Verbindung mit ERP, CRM, SAP, APIs, Datenbanken, Dokumentensystemen und bestehenden Business-Workflows.'],
+['Intelligent Workflow Automation','Automatisierung wiederkehrender Abläufe mit nachvollziehbaren Zuständen, Freigabeschritten und Fehlerbehandlung.'],
+['Secure & Sovereign AI','Datensparsamkeit, Zugriffskontrollen, Datenresidenz, Auditierbarkeit und geeignete Cloud-, Hybrid- oder On-Prem-Architekturen.'],
+['AI Operations & MLOps','Betrieb, Evaluation, Observability, Modellversionierung, Kostenkontrolle und kontinuierliche Optimierung.']],
+scenarioEyebrow:'PRAXISNAHE ANWENDUNGSFÄLLE',scenarioHeading:'Mehr als ein Chatbot.',scenarioIntro:'Agentic-AI-Systeme verbinden Analyse, Entscheidungen und Aktionen über mehrere Systeme hinweg — immer innerhalb definierter Grenzen.',
+scenarios:[['Customer Operations','Kundenanfragen klassifizieren, Informationen aus CRM und ERP zusammenführen, Antwort- und Bearbeitungsprozesse vorbereiten.'],['Finance & Back Office','Dokumente prüfen, Daten abgleichen, Ausnahmen markieren und Freigabeworkflows koordinieren.'],['IT & Service Management','Tickets analysieren, Wissensquellen korrelieren, Änderungen vorbereiten und Maßnahmen zur Freigabe vorschlagen.'],['Knowledge & Compliance','Verteiltes Unternehmenswissen sicher erschließen, Quellen belegen und regelbasierte Prüfabläufe unterstützen.']],
+safetyEyebrow:'SECURITY & PRIVACY BY DESIGN',safetyTitle:'Autonom, wo sinnvoll.',safetyAccent:'Kontrolliert, wo notwendig.',
+safetyDesc:'Autonome Workflows benötigen mehr als einen guten Prompt. Wir definieren technische und organisatorische Grenzen für Agenten und setzen kritische Aktionen nur innerhalb expliziter Freigaben um.',
+controls:['Least-Privilege-Zugriffe und gesicherte Tool-Integrationen','Datenminimierung, Schutz sensibler Informationen und Löschkonzepte','Evaluierung, Testfälle, Nachvollziehbarkeit und Audit-Trails','Human-in-the-Loop bei risikobehafteten oder irreversiblen Aktionen'],
+note:'Datenschutzkonforme Verarbeitung muss für den konkreten Einsatzfall, die Datenflüsse und eingesetzten Anbieter rechtlich und organisatorisch geprüft werden.',
+assessmentEyebrow:'ENTERPRISE AI OPPORTUNITY ASSESSMENT',assessmentTitle:'Ein guter KI-Einstieg beginnt mit einem messbaren Prozess.',
+assessmentIntro:'Wir wählen gemeinsam einen geeigneten Anwendungsfall, prüfen Integrationen und Risiken und definieren einen begrenzten Pilot mit nachvollziehbaren Erfolgsmetriken.',
+assessmentSteps:[['01','Discover','Prozesse, Engpässe und Chancen identifizieren'],['02','Assess','Daten, Security, Integrationsaufwand und Nutzen bewerten'],['03','Prototype','Einen begrenzten Agentic-AI-Workflow implementieren'],['04','Measure & Scale','Ergebnisse messen und bei Erfolg kontrolliert skalieren']],
+assessmentCta:'AI-Projekt mit uns besprechen',
+bridge:'Die richtige Lösung ist nicht an ein bestimmtes Produkt gebunden. Wir integrieren geeignete Modelle und Frameworks in Ihre bestehende Architektur — bei Bedarf unterstützt durch OpenKubes und unsere Plattformkompetenz.'
+}:{
+eyebrow:'ENTERPRISE AI ENGINEERING · AGENTIC AI · INTEGRATION',
+title:'AI that works.',sub:'With your business.',
+lead:'We engineer secure AI applications and agentic AI systems that go beyond simple chatbots: intelligent agents plan multi-step tasks, orchestrate business processes and interact with existing enterprise software under explicit controls.',
+promise:'From the first process assessment through production operations. Privacy, security, integration and measurable efficiency gains are architectural requirements from the outset.',
+primary:'Request an AI Opportunity Assessment',secondary:'Explore capabilities',
+visual:'INTELLIGENT WORKFLOW ORCHESTRATION',
+systems:['ERP / SAP','CRM','Data & APIs','Documents'],
+steps:['Observe','Plan','Execute','Verify'],
+governance:'POLICIES · APPROVALS · AUDIT',
+outcomes:'BUSINESS VALUE OVER AI HYPE',
+outcomesHeading:'Agentic AI that delivers',outcomesAccent:'measurable outcomes.',
+outcomesIntro:'We prioritize use cases by impact, integration effort and risk. Every implementation starts with a measurable baseline.',
+metrics:[['Cycle time','Compare handling times before and after automation'],['Automation rate','Measure the proportion of successfully assisted or automated cases'],['Quality','Track error rates, escalations and manual rework'],['Cost per case','Compare operational and model costs with demonstrated value']],
+offersEyebrow:'OUR CAPABILITIES',offersHeading:'From enterprise software',offersAccent:'to agentic workflows.',
+offers:[
+['AI Software Development','Custom production-oriented AI applications with clear interfaces, tests, monitoring and governed permissions.'],
+['Agentic AI & Multi-Agent Systems','Purpose-built agents that break down tasks, call tools, verify outcomes and involve humans when required.'],
+['Enterprise AI Integration','Connect ERP, CRM, SAP, APIs, databases, document systems and established business workflows.'],
+['Intelligent Workflow Automation','Automate recurring activities with traceable state, approval steps and robust error handling.'],
+['Secure & Sovereign AI','Data minimization, access control, data residency, auditability and appropriate cloud, hybrid or on-prem architectures.'],
+['AI Operations & MLOps','Operations, evaluation, observability, model versioning, cost control and continuous optimization.']],
+scenarioEyebrow:'PRACTICAL USE CASES',scenarioHeading:'Beyond the chatbot.',scenarioIntro:'Agentic AI connects analysis, decisions and actions across multiple systems — always within defined boundaries.',
+scenarios:[['Customer Operations','Classify customer requests, assemble ERP and CRM context, and prepare response and processing workflows.'],['Finance & Back Office','Review documents, reconcile data, flag exceptions and coordinate approval workflows.'],['IT & Service Management','Analyze tickets, correlate knowledge sources and prepare changes for human approval.'],['Knowledge & Compliance','Access distributed organizational knowledge securely, cite sources and support policy-driven checks.']],
+safetyEyebrow:'SECURITY & PRIVACY BY DESIGN',safetyTitle:'Autonomous where useful.',safetyAccent:'Governed where necessary.',
+safetyDesc:'Autonomous workflows need more than good prompts. We define technical and organizational boundaries for agents and permit sensitive actions only through explicit controls.',
+controls:['Least-privilege access and secured tool integrations','Data minimization, sensitive-information safeguards and retention controls','Evaluations, test cases, traceability and audit trails','Human-in-the-loop for risky or irreversible actions'],
+note:'Compliance with privacy law must be assessed for each specific use case, data flow and service provider.',
+assessmentEyebrow:'ENTERPRISE AI OPPORTUNITY ASSESSMENT',assessmentTitle:'A useful AI journey starts with a measurable workflow.',
+assessmentIntro:'Together we select a promising use case, review integrations and risks, then define a bounded pilot with explicit success metrics.',
+assessmentSteps:[['01','Discover','Identify processes, bottlenecks and opportunities'],['02','Assess','Evaluate data, security, integration effort and value'],['03','Prototype','Implement a bounded agentic workflow'],['04','Measure & Scale','Measure results and scale responsibly when justified']],
+assessmentCta:'Discuss an AI engineering project',
+bridge:'The right solution is not tied to one vendor or platform. We integrate suitable models and frameworks into your existing architecture, supported by OpenKubes and our platform-engineering expertise where useful.'
+};
+const contact='/' + lang + '/contact/';
+---
+<main class="enterprise-ai">
+ <section class="enterprise-ai__hero">
+  <div class="wrap enterprise-ai__hero-grid">
+   <div class="enterprise-ai__copy">
+    <p class="eyebrow">{d.eyebrow}</p>
+    <h1>{d.title}<br/><em>{d.sub}</em></h1>
+    <p class="enterprise-ai__lead">{d.lead}</p>
+    <p class="enterprise-ai__promise">{d.promise}</p>
+    <div class="enterprise-ai__actions"><a class="enterprise-ai__btn enterprise-ai__btn--primary" href={contact}>{d.primary} ↗</a><a class="enterprise-ai__btn enterprise-ai__btn--outline" href="#capabilities">{d.secondary} ↓</a></div>
+   </div>
+   <div class="enterprise-ai__diagram" role="img" aria-label={de?'Agentic-AI-Workflow mit Unternehmenssystemen, Planung, Aktionen und Freigaben':'Agentic AI workflow connecting enterprise systems, planning, actions and approvals'}>
+     <p class="enterprise-ai__diagram-label">{d.visual}</p>
+     <div class="enterprise-ai__diagram-core"><span class="enterprise-ai__diagram-symbol">✳</span><strong>AGENTIC AI</strong><small>ORCHESTRATION CORE</small></div>
+     <div class="enterprise-ai__diagram-systems">{d.systems.map(s=><span>{s}</span>)}</div>
+     <div class="enterprise-ai__diagram-flow">{d.steps.map((step,i)=><span><small>0{i+1}</small>{step}</span>)}</div>
+     <p class="enterprise-ai__diagram-governance">{d.governance}</p>
+   </div>
+  </div>
+ </section>
+ <section class="enterprise-ai__outcomes"><div class="wrap">
+  <p class="eyebrow">{d.outcomes}</p><h2>{d.outcomesHeading}<br/><em>{d.outcomesAccent}</em></h2><p class="enterprise-ai__section-intro">{d.outcomesIntro}</p>
+  <div class="enterprise-ai__metrics">{d.metrics.map(([title,desc],i)=><article><span>0{i+1} / KPI</span><h3>{title}</h3><p>{desc}</p></article>)}</div>
+ </div></section>
+ <section class="enterprise-ai__capabilities" id="capabilities"><div class="wrap">
+  <p class="eyebrow">{d.offersEyebrow}</p><h2>{d.offersHeading}<br/><em>{d.offersAccent}</em></h2>
+  <div class="enterprise-ai__services">{d.offers.map(([title,desc],i)=><article><span>0{i+1} / CAPABILITY</span><h3>{title}</h3><p>{desc}</p></article>)}</div>
+ </div></section>
+ <section class="enterprise-ai__cases"><div class="wrap"><p class="eyebrow">{d.scenarioEyebrow}</p><h2>{d.scenarioHeading}</h2><p class="enterprise-ai__section-intro">{d.scenarioIntro}</p><div class="enterprise-ai__case-grid">{d.scenarios.map(([title,desc])=><article><h3>{title}</h3><p>{desc}</p></article>)}</div></div></section>
+ <section class="enterprise-ai__trust"><div class="wrap enterprise-ai__trust-grid"><div><p class="eyebrow">{d.safetyEyebrow}</p><h2>{d.safetyTitle}<br/><em>{d.safetyAccent}</em></h2><p>{d.safetyDesc}</p><p class="enterprise-ai__compliance-note">{d.note}</p></div><ul>{d.controls.map(item=><li><span aria-hidden="true">✓</span>{item}</li>)}</ul></div></section>
+ <section class="enterprise-ai__assessment"><div class="wrap"><p class="eyebrow">{d.assessmentEyebrow}</p><h2>{d.assessmentTitle}</h2><p class="enterprise-ai__section-intro">{d.assessmentIntro}</p><div class="enterprise-ai__assessment-steps">{d.assessmentSteps.map(([number,name,detail])=><article><span>{number}</span><h3>{name}</h3><p>{detail}</p></article>)}</div><div class="enterprise-ai__assessment-end"><p>{d.bridge}</p><a class="enterprise-ai__btn enterprise-ai__btn--primary" href={contact}>{d.assessmentCta} ↗</a></div></div></section>
+</main>
