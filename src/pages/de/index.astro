@@ -5,6 +5,7 @@ import ServicesGrid from '../../components/ServicesGrid.astro';
 import IndustriesGrid from '../../components/IndustriesGrid.astro';
 import AnnouncementBar from '../../components/AnnouncementBar.astro';
 import InnovationPlatforms from '../../components/InnovationPlatforms.astro';
+import FamilyWordmark from '../../components/FamilyWordmark.astro';
 import EngineeringApproach from '../../components/EngineeringApproach.astro';
 import ContactSection from '../../components/ContactSection.astro';
 import SiteNavigation from '../../components/SiteNavigation.astro';
@@ -109,7 +110,7 @@ const serviceItems = [
 ---
 <BaseLayout lang="de" title={t.title} description={t.description}>
 <AnnouncementBar lang="de" />
-<header class="site-header"><div class="header wrap"><a class="logo brand-logo" href="/de/" aria-label="Kubernauts"><img src="/brand/kubernauts-hexagon-light.svg" alt="" width="44" height="44" /><span class="brand-type"><span class="brand-kuber">KUBER</span><span class="brand-nauts"><span>N</span><span>A</span><span>U</span><span>T</span><span>S</span></span></span></a><SiteNavigation lang="de" /><div class="header-right"><a class="lang" lang="en" href={t.otherPath}>{t.other}</a><a class="btn outline" href="/de/contact/">{t.contact} ↗</a></div></div></header>
+<header class="site-header"><div class="header wrap"><a class="logo brand-logo" href="/de/" aria-label="Kubernauts"><img src="/brand/kubernauts-hexagon-light.svg" alt="" width="44" height="44" /><span class="brand-type"><FamilyWordmark name="kubernauts" theme="light" /></span></a><SiteNavigation lang="de" /><div class="header-right"><a class="lang" lang="en" href={t.otherPath}>{t.other}</a><a class="btn outline" href="/de/contact/">{t.contact} ↗</a></div></div></header>
 <main>
 <section class="hero"><div class="wrap hero-inner"><div class="hero-copy"><p class="eyebrow">● &nbsp;{t.eyebrow}</p><h1>{t.hero[0]}<br />{t.hero[1]}<br /><em>{t.hero[2]}</em></h1><p class="lead">{t.lead}</p><p class="sublead">{t.sub}</p><div class="buttons"><a class="btn primary" href="#services">{t.explore} ↗</a><a class="btn outline" href="/de/contact/">{t.talk} ↗</a></div><p class="minor">{t.micro}</p></div><PlatformDiagram lang="de" /></div></section>
 <div class="ticker"><div class="wrap"><span>{t.ticker}</span><b>KUBERNETES</b><b>OPEN SOURCE</b><b>GITOPS</b><b>PLATFORM ENGINEERING</b></div></div>
