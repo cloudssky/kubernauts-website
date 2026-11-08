@@ -1,0 +1,49 @@
+---
+interface Props {lang:'de'|'en'}
+const {lang}=Astro.props;
+const d={"de":{"eyebrow":"ENTERPRISE AI · MLOPS · PRIVATE INFRASTRUCTURE","hero":"KI in Produktion bringen.","accent":"Souverän betreiben.","lead":"Von GPU-Infrastruktur und privaten KI-Plattformen bis zu Model Operations, Governance und Edge AI: Wir schaffen die technische Grundlage für produktive KI-Workloads.","primary":"KI-Projekt besprechen","secondary":"Kontaktmöglichkeiten","benefits":["Private AI & On-Premises","GPU-beschleunigtes Kubernetes","Automatisiertes Model Lifecycle Management","Sicherheit und kontrollierter Datenzugriff"],"introKicker":"FROM PROTOTYPE TO PRODUCTION","introTitle":"Mehr als ein Modell.","introText":"Viele KI-Initiativen funktionieren im Proof of Concept – aber nicht automatisch im produktiven Betrieb. Skalierbarkeit, sichere Datenpipelines, reproduzierbare Deployments, Ressourcensteuerung und Observability müssen von Beginn an zusammen gedacht werden.","areasKicker":"UNSERE AI & MLOPS LEISTUNGEN","areasTitle":"KI-Infrastruktur mit Engineering-Tiefe.","areas":[["01 / AI PLATFORMS","Enterprise AI Platform Engineering","Kubernetes-native KI-Plattformarchitektur, sichere Team-Umgebungen, Self-Service, Ressourcensteuerung und Mandantenfähigkeit."],["02 / GPU INFRASTRUCTURE","Private AI & GPU Infrastructure","Souveräne GPU-Plattformen für On-Premises, Hybrid und Partner-Infrastruktur; Kapazitätsplanung, Isolation und Workload Scheduling."],["03 / MODEL LIFECYCLE","MLOps & Model Operations","ML-Pipelines, Modellversionierung, Validierung, Deployment, Überwachung und kontrollierte Aktualisierung mit geeigneten Open-Source-Werkzeugen."],["04 / INFERENCE","LLMs, RAG & AI Agents","Infrastrukturseitige Bereitstellung und Betrieb von LLM-Inferenz, Retrieval-Augmented Generation und AI-Agent-Workloads."],["05 / DISTRIBUTED AI","Edge AI & Industrial AI","Lokale Inferenz, verteilte Kubernetes-Umgebungen, industrielle Datenverarbeitung und zuverlässiger Betrieb am Edge."],["06 / PHYSICAL AI","Robotics & Physical AI","Kubernetes-Infrastruktur und Operations für Robotik-Flotten, autonome Systeme und KI-nahe industrielle Anwendungen."],["07 / TRUST","AI Security & Governance","Identitäten, Datenschutz, Netzsegmentierung, Nachvollziehbarkeit, Sicherheitsrichtlinien und kontrollierte Freigabeprozesse."],["08 / ENABLEMENT","AI Architecture & Enablement","Architektur-Workshops, Plattform-Blueprints, technische Evaluierungen und Migrationspfade von Pilotprojekten in den Betrieb."]],"platformKicker":"OPEN FOUNDATIONS","platformTitle":"Offene Plattformen. Kontrollierte KI.","platformText":"Mit OpenKubes verbinden wir Kubernetes-basierte Plattformarchitektur mit AI- und MLOps-Workloads. Der Fokus liegt auf offenen Komponenten, überprüfbaren Entscheidungen und der Kontrolle über Infrastruktur und Daten.","platformCTA":"OpenKubes kennenlernen","closingKicker":"LET'S TALK AI ENGINEERING","closingTitle":"Von der KI-Idee zur belastbaren Plattform.","closingText":"Besprechen Sie Ihre Anforderungen an Private AI, GPU, MLOps oder Edge AI direkt mit unserem Engineering-Team.","closingCTA":"30-Minuten-Projektgespräch vereinbaren","contactCTA":"Kontaktseite öffnen"},"en":{"eyebrow":"ENTERPRISE AI · MLOPS · PRIVATE INFRASTRUCTURE","hero":"Bring AI into production.","accent":"Operate on your terms.","lead":"From GPU infrastructure and private AI platforms to model operations, governance and edge AI, we engineer the foundations for production-ready AI workloads.","primary":"Discuss your AI project","secondary":"Contact options","benefits":["Private AI & On-Premises","GPU-accelerated Kubernetes","Automated Model Lifecycle","Security & controlled data access"],"introKicker":"FROM PROTOTYPE TO PRODUCTION","introTitle":"More than a model.","introText":"Many AI projects succeed in a proof of concept but struggle in production. Scalability, secure data pipelines, repeatable deployment, resource management and observability need to be engineered together from the beginning.","areasKicker":"OUR AI & MLOPS SERVICES","areasTitle":"AI infrastructure with engineering depth.","areas":[["01 / AI PLATFORMS","Enterprise AI Platform Engineering","Kubernetes-native AI architecture, secure team environments, self-service, resource management and tenant isolation."],["02 / GPU INFRASTRUCTURE","Private AI & GPU Infrastructure","Sovereign GPU platforms across on-premises, hybrid and partner infrastructure, with capacity planning, isolation and workload scheduling."],["03 / MODEL LIFECYCLE","MLOps & Model Operations","ML pipelines, model versioning, validation, deployment, monitoring and controlled updates with appropriate open-source tooling."],["04 / INFERENCE","LLMs, RAG & AI Agents","Infrastructure for deploying and operating LLM inference, retrieval-augmented generation and AI agent workloads."],["05 / DISTRIBUTED AI","Edge AI & Industrial AI","Local inference, distributed Kubernetes, industrial data processing and reliable edge operations."],["06 / PHYSICAL AI","Robotics & Physical AI","Kubernetes infrastructure and operations for robotics fleets, autonomous systems and industrial AI applications."],["07 / TRUST","AI Security & Governance","Identity, data protection, segmentation, traceability, security policies and controlled change management."],["08 / ENABLEMENT","AI Architecture & Enablement","Architecture workshops, platform blueprints, technical evaluation and practical paths from pilots to production."]],"platformKicker":"OPEN FOUNDATIONS","platformTitle":"Open platforms. Controlled AI.","platformText":"OpenKubes brings Kubernetes platform engineering to AI and MLOps workloads. Our focus is on open components, reviewable architecture decisions and control over infrastructure and data.","platformCTA":"Discover OpenKubes","closingKicker":"LET'S TALK AI ENGINEERING","closingTitle":"From AI concept to dependable platform.","closingText":"Talk to our engineers about your private AI, GPU, MLOps or edge AI requirements.","closingCTA":"Book a 30-minute project conversation","contactCTA":"Contact our team"}}[lang];
+const booking='https://calendly.com/kubernauts/30min';
+---
+<main class="platform-service ai-service">
+  <section class="platform-service__hero">
+    <div class="wrap platform-service__hero-grid">
+      <div>
+        <p class="eyebrow">{d.eyebrow}</p>
+        <h1>{d.hero}<br/><em>{d.accent}</em></h1>
+        <p class="platform-service__lead">{d.lead}</p>
+        <div class="platform-service__actions">
+          <a class="platform-service__primary" href={booking} target="_blank" rel="noopener noreferrer">{d.primary} ↗</a>
+          <a class="platform-service__secondary" href={'/'+lang+'/contact/'}>{d.secondary} ↗</a>
+        </div>
+      </div>
+      <aside class="platform-service__proof">
+        <div class="platform-service__proof-top"><span>AI · MLOPS · GOVERNANCE</span><div class="ai-service__mark" aria-hidden="true">AI</div></div>
+        <ul>{d.benefits.map((item,i)=><li><span>{String(i+1).padStart(2,'0')}</span>{item}</li>)}</ul>
+        <span>PRIVATE · REPRODUCIBLE · GOVERNED</span>
+      </aside>
+    </div>
+  </section>
+  <section class="platform-service__intro"><div class="wrap platform-service__intro-grid">
+    <div><p class="eyebrow">{d.introKicker}</p><h2>{d.introTitle}</h2></div>
+    <p>{d.introText}</p>
+  </div></section>
+  <section class="platform-service__skills"><div class="wrap">
+    <p class="eyebrow">{d.areasKicker}</p>
+    <h2>{d.areasTitle}</h2>
+    <div class="platform-service__skills-grid">{d.areas.map(([num,title,description])=>
+      <article><span>{num}</span><h3>{title}</h3><p>{description}</p></article>
+    )}</div>
+  </div></section>
+  <section class="platform-service__open"><div class="wrap platform-service__open-grid">
+    <div><p class="eyebrow">{d.platformKicker}</p><h2>{d.platformTitle}</h2><p>{d.platformText}</p><a href="https://openkubes.org" target="_blank" rel="noopener noreferrer">{d.platformCTA} ↗</a></div>
+    <div class="platform-service__layers" aria-hidden="true"><span>AI & MLOPS</span><span>OPENKUBES</span><span>KUBERNETES</span></div>
+  </div></section>
+  <section class="platform-service__closing"><div class="wrap">
+    <p class="eyebrow">{d.closingKicker}</p>
+    <h2>{d.closingTitle}</h2><p>{d.closingText}</p>
+    <div class="platform-service__actions">
+      <a class="platform-service__primary" href={booking} target="_blank" rel="noopener noreferrer">{d.closingCTA} ↗</a>
+      <a class="platform-service__secondary" href={'/'+lang+'/contact/'}>{d.contactCTA} ↗</a>
+    </div>
+  </div></section>
+</main>
