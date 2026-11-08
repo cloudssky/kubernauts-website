@@ -1,4 +1,5 @@
 ---
+import OpenKubesWordmark from './OpenKubesWordmark.astro';
 interface Props { lang: 'de'|'en'; }
 const { lang } = Astro.props;
 const de = lang === 'de';
@@ -48,7 +49,7 @@ const copy = de ? {
     </div>
     <div class="innovation-card__body">
       <p class="innovation-card__kicker">{copy.foundation}</p>
-      <h3>Open<span class="innovation-card__rainbow">Kubes</span><span class="innovation-card__period">.</span></h3>
+      <h3><OpenKubesWordmark theme="light"/></h3>
       <h4>{copy.okName}</h4>
       <p>{copy.okDesc}</p>
       <ul>{copy.okTags.map(tag=><li>{tag}</li>)}</ul>
