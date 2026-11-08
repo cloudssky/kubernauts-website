@@ -14,3 +14,5 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: npm run build
       - run: npm run verify:seo
+      - name: Validate future release SEO without deploying
+        run: SITE_INDEXABLE=true npm run build && SITE_INDEXABLE=true npm run verify:seo
