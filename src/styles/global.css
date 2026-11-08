@@ -69,3 +69,33 @@ footer .brand-logo .brand-kuber{color:#f0f9ff}
  .platform-diagram{width:calc(100% + 12px);margin-left:-6px}
  .hero .minor{margin-top:38px}
 }
+
+/* SVG label positioning: edit these six values in DevTools, then send them back. */
+.platform-diagram{
+  --platform-label-x:255px;
+  --platform-label-y:244px;
+  --platform-label-angle:22.5deg;
+  --engineering-label-x:425px;
+  --engineering-label-y:273px;
+  --engineering-label-angle:-22.5deg;
+}
+.platform-diagram .platform-face-label{
+  transform:translate(var(--platform-label-x),var(--platform-label-y)) rotate(var(--platform-label-angle));
+}
+.platform-diagram .engineering-face-label{
+  transform:translate(var(--engineering-label-x),var(--engineering-label-y)) rotate(var(--engineering-label-angle));
+}
+/* Prevent the illustration from covering the hero copy at desktop widths. */
+.hero-inner{grid-template-columns:minmax(0,44%) minmax(0,56%);column-gap:22px}
+.hero-copy{position:relative;z-index:2}
+.platform-diagram{width:100%;max-width:760px;min-width:0;overflow:visible;position:relative;z-index:1}
+.hero .lead,.hero .sublead{overflow-wrap:normal}
+.hero .sublead{font-size:13.4px;letter-spacing:-.01em;max-width:100%}
+.hero .lead{font-size:19px;max-width:100%}
+@media(max-width:1190px){.hero-desktop-break{display:none}}
+@media(min-width:1191px){.hero .sublead{font-size:13.1px}}
+@media(max-width:1050px){
+ .hero-inner{grid-template-columns:1fr;column-gap:0}
+ .platform-diagram{width:min(100%,800px);max-width:800px}
+ .hero .sublead{font-size:14px}
+}
