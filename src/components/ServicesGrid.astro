@@ -12,12 +12,13 @@ interface Props { lang:'de'|'en'; items:Item[]; }
 const {lang,items}=Astro.props;
 const label=lang==='de'?'Projekt besprechen':'Discuss your project';
 const tag=lang==='de'?'UNSER FOKUS':'OUR FOCUS';
+const serviceCategories=lang==='de' ? ['PLATTFORM-ARCHITEKTUR','KUBERNETES-BETRIEB','AI-INFRASTRUKTUR','MODERNISIERUNG'] : ['PLATFORM ARCHITECTURE','KUBERNETES OPERATIONS','AI INFRASTRUCTURE','MODERNIZATION'];
 ---
 <div class="services-grid">
   {items.map((item)=>
     <article class={`service-panel service-panel--${item.accent}`}>
       <div class="service-panel__top">
-        <span class="service-panel__index">{item.number} / SERVICE</span>
+        <span class="service-panel__index">{item.number} / {serviceCategories[Number(item.number)-1]}</span>
         <span class="service-panel__symbol" aria-hidden="true">
           {item.accent==='blue' && <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M24 5 43 15 24 25 5 15 24 5Z M5 24 24 34 43 24 M5 33 24 43 43 33" stroke-linejoin="round"/></svg>}
           {item.accent==='teal' && <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="7" width="34" height="34" rx="7"/><path d="M12 25h7l5-10 7 19 5-9h5" stroke-linejoin="round"/></svg>}
