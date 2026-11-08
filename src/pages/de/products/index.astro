@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import FamilyWordmark from '../../../components/FamilyWordmark.astro';
 import AnnouncementBar from '../../../components/AnnouncementBar.astro';
 import SiteNavigation from '../../../components/SiteNavigation.astro';
 import CorporateFooter from '../../../components/CorporateFooter.astro';
@@ -11,7 +12,7 @@ const other='EN';
 <BaseLayout lang={lang} title="Produkte & Plattformen | OpenKubes & Kubernautic | Kubernauts" description="OpenKubes Plattformframework, Kubernautic Agentic AI, Bare Metal, Robotics, Private AI, Security und Industrial Edge." canonicalPath="/de/products/">
  <AnnouncementBar lang={lang}/>
  <header class="site-header"><div class="header wrap">
-  <a class="logo brand-logo" href="/de/" aria-label="Kubernauts"><img src="/brand/kubernauts-hexagon-light.svg" alt="" width="44" height="44"/><span class="brand-type"><span class="brand-kuber">KUBER</span><span class="brand-nauts"><span>N</span><span>A</span><span>U</span><span>T</span><span>S</span></span></span></a>
+  <a class="logo brand-logo" href="/de/" aria-label="Kubernauts"><img src="/brand/kubernauts-hexagon-light.svg" alt="" width="44" height="44"/><span class="brand-type"><FamilyWordmark name="kubernauts" theme="dark" /></span></a>
   <SiteNavigation lang={lang}/>
   <div class="header-right"><a class="lang" lang="en" href="/en/products/">{other}</a><a class="btn outline" href="/de/contact/">{contact} ↗</a></div>
  </div></header>
