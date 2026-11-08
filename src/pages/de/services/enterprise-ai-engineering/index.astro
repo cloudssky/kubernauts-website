@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import FamilyWordmark from '../../../../components/FamilyWordmark.astro';
+import AnnouncementBar from '../../../../components/AnnouncementBar.astro';
+import SiteNavigation from '../../../../components/SiteNavigation.astro';
+import CorporateFooter from '../../../../components/CorporateFooter.astro';
+import EnterpriseAIEngineering from '../../../../components/EnterpriseAIEngineering.astro';
+const lang='de';
+---
+<BaseLayout lang={lang} title="Agentic AI Entwicklung & Enterprise KI-Integration | Kubernauts" description="Agentic-AI-Systeme jenseits von Chatbots: sichere KI-Softwareentwicklung, autonome Workflows, ERP- und CRM-Integration und messbare Effizienzgewinne." canonicalPath="/de/services/enterprise-ai-engineering/">
+<AnnouncementBar lang={lang}/>
+<header class="site-header"><div class="header wrap">
+<a class="logo brand-logo" href="/de/" aria-label="Kubernauts"><img src="/brand/kubernauts-hexagon-light.svg" alt="" width="44" height="44"/><span class="brand-type"><FamilyWordmark name="kubernauts" theme="dark"/></span></a>
+<SiteNavigation lang={lang}/>
+<div class="header-right"><a class="lang" lang="en" href="/en/services/enterprise-ai-engineering/">EN</a><a class="btn outline" href="/de/contact/">Kontakt ↗</a></div>
+</div></header>
+<EnterpriseAIEngineering lang={lang}/>
+<CorporateFooter lang={lang}/>
+</BaseLayout>
