@@ -30,7 +30,7 @@ const copy=de?{
       <p class="eyebrow">{copy.kicker}</p>
       <h2 id="contact-heading">{copy.title}<br /><em>{copy.title2}</em></h2>
       <p class="contact-stage__intro">{copy.intro}</p>
-      <a class="contact-stage__button" href="mailto:contact@kubernauts.de?subject=Kubernauts%20Platform%20Engineering">{copy.action}<span aria-hidden="true">↗</span></a>
+      <a class="contact-stage__button" href={de ? "/de/contact/" : "/en/contact/"}>{copy.action}<span aria-hidden="true">↗</span></a>
       <p class="contact-stage__note"><span aria-hidden="true">●</span>{copy.detail}</p>
     </div>
     <aside class="contact-stage__aside" aria-label={de?'Kontaktdaten':'Contact information'}>
