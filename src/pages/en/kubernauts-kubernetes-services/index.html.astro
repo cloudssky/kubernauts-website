@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import AnnouncementBar from '../../../components/AnnouncementBar.astro';
+import SiteNavigation from '../../../components/SiteNavigation.astro';
 import CorporateFooter from '../../../components/CorporateFooter.astro';
 import KubernetesServicesLanding from '../../../components/KubernetesServicesLanding.astro';
 const lang='en';
@@ -15,8 +16,7 @@ const other='DE';
  <AnnouncementBar lang={lang}/>
  <header class="site-header"><div class="header wrap">
   <a class="logo brand-logo" href="/en/" aria-label="Kubernauts"><img src="/brand/kubernauts-hexagon-light.svg" alt="" width="44" height="44"/><span class="brand-type"><span class="brand-kuber">KUBER</span><span class="brand-nauts"><span>N</span><span>A</span><span>U</span><span>T</span><span>S</span></span></span></a>
-  <nav class="navigation" aria-label="Main navigation">{nav.map(([label,id])=><a href={`/${lang}/#${id}`}>{label}</a>)}</nav>
-  <details class="mobile-menu"><summary aria-label="Open menu"><span class="hamburger" aria-hidden="true">☰</span><span>Menu</span></summary><nav class="mobile-menu-panel" aria-label="Mobile navigation">{nav.map(([label,id])=><a href={`/${lang}/#${id}`}>{label}</a>)}<a href="/en/contact/">{contact} ↗</a></nav></details>
+  <SiteNavigation lang="en" />
   <div class="header-right"><a class="lang" lang="de" href="/de/kubernauts-kubernetes-services/index.html">{other.toUpperCase()}</a><a class="btn outline" href="/en/contact/">{contact} ↗</a></div>
  </div></header>
  <KubernetesServicesLanding lang={lang}/>
