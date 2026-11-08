@@ -31,12 +31,12 @@ const nav=[
   <details class="nav-services">
     <summary>{de?'Leistungen':'Services'} <span class="nav-services__chevron" aria-hidden="true">⌄</span></summary>
     <div class="nav-services__menu">
+      <a class="nav-services__all" href={base+'#services'}>{de?'Alle Leistungen':'All services'} <span aria-hidden="true">→</span></a>
       {items.map((item)=><a href={item.url} class="nav-services__item">
         <span class="nav-services__dot" aria-hidden="true"></span>
         <span><strong>{item.label}</strong><small>{item.detail}</small></span>
         <span aria-hidden="true">↗</span>
       </a>)}
-      <a class="nav-services__all" href={base+'#services'}>{de?'Alle Leistungen':'All services'} <span aria-hidden="true">→</span></a>
     </div>
   </details>
   {nav.map(item=><a href={item.href}>{item.label}</a>)}
@@ -60,8 +60,8 @@ const nav=[
     <details class="mobile-services">
       <summary>{de?'Leistungen':'Services'} <span aria-hidden="true">⌄</span></summary>
       <div class="mobile-services__links">
-        {items.map(item=><a href={item.url}>{item.label}</a>)}
         <a href={base+'#services'}>{de?'Alle Leistungen':'All services'}</a>
+        {items.map(item=><a href={item.url}>{item.label}</a>)}
       </div>
     </details>
     {nav.map(item=><a href={item.href}>{item.label}</a>)}
