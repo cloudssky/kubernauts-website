@@ -716,3 +716,18 @@ section[id]{scroll-margin-top:100px}
 .ok-detail__note{font-size:11px;color:#6c8290;margin-top:24px;line-height:1.7}
 @media(max-width:970px){.ok-overview__hero-grid,.ok-overview__feature{grid-template-columns:1fr;gap:40px}.ok-overview__principle-grid,.ok-overview__solution-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ok-overview__feature--reverse>div:first-child{order:0}}
 @media(max-width:620px){.ok-overview__hero,.ok-overview__principles,.ok-overview__paths,.ok-overview__solutions,.ok-overview__closing{padding:60px 0}.ok-overview__principle-grid,.ok-overview__solution-grid{grid-template-columns:1fr}.ok-overview__principle-grid article,.ok-overview__solution{min-height:0}.ok-overview__feature,.ok-overview__feature+.ok-overview__feature{padding:28px 0}}
+
+/* Exact OpenKubes letter palette from openkubes/openkubes website/assets/openkubes-branding.css */
+.openkubes-wordmark{display:inline-flex;white-space:nowrap;font-weight:850;letter-spacing:-.045em;line-height:1.1}
+.openkubes-wordmark>span:nth-child(1){color:#27A8F2}
+.openkubes-wordmark>span:nth-child(2){color:#48BDF7}
+.openkubes-wordmark>span:nth-child(3){color:#76D1FF}
+.openkubes-wordmark>span:nth-child(4){color:#B4E5FF}
+.openkubes-wordmark>span:nth-child(5){color:#2DBF80}
+.openkubes-wordmark>span:nth-child(6){color:#27A8F2}
+.openkubes-wordmark>span:nth-child(7){color:#2E75CF}
+.openkubes-wordmark>span:nth-child(8){color:#F47B16}
+.openkubes-wordmark>span:nth-child(9){color:#FFA52D}
+.openkubes-wordmark>span:nth-child(10){color:#FFFFFF}
+.openkubes-wordmark--light>span:nth-child(10){color:#1c354a}
+.ok-overview__seal .openkubes-wordmark{font-size:clamp(29px,3.3vw,43px)}
