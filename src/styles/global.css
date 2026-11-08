@@ -377,3 +377,51 @@ section[id]{scroll-margin-top:100px}
 .contact-page__side-foot a{font-size:13px;font-weight:800;color:#7beade;overflow-wrap:anywhere}
 @media(max-width:920px){.contact-page__grid{grid-template-columns:1fr}.contact-page__side{width:100%}.contact-page__intro{grid-template-columns:1fr}.contact-page__badge{display:none}}
 @media(max-width:560px){.contact-page__hero{padding:55px 0}.contact-page__grid{padding-top:30px}.contact-page__direct,.contact-booking,.contact-page__side{padding:24px}.contact-page__direct-grid{grid-template-columns:1fr}}
+
+/* Ads landing — dedicated, search-friendly Enterprise Kubernetes Operations */
+.ads-landing{background:#f5f9fb;color:#142a3d}
+.ads-landing__hero{background:radial-gradient(ellipse at 77% 35%,#16425a,#081727 68%);color:#f7fcff;padding:82px 0 86px}
+.ads-landing__hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);align-items:center;gap:60px}
+.ads-landing h1{font-size:clamp(43px,5.1vw,74px);line-height:1.075;letter-spacing:-.06em;margin:16px 0 26px}
+.ads-landing h1 em,.ads-landing h2 em{font-style:normal;background:linear-gradient(90deg,#59dfd3,#57aedb,#a99cf0);background-clip:text;color:transparent}
+.ads-landing__lead{font-size:17px;line-height:1.75;color:#c0d4e0;max-width:680px}
+.ads-landing__actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:32px}
+.ads-landing__primary,.ads-landing__secondary{display:inline-flex;align-items:center;gap:14px;padding:15px 19px;font-weight:800;font-size:13px;border-radius:5px}
+.ads-landing__primary{background:#66e2d8;color:#082733;border:1px solid #66e2d8}.ads-landing__primary:hover{background:#95f8ed}
+.ads-landing__secondary{background:transparent;color:#e9f7fb;border:1px solid #577589}.ads-landing__secondary:hover{border-color:#6ee6e0}
+.ads-landing__small{font-size:11px;color:#8facbc;line-height:1.6;margin:17px 0 0}
+.ads-landing__visual{padding:28px;background:linear-gradient(145deg,#11354a,#092337);border:1px solid #326177;border-radius:12px;box-shadow:0 25px 50px #00132170}
+.ads-landing__visual>p{font-size:10px;font-weight:850;color:#6ce5d8;letter-spacing:.16em;margin:0}
+.ads-landing__hexagon{display:flex;justify-content:center;align-items:center;min-height:160px}
+.ads-landing__hexagon img{width:120px;height:120px;filter:drop-shadow(0 15px 26px #06c9d548)}
+.ads-landing__visual ul{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.ads-landing__visual li{display:flex;align-items:center;gap:16px;padding:13px 0;border-top:1px solid #2c5164;color:#d6e9f1;font-size:13px}
+.ads-landing__visual li span{font-size:10px;font-weight:850;color:#64ded7}
+.ads-landing__intro-section{padding:88px 0}
+.ads-landing__intro{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.ads-landing h2{font-size:clamp(31px,3.6vw,50px);line-height:1.15;letter-spacing:-.05em;margin:15px 0 22px}
+.ads-landing__intro>p,.ads-landing__assessment-grid>div>p:not(.eyebrow),.ads-landing__why p{font-size:15px;line-height:1.85;color:#536c7d;margin:0}
+.ads-landing__assessment{background:#eaf3f6;padding:76px 0}
+.ads-landing__assessment-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:80px;align-items:center}
+.ads-landing__assessment-grid .ads-landing__primary{margin-top:26px}
+.ads-landing__assessment-grid ol{list-style:none;margin:0;padding:10px 25px;background:white;border-radius:9px;border:1px solid #d7e6eb}
+.ads-landing__assessment-grid ol li{display:flex;align-items:center;gap:20px;padding:19px 0;border-bottom:1px solid #e2ecf1;font-size:14px;font-weight:700;color:#254155}
+.ads-landing__assessment-grid ol li:last-child{border:0}
+.ads-landing__assessment-grid ol li span{font-size:12px;color:#079da2;font-weight:850;letter-spacing:.12em}
+.ads-landing__services{padding:90px 0}
+.ads-landing__services h2{margin-bottom:10px}
+.ads-landing__section-lead{font-size:15px;line-height:1.7;color:#5d7182;margin:0 0 36px}
+.ads-landing__service-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.ads-landing__service-grid article{background:white;border:1px solid #dbe8ed;border-top:3px solid #21b3b1;border-radius:8px;padding:29px 25px;min-height:230px}
+.ads-landing__service-grid article:nth-child(3n+1){border-top-color:#178de3}
+.ads-landing__service-grid article:nth-child(3n){border-top-color:#62be78}
+.ads-landing__service-grid article>span{font-size:10px;letter-spacing:.11em;color:#698393;font-weight:850}
+.ads-landing__service-grid article h3{font-size:22px;line-height:1.22;letter-spacing:-.04em;margin:21px 0 13px}
+.ads-landing__service-grid article p{font-size:13px;line-height:1.75;color:#5b7080;margin:0}
+.ads-landing__why{padding:70px 0;background:#eef4f7}
+.ads-landing__why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.ads-landing__closing{padding:83px 0;background:radial-gradient(ellipse at 30% 40%,#124057,#081827 78%);color:#fff}
+.ads-landing__closing h2{max-width:780px}
+.ads-landing__closing p:not(.eyebrow){font-size:15px;line-height:1.8;color:#b8cbd8;max-width:650px}
+@media(max-width:950px){.ads-landing__hero-grid,.ads-landing__intro,.ads-landing__assessment-grid,.ads-landing__why-grid{grid-template-columns:1fr;gap:35px}.ads-landing__service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.ads-landing__hero{padding:54px 0 66px}.ads-landing__visual{padding:20px}.ads-landing__intro-section,.ads-landing__services{padding:65px 0}.ads-landing__service-grid{grid-template-columns:1fr}.ads-landing__assessment{padding:55px 0}.ads-landing__assessment-grid ol{padding:7px 17px}.ads-landing__closing{padding:60px 0}}
