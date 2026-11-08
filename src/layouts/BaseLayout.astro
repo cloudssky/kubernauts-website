@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import ConsentManager from '../components/ConsentManager.astro';
+import { seoApprovedPaths, alternateLanguages } from '../config/seo';
 
 interface Props {
   title: string;
@@ -17,23 +18,10 @@ const absoluteCanonical = new URL(currentPath, site).toString();
 // Safe by default: the relaunch remains unindexed unless explicitly enabled.
 // A future production release must set SITE_INDEXABLE=true at build time.
 const releaseApproved = process.env.SITE_INDEXABLE === 'true';
-const nonIndexablePaths = new Set([
-  '/brand-compare/',
-  '/de/impressum/', '/en/imprint/',
-  '/de/datenschutz/', '/en/privacy/',
-]);
-const indexable = releaseApproved && !nonIndexablePaths.has(currentPath);
+const indexable = releaseApproved && seoApprovedPaths.has(currentPath);
 const robots = indexable ? 'index,follow' : 'noindex,follow';
 
-const languagePairs: Record<string, {de:string;en:string}> = {
-  '/de/': {de:'/de/',en:'/en/'},
-  '/en/': {de:'/de/',en:'/en/'},
-  '/de/impressum/': {de:'/de/impressum/',en:'/en/imprint/'},
-  '/en/imprint/': {de:'/de/impressum/',en:'/en/imprint/'},
-  '/de/datenschutz/': {de:'/de/datenschutz/',en:'/en/privacy/'},
-  '/en/privacy/': {de:'/de/datenschutz/',en:'/en/privacy/'},
-};
-const alternates = languagePairs[currentPath];
+const alternates = alternateLanguages[currentPath];
 
 const ld = currentPath === '/de/' || currentPath === '/en/' ? [
   {
