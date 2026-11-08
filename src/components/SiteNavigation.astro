@@ -43,3 +43,33 @@ const nav=[
     <a href={base+'contact/'}>{de?'Kontakt':'Contact'} ↗</a>
   </nav>
 </details>
+
+<script>
+  document.querySelectorAll<HTMLDetailsElement>('.nav-services').forEach((menu) => {
+    let openedByHover = false;
+    menu.addEventListener('pointerenter', (event) => {
+      if (event.pointerType === 'mouse' && window.matchMedia('(min-width: 1021px)').matches) {
+        if (!menu.open) { menu.open = true; openedByHover = true; }
+      }
+    });
+    menu.addEventListener('pointerleave', () => {
+      if (openedByHover) { menu.open = false; openedByHover = false; }
+    });
+    menu.addEventListener('toggle', () => {
+      if (!menu.open) openedByHover = false;
+    });
+    menu.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        menu.open = false;
+        openedByHover = false;
+        menu.querySelector('summary')?.focus();
+      }
+    });
+    document.addEventListener('pointerdown', (event) => {
+      if (menu.open && !menu.contains(event.target as Node)) {
+        menu.open = false;
+        openedByHover = false;
+      }
+    });
+  });
+</script>
