@@ -1,0 +1,46 @@
+---
+interface Props {lang:'de'|'en'}
+const {lang}=Astro.props;
+const d={"de":{"eyebrow":"OPENKUBES · INHOUSE AI","title":"Ihre KI.","accent":"Ihre Infrastruktur.","intro":"Private LLMs, RAG und KI-Inferenz auf kontrollierter Kubernetes-Infrastruktur. OpenKubes Inhouse AI verbindet Datenkontrolle, GPU-Ressourcen und reproduzierbare Model Operations.","pill":"PRIVATE AI · SOVEREIGN INFRASTRUCTURE","benefits":["Datenhoheit & kontrollierter Zugriff","GPU-basierte Inferenz und MLOps","On-Premises, Hybrid und Edge","Nachvollziehbare Betriebsprozesse"],"challenge":"KI produktiv nutzen – ohne die Kontrolle abzugeben.","challengeText":"Prototypen lassen sich schnell erstellen. Im Unternehmensbetrieb zählen jedoch Datenflüsse, Identitäten, Isolierung, Ressourcenplanung, Modellversionen, Observability und klare Verantwortlichkeiten. Diese Anforderungen gehören in die Plattformarchitektur.","section":"OPENKUBES / INHOUSE AI CAPABILITIES","capabilities":[["Private LLM & Inference","Bereitstellung offener oder entsprechend lizenzierter Modelle über kontrollierte Inferenzendpunkte mit Authentifizierung und Zugriffskonzept."],["GPU & Kubernetes","GPU-Ressourcen und Scheduling für unterschiedliche Teams und Workloads, abhängig von Infrastruktur und verfügbarer Hardware."],["RAG & Datenintegration","Retrieval-Augmented Generation mit kontrolliertem Zugang zu Unternehmenswissen, Vektorsuche und definierten Datenflüssen."],["MLOps & Model Lifecycle","Pipelines, Model Registry, Versionierung, Rollout, Rollback und Monitoring mit geeigneten Komponenten wie MLflow, Kubeflow oder KServe."],["Security & Governance","Policies, Netzwerksegmentierung, Secrets, Audit-Logging und überprüfbare Freigabeprozesse für KI-Workloads."],["Observability & Operations","Metriken zu Inferenz, GPU-Auslastung, Verfügbarkeit, Kosten und Modellbetrieb – integriert in vorhandene Plattformprozesse."]],"note":"OpenKubes Inhouse AI bezeichnet eine konfigurierbare Plattformarchitektur und kein pauschal sofort verfügbares Managed-AI-Angebot. Modell-, GPU- und Komponentenverfügbarkeit werden je Projekt validiert.","lastTitle":"Private AI auf Ihren Bedingungen.","lastText":"Wir prüfen gemeinsam Datenanforderungen, GPU-Optionen, Modellbetrieb und einen realistischen Pilotumfang.","cta":"Inhouse-AI-Projekt besprechen","contact":"Kontaktmöglichkeiten","back":"Alle Produkte"},"en":{"eyebrow":"OPENKUBES · INHOUSE AI","title":"Your AI.","accent":"Your infrastructure.","intro":"Private LLMs, RAG and AI inference on controlled Kubernetes infrastructure. OpenKubes Inhouse AI brings together data sovereignty, GPU resources and repeatable model operations.","pill":"PRIVATE AI · SOVEREIGN INFRASTRUCTURE","benefits":["Data sovereignty & controlled access","GPU inference and MLOps","On-premises, hybrid and edge","Auditable operational workflows"],"challenge":"Bring AI into production without giving up control.","challengeText":"Prototypes are easy to start, but enterprises need clear data flows, identity, isolation, capacity planning, model versions, observability and accountability. These concerns belong in the platform architecture.","section":"OPENKUBES / INHOUSE AI CAPABILITIES","capabilities":[["Private LLM & Inference","Deploy open or appropriately licensed models behind controlled inference endpoints with authentication and access policies."],["GPU & Kubernetes","GPU scheduling and resource management for teams and workloads, based on available hardware and infrastructure."],["RAG & Data Integration","Retrieval-augmented generation using controlled access to enterprise knowledge, vector retrieval and governed data flows."],["MLOps & Model Lifecycle","Pipelines, model registries, versioning, rollout, rollback and monitoring using suitable components such as MLflow, Kubeflow or KServe."],["Security & Governance","Policies, network segmentation, secrets, audit logging and reviewable approval processes for AI workloads."],["Observability & Operations","Inference, GPU utilization, availability, cost and model-operation metrics integrated with platform operations."]],"note":"OpenKubes Inhouse AI describes a configurable platform architecture, not a blanket promise of an immediately available managed AI product. Model, GPU and component availability are validated per project.","lastTitle":"Private AI on your terms.","lastText":"Let's assess data requirements, GPU options, model operations and a realistic pilot scope.","cta":"Discuss your Inhouse AI project","contact":"Contact options","back":"All products"}}[lang];
+const contact='/'+lang+'/contact/';
+const calendly='https://calendly.com/kubernauts/30min';
+---
+<main class="product-detail product-detail--inhouse-ai">
+  <section class="product-detail__hero"><div class="wrap product-detail__hero-grid">
+    <div>
+      <p class="eyebrow">{d.eyebrow}</p>
+      <h1>{d.title}<br/><em>{d.accent}</em></h1>
+      <p class="product-detail__lead">{d.intro}</p>
+      <div class="product-detail__actions">
+        <a class="product-detail__primary" href={calendly} target="_blank" rel="noopener noreferrer">{d.cta} ↗</a>
+        <a class="product-detail__secondary" href={contact}>{d.contact} ↗</a>
+      </div>
+    </div>
+    <aside class="product-detail__visual" aria-label={d.pill}>
+      <span class="product-detail__visual-header">{d.pill}</span>
+      <div class="product-detail__layer-stack" aria-hidden="true">
+        <div class="product-detail__layer product-detail__layer--0">PRIVATE LLM · RAG · INFERENCE</div>
+        <div class="product-detail__layer product-detail__layer--1">MLOPS · SECURITY · GOVERNANCE</div>
+        <div class="product-detail__layer product-detail__layer--2">OPENKUBES · KUBERNETES · GPU</div>
+      </div>
+      <span class="product-detail__visual-footer">DATA CONTROL · HUMAN GOVERNANCE</span>
+    </aside>
+  </div></section>
+  <section class="product-detail__problem"><div class="wrap product-detail__problem-grid">
+    <div><p class="eyebrow">THE CHALLENGE</p><h2>{d.challenge}</h2></div><p>{d.challengeText}</p>
+  </div></section>
+  <section class="product-detail__capabilities"><div class="wrap">
+    <p class="eyebrow">{d.section}</p><h2>{lang==='de'?'Souveräne AI-Infrastruktur.':'Sovereign AI infrastructure.'}</h2>
+    <div class="product-detail__cards">{d.capabilities.map(([heading,description],i)=><article>
+      <span>{String(i+1).padStart(2,'0')} / CAPABILITY</span><h3>{heading}</h3><p>{description}</p>
+    </article>)}</div>
+    <p class="product-detail__disclaimer">{d.note}</p>
+  </div></section>
+  <section class="product-detail__closing"><div class="wrap">
+    <p class="eyebrow">LET'S TALK ENGINEERING</p><h2>{d.lastTitle}</h2><p>{d.lastText}</p>
+    <div class="product-detail__actions">
+      <a class="product-detail__primary" href={calendly} target="_blank" rel="noopener noreferrer">{d.cta} ↗</a>
+      <a class="product-detail__secondary" href={'/'+lang+'/products/'}>{d.back} ↗</a>
+    </div>
+  </div></section>
+</main>
