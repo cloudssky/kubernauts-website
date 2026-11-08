@@ -616,3 +616,23 @@ section[id]{scroll-margin-top:100px}
 .product-detail__closing>div>p:not(.eyebrow){color:#bed1dd;font-size:15px;line-height:1.8;max-width:720px}
 @media(max-width:980px){.product-detail__hero-grid,.product-detail__problem-grid{grid-template-columns:1fr;gap:35px}.product-detail__cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.product-detail__hero,.product-detail__problem,.product-detail__capabilities,.product-detail__closing{padding:62px 0}.product-detail__cards{grid-template-columns:1fr}.product-detail__cards article{min-height:0}.product-detail__visual{min-height:300px}}
+
+/* Cloud Native Transformation service page */
+.transformation-service .platform-service__hero{background:radial-gradient(ellipse at 74% 35%,#18384f,#081827 73%)}
+.transformation-service h1 em{background:linear-gradient(90deg,#63e2d6,#7cc3ed,#f0a25f);background-clip:text;color:transparent}
+.transformation-service .platform-service__proof{background:linear-gradient(145deg,#13394d,#13283b)}
+.transformation-service__icon{width:65px;height:65px;display:grid;place-items:center;border:1px solid #74e5d7;border-radius:14px;color:#7ef5e4;background:#144c5b;font-size:40px;font-weight:700}
+.transformation-service .platform-service__skills-grid article:nth-child(4n+1){border-top-color:#188fe4}
+.transformation-service .platform-service__skills-grid article:nth-child(4n+2){border-top-color:#20b5b1}
+.transformation-service .platform-service__skills-grid article:nth-child(4n+3){border-top-color:#7bc078}
+.transformation-service .platform-service__skills-grid article:nth-child(4n){border-top-color:#eaa05b}
+.transformation-service__process{background:#f8fbfc;padding:87px 0 95px}
+.transformation-service__process h2{max-width:780px}
+.transformation-service__process-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-top:37px}
+.transformation-service__process-grid article{padding:25px;border:1px solid #d6e5ec;border-radius:9px;background:white;min-height:215px}
+.transformation-service__process-grid article>span{display:grid;place-items:center;width:44px;height:44px;border:1px solid #9bcbd0;border-radius:50%;color:#0a969e;font-size:12px;font-weight:850}
+.transformation-service__process-grid h3{font-size:22px;letter-spacing:-.03em;margin:21px 0 10px}
+.transformation-service__process-grid p{font-size:13px;line-height:1.7;color:#5a7283;margin:0}
+.service-panel__bottom .service-panel__link+.service-panel__link{margin-top:12px}
+@media(max-width:920px){.transformation-service__process-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:590px){.transformation-service__process{padding:60px 0}.transformation-service__process-grid{grid-template-columns:1fr}.transformation-service__process-grid article{min-height:0}}
