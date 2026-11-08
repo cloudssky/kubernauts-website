@@ -1,0 +1,30 @@
+---
+interface Industry {
+  title: string;
+  context: string;
+  focus: string;
+  accent: 'blue' | 'teal' | 'green' | 'orange';
+}
+interface Props {lang:'de'|'en'; industries:Industry[];}
+const {lang,industries}=Astro.props;
+---
+<div class="industries-grid">
+  {industries.map((industry,index)=>
+    <article class={`industry-tile industry-tile--${industry.accent}`}>
+      <div class="industry-tile__top">
+        <span class="industry-tile__number">{String(index+1).padStart(2,'0')}</span>
+        <span class="industry-tile__glyph" aria-hidden="true">
+          {index===0 && <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="12" width="30" height="17" rx="4"/><path d="M11 12 15 6h10l4 6M8 29l-2 5m26-5 2 5M10 19h5m10 0h5"/></svg>}
+          {index===1 && <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 33V18l10 5v-8l10 7V9h8v24Z M11 28h3m7 0h3m5 0h2"/></svg>}
+          {index===2 && <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="13" width="23" height="18" rx="2"/><path d="M27 19h6l4 5v7H27 M9 13V8h15 M10 31a3 3 0 1 0 6 0m15 0a3 3 0 1 0 6 0"/></svg>}
+          {index===3 && <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 15 20 6l15 9v18H5V15Z M12 33V17h16v16 M17 21h6m-6 6h6"/></svg>}
+          {index===4 && <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 5v30M5 20h30" stroke-width="5"/><rect x="4" y="4" width="32" height="32" rx="7" stroke-width="1"/></svg>}
+          {index===5 && <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m23 3-12 18h10l-4 16 13-21H19Z" stroke-linejoin="round"/></svg>}
+        </span>
+      </div>
+      <h3>{industry.title}</h3>
+      <p>{industry.context}</p>
+      <div class="industry-tile__focus"><span>{lang==='de'?'FOKUS':'FOCUS'}</span>{industry.focus}</div>
+    </article>
+  )}
+</div>
