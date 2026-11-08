@@ -1,0 +1,89 @@
+---
+interface Props { lang:'de'|'en'; }
+const {lang}=Astro.props;
+const de=lang==='de';
+const url=de?'/de/datenschutz/':'/en/privacy/';
+---
+<div id="consent-manager" class="consent-manager" data-locale={lang} data-privacy-url={url}>
+  <section id="consent-panel" class="consent-panel" role="dialog" aria-modal="true" aria-labelledby="consent-heading" aria-describedby="consent-description" hidden>
+    <h2 id="consent-heading">{de?'Datenschutz-Einstellungen':'Privacy settings'}</h2>
+    <p id="consent-description">{de?'Wir verwenden optionale Analyse- und Marketing-Technologien nur mit Ihrer Einwilligung. Sie entscheiden.':'Optional analytics and marketing technologies are used only with your consent. You decide.'}</p>
+    <div class="consent-choices">
+      <label class="consent-choice consent-choice--required"><input type="checkbox" checked disabled /><span>{de?'Notwendig (immer aktiv)':'Necessary (always active)'}</span></label>
+      <label class="consent-choice"><input id="consent-analytics" type="checkbox" /><span>{de?'Statistik – Google Analytics':'Analytics – Google Analytics'}</span></label>
+      <label class="consent-choice"><input id="consent-marketing" type="checkbox" /><span>{de?'Marketing – Google Ads, LinkedIn & OpenAI Ads':'Marketing – Google Ads, LinkedIn & OpenAI Ads'}</span></label>
+    </div>
+    <p class="consent-explainer">{de?'Die Einwilligung wird lokal gespeichert. Sie können die Auswahl jederzeit ändern. Die genannten Dienste werden erst integriert, wenn die jeweiligen Tags technisch freigegeben wurden.':'Your choice is stored locally and may be changed at any time. The listed services are only activated once their tags are separately integrated.'}</p>
+    <a class="consent-privacy-link" href={url}>{de?'Weitere Informationen: Datenschutzerklärung lesen':'More information: read our privacy policy'}</a>
+    <div class="consent-actions">
+      <button type="button" data-consent-action="reject">{de?'Alle ablehnen':'Reject all'}</button>
+      <button type="button" data-consent-action="save">{de?'Auswahl speichern':'Save preferences'}</button>
+      <button type="button" class="consent-actions__accept" data-consent-action="accept">{de?'Alle akzeptieren':'Accept all'}</button>
+    </div>
+  </section>
+  <button type="button" class="consent-reopen" id="consent-reopen" aria-controls="consent-panel">{de?'Cookie-Einstellungen':'Cookie settings'}</button>
+</div>
+<script is:inline>
+(function () {
+  const root = document.getElementById('consent-manager');
+  if (!root) return;
+  const panel = root.querySelector('#consent-panel');
+  const openButton = root.querySelector('#consent-reopen');
+  const analytics = root.querySelector('#consent-analytics');
+  const marketing = root.querySelector('#consent-marketing');
+  const key = 'kubernauts-consent-v2';
+  const version = 2;
+  let previousFocus = null;
+  const defaults = { necessary: true, analytics: false, marketing: false };
+  function readConsent() {
+    try {
+      const raw = localStorage.getItem(key);
+      if (!raw) return null;
+      const parsed = JSON.parse(raw);
+      if (!parsed || parsed.version !== version || typeof parsed.analytics !== 'boolean' || typeof parsed.marketing !== 'boolean') return null;
+      return { necessary: true, analytics: parsed.analytics, marketing: parsed.marketing, timestamp: parsed.timestamp || null, version };
+    } catch (_) { return null; }
+  }
+  function notify(state) {
+    window.kubernautsConsent = state;
+    window.dispatchEvent(new CustomEvent('kubernauts:consent', { detail: state }));
+  }
+  function show(isInitial) {
+    previousFocus = isInitial ? null : document.activeElement;
+    const state = readConsent() || defaults;
+    analytics.checked = state.analytics;
+    marketing.checked = state.marketing;
+    panel.hidden = false;
+    openButton.hidden = true;
+    panel.querySelector('[data-consent-action="reject"]').focus();
+  }
+  function close() {
+    panel.hidden = true;
+    openButton.hidden = false;
+    if (previousFocus && typeof previousFocus.focus === 'function' && previousFocus.isConnected) previousFocus.focus();
+    else openButton.focus();
+  }
+  function store(analyticsValue, marketingValue) {
+    const state = { version, necessary: true, analytics: analyticsValue, marketing: marketingValue, timestamp: new Date().toISOString() };
+    try { localStorage.setItem(key, JSON.stringify(state)); } catch (_) {}
+    notify(state);
+    close();
+  }
+  openButton.addEventListener('click', () => show(false));
+  root.querySelector('[data-consent-action="reject"]').addEventListener('click', () => store(false, false));
+  root.querySelector('[data-consent-action="accept"]').addEventListener('click', () => store(true, true));
+  root.querySelector('[data-consent-action="save"]').addEventListener('click', () => store(analytics.checked, marketing.checked));
+  panel.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') { event.preventDefault(); return; }
+    if (event.key !== 'Tab') return;
+    const nodes = [...panel.querySelectorAll('button:not([disabled]),a[href],input:not([disabled])')].filter(el=>el.getClientRects().length);
+    if (!nodes.length) return;
+    const first = nodes[0], last = nodes[nodes.length - 1];
+    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+    else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+  });
+  const current = readConsent();
+  if (current) notify(current);
+  else { notify(defaults); show(true); }
+})();
+</script>
