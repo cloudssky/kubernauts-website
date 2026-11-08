@@ -223,3 +223,31 @@ section[id]{scroll-margin-top:100px}
 .innovation-note{font-size:12px;color:#718596;margin:23px 0 0;line-height:1.7}
 @media(max-width:880px){.innovation-grid{grid-template-columns:1fr}.innovation-intro{grid-template-columns:1fr;gap:7px}.innovation-art{height:260px}}
 @media(max-width:520px){.innovation-card__body{padding:25px 23px}.innovation-art{height:225px}.ok-stack{transform:scale(.84)}.ai-core{transform:scale(.8)}}
+
+/* Engineering Approach — evidence-driven lifecycle */
+.approach-section{background:radial-gradient(ellipse at 65% 20%,#16364a 0%,#0b1b2d 55%,#071421 100%)}
+.approach-intro{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:end;margin:4px 0 43px}
+.approach-intro>p{font-size:17px;line-height:1.7;color:#b6cddd;max-width:570px;margin:0}
+.approach-principle{border-left:2px solid #48d3c9;padding:10px 0 10px 18px;display:flex;align-items:start;gap:12px;font-size:13px;line-height:1.7;color:#dcecf3}
+.approach-principle__dot{width:8px;height:8px;border-radius:50%;background:#61e5d9;box-shadow:0 0 14px #49e7db;flex:none;margin-top:7px}
+.approach-timeline{list-style:none;counter-reset:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;padding:0;margin:0}
+.approach-stage{--stage-accent:#49d3cd;position:relative;display:flex;flex-direction:column;border:1px solid #29475c;border-radius:9px;background:linear-gradient(160deg,#15364b,#0b2438 75%);padding:23px 19px 21px;min-width:0;min-height:345px}
+.approach-stage:nth-child(1){--stage-accent:#2395f5}.approach-stage:nth-child(2){--stage-accent:#62dfd1}.approach-stage:nth-child(3){--stage-accent:#79c963}.approach-stage:nth-child(4){--stage-accent:#f1b940}.approach-stage:nth-child(5){--stage-accent:#ff934b}
+.approach-stage::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;border-radius:9px 9px 0 0;background:var(--stage-accent)}
+.approach-stage__head{display:flex;align-items:start;justify-content:space-between;gap:8px;margin-bottom:28px}
+.approach-stage__index{font-size:11px;font-weight:850;letter-spacing:.13em;color:var(--stage-accent)}
+.approach-stage__icon{display:grid;place-items:center;width:42px;height:42px;flex:none;border:1px solid #36596d;border-radius:7px;color:var(--stage-accent);background:#19374b}
+.approach-stage__icon svg{width:27px;height:27px}
+.approach-stage__eyebrow{font-size:9px;font-weight:850;letter-spacing:.16em;color:#7e9eb3}
+.approach-stage h3{font-size:clamp(20px,2vw,26px);letter-spacing:-.04em;margin:8px 0 13px;color:#f1faff;line-height:1.17;overflow-wrap:break-word}
+.approach-stage>p{color:#a8c2d1;font-size:12.3px;line-height:1.75;margin:0 0 20px}
+.approach-stage__deliverable{margin-top:auto;border-top:1px solid #315064;padding-top:14px;font-size:11px;line-height:1.7;color:#d9ebf2}
+.approach-stage__deliverable span{display:block;font-size:9px;font-weight:800;letter-spacing:.16em;color:var(--stage-accent);margin-bottom:3px}
+.approach-closing{display:flex;justify-content:space-between;align-items:center;gap:20px;padding-top:35px}
+.approach-closing p{font-size:13px;color:#b0c7d4;line-height:1.6;margin:0}
+.approach-closing p span{color:#65e4dd}
+.approach-closing a{color:#071e29;background:#6de5db;border-radius:5px;white-space:nowrap;padding:14px 20px;font-size:12px;font-weight:850}
+.approach-closing a:hover{background:#95f5ec}
+@media(max-width:1120px){.approach-timeline{grid-template-columns:repeat(3,minmax(0,1fr))}.approach-stage{min-height:310px}}
+@media(max-width:770px){.approach-intro{grid-template-columns:1fr;gap:17px}.approach-timeline{grid-template-columns:repeat(2,minmax(0,1fr))}.approach-stage{min-height:290px}.approach-closing{flex-direction:column;align-items:flex-start}}
+@media(max-width:490px){.approach-timeline{grid-template-columns:1fr}.approach-stage{min-height:0}.approach-stage__head{margin-bottom:20px}.approach-closing a{white-space:normal}}
