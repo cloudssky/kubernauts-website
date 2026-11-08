@@ -1,15 +1,69 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PlatformDiagram from '../../components/PlatformDiagram.astro';
+import ServicesGrid from '../../components/ServicesGrid.astro';
 const t = {"lang":"de","other":"EN","otherPath":"/en/","nav":[["Leistungen","#services"],["Branchen","#industries"],["Plattformen","#platforms"],["Vorgehen","#approach"]],"contact":"Kontakt","eyebrow":"ENTERPRISE CLOUD NATIVE ENGINEERING","hero":["We Engineer.","We Operate.","We Innovate."],"lead":"Enterprise Kubernetes, souveräne Plattformen und AI-native Infrastruktur.","sub":"Von Architektur und Platform Engineering bis zum sicheren Betrieb geschäftskritischer Umgebungen.","explore":"Unsere Leistungen","talk":"Mit unseren Engineers sprechen","micro":"BUILT FOR COMPLEXITY. ENGINEERED FOR TRUST.","ticker":"AUF OFFENEN TECHNOLOGIEN AUFGEBAUT","servicesEyebrow":"01 / UNSERE EXPERTISE","servicesTitle":["Engineering für","die Zukunft."],"servicesIntro":"Wir verbinden moderne Plattformarchitektur mit praktischem Engineering und langjähriger Betriebserfahrung.","services":[["Platform Engineering","Kubernetes-Plattformen in Cloud-, On-Premises- und Edge-Umgebungen entwerfen, aufbauen und automatisieren."],["Enterprise Kubernetes Operations","Observability, Zuverlässigkeit und Kubernetes-Betrieb für komplexe Unternehmensumgebungen."],["AI & MLOps","Souveräne KI-Infrastruktur und produktionsorientierte Workflows für verantwortungsvolle KI."],["Cloud Native Transformation","Modernisierung, GitOps und Security by Design für skalierbare Anwendungen."]],"industriesEyebrow":"02 / GESCHÄFTSKRITISCHE UMGEBUNGEN","industriesTitle":["Entwickelt für Systeme,","auf die es ankommt."],"industriesDesc":"Cloud-Native-Technologien müssen sich im produktiven Einsatz bewähren – von Industrie und Logistik bis zu regulierten Unternehmen.","industries":["Automotive","Industrie","Logistik","Finanzdienstleistungen","Gesundheitswesen","Energie"],"platformEyebrow":"03 / INNOVATION & PLATTFORMEN","platformTitle":["Offene Innovation.","Echtes Engineering."],"openkubes":"Offene, erweiterbare Kubernetes-Plattformarchitektur – souverän und deklarativ gestaltet.","kubernautic":"KI-gestützte Kubernetes Operations Intelligence mit nachvollziehbarer Analyse und menschlicher Kontrolle.","platformLinks":["OpenKubes entdecken","Kubernautic entdecken"],"approachEyebrow":"04 / UNSERE ARBEITSWEISE","approachTitle":["Von der Architektur","bis zum Betrieb."],"steps":["Analysieren","Architektur","Aufbauen","Betreiben","Weiterentwickeln"],"contactEyebrow":"GEMEINSAM WEITERDENKEN","contactTitle":["Bereit für Ihre","nächste Plattform?"],"contactCta":"Kontakt aufnehmen","footer":"Konzeptvorschau · Nicht die produktive Website","title":"Kubernauts | Enterprise Kubernetes & Platform Engineering","description":"Enterprise Kubernetes Operations, Platform Engineering, Cloud-Native-Modernisierung und souveräne KI-Infrastruktur."};
-const numbers = ['01','02','03','04'];
+const serviceItems = [
+  {
+    "number": "01",
+    "title": "Platform Engineering",
+    "description": "Wir konzipieren und automatisieren Kubernetes-Plattformen für Cloud, On-Premises und Edge – vom Architekturentwurf bis zum produktiven Betrieb.",
+    "capabilities": [
+      "Kubernetes-Architektur",
+      "Cluster Lifecycle",
+      "GitOps & IaC"
+    ],
+    "outcome": "Wiederholbare Plattformen statt individueller Cluster-Silos.",
+    "accent": "blue",
+    "href": "mailto:contact@kubernauts.de?subject=Projektanfrage%3A%20Platform%20Engineering"
+  },
+  {
+    "number": "02",
+    "title": "Enterprise Kubernetes Operations",
+    "description": "Wir betreiben und optimieren geschäftskritische Kubernetes-Umgebungen mit Fokus auf Verfügbarkeit, Transparenz und verlässliche Prozesse.",
+    "capabilities": [
+      "SRE & Observability",
+      "Security & Hardening",
+      "Incident & Change"
+    ],
+    "outcome": "Betriebsfähigkeit, die auch im Ernstfall trägt.",
+    "accent": "teal",
+    "href": "mailto:contact@kubernauts.de?subject=Projektanfrage%3A%20Enterprise%20Kubernetes%20Operations"
+  },
+  {
+    "number": "03",
+    "title": "AI & MLOps",
+    "description": "Wir schaffen Infrastruktur und Betriebsprozesse für private KI, Modellbereitstellung und ML-Workloads unter kontrollierten Rahmenbedingungen.",
+    "capabilities": [
+      "Private AI",
+      "GPU & Kubernetes",
+      "Model Operations"
+    ],
+    "outcome": "KI-Workloads auf nachvollziehbarer, souveräner Infrastruktur.",
+    "accent": "green",
+    "href": "mailto:contact@kubernauts.de?subject=Projektanfrage%3A%20AI%20%26%20MLOps"
+  },
+  {
+    "number": "04",
+    "title": "Cloud Native Transformation",
+    "description": "Wir modernisieren Workloads und Lieferprozesse mit Containern, GitOps und automatisierter Infrastruktur – in sinnvollen, kontrollierten Schritten.",
+    "capabilities": [
+      "Modernisierung",
+      "CI/CD & GitOps",
+      "Security by Design"
+    ],
+    "outcome": "Weniger Betriebsaufwand, klare Migrationspfade.",
+    "accent": "orange",
+    "href": "mailto:contact@kubernauts.de?subject=Projektanfrage%3A%20Cloud%20Native%20Transformation"
+  }
+];
 ---
 <BaseLayout lang="de" title={t.title} description={t.description}>
 <header class="header wrap"><a class="logo brand-logo" href="/de/" aria-label="Kubernauts"><img src="/brand/kubernauts-hexagon-light.svg" alt="" width="44" height="44" /><span class="brand-type"><span class="brand-kuber">KUBER</span><span class="brand-nauts"><span>N</span><span>A</span><span>U</span><span>T</span><span>S</span></span></span></a><nav class="navigation" aria-label="Hauptnavigation">{t.nav.map(([name,url])=><a href={url}>{name}</a>)}</nav><details class="mobile-menu"><summary aria-label="Menü öffnen"><span class="hamburger" aria-hidden="true">☰</span><span>Menü</span></summary><nav class="mobile-menu-panel" aria-label="Mobile Navigation">{t.nav.map(([name,url])=><a href={url}>{name}</a>)}<a href="mailto:contact@kubernauts.de">{t.contact} ↗</a></nav></details><div class="header-right"><a class="lang" lang="en" href={t.otherPath}>{t.other}</a><a class="btn outline" href="mailto:contact@kubernauts.de">{t.contact} ↗</a></div></header>
 <main>
 <section class="hero"><div class="wrap hero-inner"><div class="hero-copy"><p class="eyebrow">● &nbsp;{t.eyebrow}</p><h1>{t.hero[0]}<br />{t.hero[1]}<br /><em>{t.hero[2]}</em></h1><p class="lead">{t.lead}</p><p class="sublead">{t.sub}</p><div class="buttons"><a class="btn primary" href="#services">{t.explore} ↗</a><a class="btn outline" href="mailto:contact@kubernauts.de">{t.talk} ↗</a></div><p class="minor">{t.micro}</p></div><PlatformDiagram lang="de" /></div></section>
 <div class="ticker"><div class="wrap"><span>{t.ticker}</span><b>KUBERNETES</b><b>OPEN SOURCE</b><b>GITOPS</b><b>PLATFORM ENGINEERING</b></div></div>
-<section id="services" class="section light"><div class="wrap"><div class="section-title"><div><p class="eyebrow">{t.servicesEyebrow}</p><h2>{t.servicesTitle[0]}<br /><em>{t.servicesTitle[1]}</em></h2></div><p>{t.servicesIntro}</p></div><div class="cards">{t.services.map(([title,desc],i)=><article class="card"><span class="number">{numbers[i]} / EXPERTISE</span><h3>{title}</h3><p>{desc}</p><span aria-hidden="true" class="arrow">↗</span></article>)}</div></div></section>
+<section id="services" class="section light"><div class="wrap"><div class="section-title"><div><p class="eyebrow">{t.servicesEyebrow}</p><h2>{t.servicesTitle[0]}<br /><em>{t.servicesTitle[1]}</em></h2></div><p>{t.servicesIntro}</p></div><ServicesGrid lang="de" items={serviceItems} /></div></section>
 <section id="industries" class="section dark"><div class="wrap split"><div><p class="eyebrow">{t.industriesEyebrow}</p><h2>{t.industriesTitle[0]}<br /><em>{t.industriesTitle[1]}</em></h2></div><div><p class="muted">{t.industriesDesc}</p><div class="chips">{t.industries.map(i=><span>{i}</span>)}</div></div></div></section>
 <section id="platforms" class="section light"><div class="wrap"><p class="eyebrow">{t.platformEyebrow}</p><h2>{t.platformTitle[0]}<br /><em>{t.platformTitle[1]}</em></h2><div class="platforms"><article class="platform"><span class="symbol" aria-hidden="true">⬡</span><p class="eyebrow">SOVEREIGN PLATFORM</p><h3>OpenKubes</h3><p>{t.openkubes}</p><a href="https://openkubes.org" target="_blank" rel="noopener noreferrer">{t.platformLinks[0]} ↗</a></article><article class="platform purple"><span class="symbol" aria-hidden="true">✳</span><p class="eyebrow">AGENTIC AI OPERATIONS</p><h3>Kubernautic</h3><p>{t.kubernautic}</p><a href="https://kubernautic.com" target="_blank" rel="noopener noreferrer">{t.platformLinks[1]} ↗</a></article></div></div></section>
 <section id="approach" class="section dark"><div class="wrap"><p class="eyebrow">{t.approachEyebrow}</p><h2>{t.approachTitle[0]}<br /><em>{t.approachTitle[1]}</em></h2><div class="steps">{t.steps.map((step,i)=><span>{'0'+(i+1)} <strong>{step}</strong></span>)}</div></div></section>
