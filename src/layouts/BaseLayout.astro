@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import ConsentManager from '../components/ConsentManager.astro';
 interface Props { title: string; description: string; lang: 'de' | 'en'; canonicalPath?: string; }
 const { title, description, lang, canonicalPath } = Astro.props;
 const site = 'https://kubernauts.de';
@@ -19,5 +20,5 @@ const site = 'https://kubernauts.de';
   { !canonicalPath && <link rel="alternate" hreflang="x-default" href={site + '/de/'} /> }
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 </head>
-<body><slot /></body>
+<body><slot /><ConsentManager lang={lang} /></body>
 </html>
