@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+<title id="title">Kubernautic</title>
+<!-- Rounded square frame, deep navy and turquoise -->
+<rect x="3" y="3" width="122" height="122" rx="23" fill="#070c17" stroke="#63e6e8" stroke-width="3"/>
+<g fill="#55e5e4">
+  <!-- The vertical stem -->
+  <rect x="28" y="24" width="22" height="80" rx="7"/>
+  <!-- Two symmetric, leaf-like strokes converge at the central node -->
+  <path d="M51 64 C61 44 77 29 94 28 C99 28 101 31 99 35 C91 51 74 61 55 66 Z"/>
+  <path d="M51 64 C61 84 77 99 94 100 C99 100 101 97 99 93 C91 77 74 67 55 62 Z"/>
+</g>
+<!-- Small central AI / convergence node, kept distinct at favicon sizes -->
+<circle cx="49" cy="64" r="7.5" fill="#070c17"/>
+<circle cx="49" cy="64" r="5.5" fill="#55e5e4"/>
+</svg>
