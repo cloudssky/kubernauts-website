@@ -99,3 +99,29 @@ footer .brand-logo .brand-kuber{color:#f0f9ff}
  .platform-diagram{width:min(100%,800px);max-width:800px}
  .hero .sublead{font-size:14px}
 }
+
+/* Services v2 — spacious Enterprise + Deep Tech panels */
+.services-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.service-panel{--service-accent:#087fed;position:relative;display:flex;flex-direction:column;min-height:390px;background:#fff;border:1px solid #dfe8ef;border-radius:10px;padding:30px 32px 27px;overflow:hidden;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.service-panel::before{content:"";position:absolute;top:0;left:0;height:3px;width:100%;background:var(--service-accent);opacity:.87}
+.service-panel:hover{transform:translateY(-3px);border-color:#b2c7d5;box-shadow:0 16px 35px rgba(8,32,49,.075)}
+.service-panel--blue{--service-accent:#087fed}
+.service-panel--teal{--service-accent:#00a99f}
+.service-panel--green{--service-accent:#419d53}
+.service-panel--orange{--service-accent:#e77b24}
+.service-panel__top{display:flex;justify-content:space-between;align-items:flex-start;gap:18px}
+.service-panel__index,.service-panel__label{font-size:10px;letter-spacing:.16em;font-weight:800;color:#718598}
+.service-panel__symbol{display:grid;place-items:center;width:60px;height:60px;flex:none;border-radius:14px;color:var(--service-accent);background:#f2f7fa;border:1px solid #e4edf2}
+.service-panel__symbol svg{width:36px;height:36px}
+.service-panel__content h3{font-size:clamp(23px,2.3vw,31px);line-height:1.15;letter-spacing:-.043em;margin:15px 0 15px;max-width:380px}
+.service-panel__content p{font-size:14px;color:#596c7d;line-height:1.76;max-width:510px;margin:0}
+.service-panel__bottom{margin-top:auto;padding-top:29px}
+.service-panel__label{margin:0 0 10px}
+.service-panel__tags{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.service-panel__tags li{font-size:11px;font-weight:700;line-height:1.35;color:#345066;padding:7px 10px;border-radius:4px;background:#edf3f6}
+.service-panel__outcome{font-size:12px;color:#556e7d;line-height:1.55;margin:17px 0 0;border-left:2px solid var(--service-accent);padding-left:12px}
+.service-panel__link{display:inline-flex;align-items:center;gap:12px;align-self:flex-start;font-size:13px;font-weight:800;color:#0f4964;margin-top:23px;border-bottom:1px solid #9aafb9;padding-bottom:5px}
+.service-panel__link span{font-size:18px;color:var(--service-accent)}
+.service-panel__link:hover{color:#078c95;border-color:var(--service-accent)}
+@media(max-width:860px){.services-grid{grid-template-columns:1fr}.service-panel{min-height:0;padding:27px}.service-panel__bottom{margin-top:20px}}
+@media(max-width:480px){.services-grid{gap:14px}.service-panel{padding:22px}.service-panel__symbol{width:48px;height:48px}.service-panel__symbol svg{width:30px;height:30px}.service-panel__content h3{font-size:25px}}
