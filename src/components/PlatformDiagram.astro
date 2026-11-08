@@ -1,0 +1,73 @@
+---
+interface Props { lang: 'de' | 'en'; }
+const { lang } = Astro.props;
+const de = lang === 'de';
+const data = {
+  platform: de ? 'PLATTFORMEN' : 'PLATFORMS',
+  platformSub: de ? 'Kubernetes · Cloud · Edge' : 'Kubernetes · Cloud · Edge',
+  gitops: 'GITOPS',
+  gitopsSub: de ? 'Deklarativ · Automatisiert' : 'Declarative · Automated',
+  ops: 'OPERATIONS',
+  opsSub: de ? 'SRE · Observability · 24/7' : 'SRE · Observability · 24/7',
+  ai: 'SOVEREIGN AI',
+  aiSub: de ? 'Private AI · Governance' : 'Private AI · Governance',
+  title: 'PLATFORM ENGINEERING'
+};
+---
+<div class="platform-diagram" role="img" aria-label={de ? 'Geometrisches Plattformdiagramm: Kubernauts Platform Engineering verbindet Kubernetes, OpenKubes, GitOps, Operations und souveräne KI über Cloud, On-Premises und Edge.' : 'Geometric platform engineering diagram connecting Kubernetes, OpenKubes, GitOps, operations and sovereign AI across cloud, on-premises and edge.'}>
+<svg viewBox="0 0 760 640" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <linearGradient id="slab" x1="0" y1="0" x2="0.9" y2="1"><stop stop-color="#123E57"/><stop offset=".55" stop-color="#0B273B"/><stop offset="1" stop-color="#0B1D32"/></linearGradient>
+    <linearGradient id="slabTop" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#115E70"/><stop offset=".55" stop-color="#0B9EA7"/><stop offset="1" stop-color="#0A4C72"/></linearGradient>
+    <linearGradient id="slabBlue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#164D83"/><stop offset="1" stop-color="#081F3D"/></linearGradient>
+    <linearGradient id="baseFill" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#082D42" stop-opacity=".9"/><stop offset="1" stop-color="#081421" stop-opacity=".65"/></linearGradient>
+    <filter id="softGlow" x="-50%" y="-80%" width="200%" height="260%"><feGaussianBlur stdDeviation="15"/></filter>
+  </defs>
+  <!-- Sovereign deployment landscape -->
+  <path d="M382 404 L718 534 Q735 541 717 550 L386 607 Q376 610 365 607 L39 550 Q22 544 41 534Z" fill="#00BAD0" opacity=".12" filter="url(#softGlow)"/>
+  <path d="M382 410 L717 535 Q732 541 716 551 L386 610 Q377 613 367 610 L41 551 Q25 544 41 535Z" fill="url(#baseFill)" stroke="#05A9C7" stroke-width="1.7"/>
+  <g stroke="#17627B" stroke-width="1" opacity=".55" fill="none">
+    <path d="M104 558 L416 423 M201 579 L427 435 M298 601 L440 449 M478 595 L356 420 M570 578 L335 415 M666 559 L313 409"/>
+    <path d="M101 518 L664 518 M154 492 L610 492 M213 469 L553 469"/>
+  </g>
+  <!-- Platform layers -->
+  <path d="M383 306 L545 359 L383 420 L222 359Z" fill="#0A82CE" opacity=".45" filter="url(#softGlow)"/>
+  <path d="M224 354 L382 407 L541 354 L541 396 Q541 405 526 410 L396 457 Q383 463 368 457 L238 410 Q224 405 224 396Z" fill="url(#slabBlue)" stroke="#148BD9" stroke-width="1.8"/>
+  <path d="M224 354 Q224 347 237 343 L368 296 Q382 291 396 296 L527 343 Q541 348 541 354 L383 408Z" fill="#125487" stroke="#2BAAF2" stroke-width="1.5"/>
+  <path d="M224 276 L382 329 L541 276 L541 332 Q541 340 526 346 L396 391 Q383 397 368 391 L238 346 Q224 340 224 332Z" fill="url(#slab)" stroke="#15A6C5" stroke-width="1.6"/>
+  <path d="M224 276 Q224 269 237 265 L368 218 Q382 213 396 218 L527 265 Q541 270 541 276 L383 330Z" fill="#08556A" stroke="#43CFCB" stroke-width="1.6"/>
+  <path d="M224 195 L382 248 L541 195 L541 251 Q541 259 526 265 L396 310 Q383 316 368 310 L238 265 Q224 259 224 251Z" fill="url(#slabTop)" stroke="#5BF8EB" stroke-width="1.8"/>
+  <path d="M224 195 Q224 188 237 183 L368 137 Q382 131 396 137 L527 183 Q541 189 541 195 L383 249Z" fill="#0B858C" stroke="#7EF9F2" stroke-width="2"/>
+  <path d="M224 195 L382 249 L541 195" fill="none" stroke="#B6FFF6" stroke-width="2.3"/>
+  <!-- Signet above the engineered layers -->
+  <circle cx="383" cy="157" r="93" fill="#0CD1CD" opacity=".1" filter="url(#softGlow)"/>
+  <image href="/brand/kubernauts-hexagon.svg" x="321" y="69" width="124" height="124"/>
+  <!-- Layer typography -->
+  <g text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="800">
+    <text x="382" y="282" font-size="17" fill="#EDFFFF" letter-spacing="1.3">{data.title}</text>
+    <text x="382" y="354" font-size="19" fill="#E7FFFE">OpenKubes</text>
+    <text x="382" y="435" font-size="19" fill="#F2FBFF">Kubernetes</text>
+  </g>
+  <!-- Wires and terminals -->
+  <g fill="none" stroke-width="2.5" stroke-linecap="round">
+    <path d="M300 226 L221 163 L143 163" stroke="#078CF2"/>
+    <path d="M468 221 L547 163 L630 163" stroke="#61CE4D"/>
+    <path d="M286 314 L218 345 L141 345" stroke="#F2B82D"/>
+    <path d="M477 313 L545 345 L631 345" stroke="#FF781B"/>
+  </g>
+  <g><circle cx="221" cy="163" r="5" fill="#078CF2"/><circle cx="547" cy="163" r="5" fill="#61CE4D"/><circle cx="218" cy="345" r="5" fill="#F2B82D"/><circle cx="545" cy="345" r="5" fill="#FF781B"/></g>
+  <!-- Service nodes -->
+  <g font-family="Inter,Arial,sans-serif">
+    <rect x="8" y="113" width="197" height="100" rx="11" fill="#0C2439" stroke="#1488E3" stroke-width="1.8"/>
+    <rect x="557" y="113" width="195" height="100" rx="11" fill="#0C2439" stroke="#49C96A" stroke-width="1.8"/>
+    <rect x="8" y="305" width="197" height="100" rx="11" fill="#0C2439" stroke="#E5AD2F" stroke-width="1.8"/>
+    <rect x="557" y="305" width="195" height="100" rx="11" fill="#0C2439" stroke="#F27B32" stroke-width="1.8"/>
+    <g font-weight="800" font-size="15" fill="#F4FBFF"><text x="25" y="146">{data.platform}</text><text x="574" y="146">{data.gitops}</text><text x="25" y="338">{data.ops}</text><text x="574" y="338">{data.ai}</text></g>
+    <g font-size="11.5" fill="#AAC7D7"><text x="25" y="170">{data.platformSub}</text><text x="574" y="170">{data.gitopsSub}</text><text x="25" y="362">{data.opsSub}</text><text x="574" y="362">{data.aiSub}</text></g>
+    <g fill="none" stroke-width="2.5" stroke-linejoin="round"><path d="M25 185 l14 -7 14 7 -14 7Z M25 195 l14 7 14 -7" stroke="#078CF2"/><path d="M575 192 L590 174 L606 190 M590 174 V193" stroke="#61CE4D"/><circle cx="40" cy="384" r="10" stroke="#F2B82D"/><path d="M34 384 h12" stroke="#F2B82D"/><rect x="577" y="376" width="20" height="18" rx="3" stroke="#FF781B"/></g>
+  </g>
+  <g text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="12.5" font-weight="700" fill="#CAE5EE">
+    <text x="119" y="555">ON-PREM</text><text x="245" y="567">PRIVATE CLOUD</text><text x="386" y="579">PUBLIC CLOUD</text><text x="532" y="565">EDGE</text><text x="650" y="554">GPU / AI</text>
+  </g>
+</svg>
+</div>
