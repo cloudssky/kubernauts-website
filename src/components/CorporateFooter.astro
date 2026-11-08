@@ -1,4 +1,5 @@
 ---
+import FamilyWordmark from './FamilyWordmark.astro';
 interface Props { lang:'de'|'en'; }
 const {lang}=Astro.props;
 const de=lang==='de';
@@ -14,7 +15,7 @@ const privacy=de?'/de/datenschutz/':'/en/privacy/';
     <div class="corporate-footer__identity">
       <a class="brand-logo footer-brand" href={`/${lang}/`} aria-label="Kubernauts Startseite">
         <img src="/brand/kubernauts-hexagon.svg" width="48" height="48" alt="" />
-        <span class="brand-type"><span class="brand-kuber">KUBER</span><span class="brand-nauts"><span>N</span><span>A</span><span>U</span><span>T</span><span>S</span></span></span>
+        <span class="brand-type"><FamilyWordmark name="kubernauts" theme="dark" /></span>
       </a>
       <p>{de?'Enterprise Kubernetes, Platform Engineering und souveräne KI-Infrastruktur.':'Enterprise Kubernetes, platform engineering and sovereign AI infrastructure.'}</p>
       <span class="corporate-footer__office">Kubernauts GmbH · Köln, Deutschland</span>
