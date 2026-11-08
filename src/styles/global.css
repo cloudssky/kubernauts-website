@@ -338,3 +338,42 @@ section[id]{scroll-margin-top:100px}
 .consent-reopen{position:fixed;z-index:900;bottom:12px;right:12px;border:1px solid #8b969f;border-radius:6px;background:#4b525c;color:#fff;padding:9px 13px;font-size:11px;font-weight:750;cursor:pointer;box-shadow:0 4px 15px #071b2d33}
 .consent-reopen:hover{background:#344452}
 @media(max-width:520px){.consent-panel{bottom:8px;padding:19px;width:calc(100vw - 16px);max-height:calc(100dvh - 16px)}.consent-panel h2{font-size:19px}.consent-actions{display:grid;grid-template-columns:repeat(2,1fr)}.consent-actions .consent-actions__accept{grid-column:1/-1}}
+
+/* Dedicated contact pages — enterprise conversion and booking */
+.contact-page{background:#f5f9fb;min-height:70vh;padding-bottom:100px}
+.contact-page__hero{background:radial-gradient(ellipse at 70% 35%,#153c54,#081c2d 70%);padding:76px 0 80px;color:#f5fbff}
+.contact-page__intro{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,.7fr);gap:42px;align-items:end}
+.contact-page__intro h1{font-size:clamp(40px,4.7vw,65px);line-height:1.1;letter-spacing:-.055em;margin:17px 0 18px;max-width:850px}
+.contact-page__intro>div:first-child>p:last-child{font-size:16px;line-height:1.7;color:#b4cedc;max-width:720px;margin:0}
+.contact-page__badge{border:1px solid #2b6570;border-radius:8px;background:#092d3e;padding:22px;font-size:11px;font-weight:800;letter-spacing:.08em;color:#b1eae7;line-height:1.8}
+.contact-page__badge span{font-size:24px;color:#6ee4d9;display:block;margin-bottom:7px}
+.contact-page__grid{display:grid;grid-template-columns:minmax(0,1.85fr) minmax(260px,.7fr);gap:25px;padding-top:53px}
+.contact-page__primary{min-width:0}
+.contact-page__direct{background:#fff;border:1px solid #dde8ed;border-radius:10px;padding:32px 36px;margin-bottom:22px}
+.contact-page__overline,.contact-page__direct-grid>div>span{font-size:10px;font-weight:850;letter-spacing:.15em;color:#148c93}
+.contact-page__direct h2{font-size:30px;letter-spacing:-.045em;color:#142a3d;margin:14px 0 24px}
+.contact-page__direct-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.contact-page__direct-grid>div{display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.contact-page__direct-grid address{font-style:normal;font-size:14px;color:#4c6274;line-height:1.75}
+.contact-page__direct-grid a{font-size:14px;font-weight:700;color:#13556c;overflow-wrap:anywhere}
+.contact-page__direct-grid a:hover{color:#0b9294}
+.contact-booking{border:1px solid #bfd6e3;border-left:4px solid #0fb9b0;border-radius:9px;background:linear-gradient(135deg,#f0f8fa,#e8f3f7);padding:34px 36px}
+.contact-booking__top{display:flex;justify-content:space-between;gap:16px;color:#098f93;font-size:10px;font-weight:850;letter-spacing:.13em}
+.contact-booking__top span:last-child{font-size:23px;line-height:1}
+.contact-booking h2{font-size:29px;letter-spacing:-.04em;margin:14px 0;color:#152b3d}
+.contact-booking>p:not(.contact-booking__note){font-size:14px;color:#52697b;line-height:1.8}
+.contact-booking__features{display:flex;gap:9px;flex-wrap:wrap;margin:19px 0 23px}
+.contact-booking__features span{font-size:11px;font-weight:800;color:#24546b;border:1px solid #c8dce3;background:#fff;padding:8px 11px;border-radius:5px}
+.contact-booking__button{display:inline-flex;gap:15px;align-items:center;padding:15px 21px;color:#072634;background:#63ded5;border-radius:5px;font-size:13px;font-weight:850}
+.contact-booking__button:hover{background:#8df2e7}
+.contact-booking__note{font-size:11px;color:#718798;margin:18px 0 0}
+.contact-page__side{border:1px solid #294b61;background:linear-gradient(160deg,#15354a,#0a1f32);border-radius:10px;padding:30px;color:#f6fdff;align-self:start}
+.contact-page__side-label{font-size:10px;font-weight:850;letter-spacing:.16em;color:#70e3dc}
+.contact-page__side h2{font-size:25px;letter-spacing:-.045em;line-height:1.2;margin:25px 0 15px}
+.contact-page__side>p{font-size:13px;line-height:1.75;color:#b2c9d7}
+.contact-page__side>a{display:inline-block;font-size:13px;font-weight:800;color:#6fe9df;border-bottom:1px solid #54aeb0;padding-bottom:5px;margin-top:13px}
+.contact-page__side-foot{margin-top:35px;padding-top:23px;border-top:1px solid #33556b}
+.contact-page__side-foot p{font-size:12px;color:#a9c3d3;line-height:1.6}
+.contact-page__side-foot a{font-size:13px;font-weight:800;color:#7beade;overflow-wrap:anywhere}
+@media(max-width:920px){.contact-page__grid{grid-template-columns:1fr}.contact-page__side{width:100%}.contact-page__intro{grid-template-columns:1fr}.contact-page__badge{display:none}}
+@media(max-width:560px){.contact-page__hero{padding:55px 0}.contact-page__grid{padding-top:30px}.contact-page__direct,.contact-booking,.contact-page__side{padding:24px}.contact-page__direct-grid{grid-template-columns:1fr}}
