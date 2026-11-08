@@ -70,6 +70,7 @@ const url=de?'/de/datenschutz/':'/en/privacy/';
     close();
   }
   openButton.addEventListener('click', () => show(false));
+  document.querySelectorAll('[data-open-consent]').forEach(button=>button.addEventListener('click',()=>show(false)));
   root.querySelector('[data-consent-action="reject"]').addEventListener('click', () => store(false, false));
   root.querySelector('[data-consent-action="accept"]').addEventListener('click', () => store(true, true));
   root.querySelector('[data-consent-action="save"]').addEventListener('click', () => store(analytics.checked, marketing.checked));
