@@ -1,5 +1,6 @@
 ---
 import OpenKubesWordmark from './OpenKubesWordmark.astro';
+import FamilyWordmark from './FamilyWordmark.astro';
 interface Props { lang: 'de'|'en'; }
 const { lang } = Astro.props;
 const de = lang === 'de';
@@ -71,7 +72,7 @@ const copy = de ? {
     </div>
     <div class="innovation-card__body">
       <p class="innovation-card__kicker">AGENTIC AI · OPERATIONS</p>
-      <h3>KUBER<span class="innovation-card__aqua">NAUTIC</span><span class="innovation-card__period">.</span></h3>
+      <h3><FamilyWordmark name="kubernautic" theme="light" /></h3>
       <h4>{copy.aiName}</h4>
       <p>{copy.aiDesc}</p>
       <ul>{copy.aiTags.map(tag=><li>{tag}</li>)}</ul>
