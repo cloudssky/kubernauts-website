@@ -1,0 +1,23 @@
+---
+import '../styles/global.css';
+interface Props { title: string; description: string; lang: 'de' | 'en'; }
+const { title, description, lang } = Astro.props;
+const site = 'https://kubernauts.de';
+---
+<!doctype html>
+<html lang={lang}>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content={description} />
+  <meta name="theme-color" content="#071421" />
+  <meta name="robots" content="noindex,follow" />
+  <title>{title}</title>
+  <link rel="canonical" href={site + '/' + lang + '/'} />
+  <link rel="alternate" hreflang="de" href={site + '/de/'} />
+  <link rel="alternate" hreflang="en" href={site + '/en/'} />
+  <link rel="alternate" hreflang="x-default" href={site + '/de/'} />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+</head>
+<body><slot /></body>
+</html>
