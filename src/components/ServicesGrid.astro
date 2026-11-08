@@ -10,7 +10,7 @@ interface Item {
 }
 interface Props { lang:'de'|'en'; items:Item[]; }
 const {lang,items}=Astro.props;
-const label=lang==='de'?'Leistungen entdecken':'Explore service';
+const label=lang==='de'?'Projekt besprechen':'Discuss your project';
 const tag=lang==='de'?'UNSER FOKUS':'OUR FOCUS';
 ---
 <div class="services-grid">
@@ -33,7 +33,7 @@ const tag=lang==='de'?'UNSER FOKUS':'OUR FOCUS';
         <p class="service-panel__label">{tag}</p>
         <ul class="service-panel__tags">{item.capabilities.map(cap=><li>{cap}</li>)}</ul>
         <p class="service-panel__outcome">{item.outcome}</p>
-        <a class="service-panel__link" href={item.href} target="_blank" rel="noopener noreferrer">{label} <span aria-hidden="true">↗</span><span class="sr-only"> ({lang==='de'?'öffnet derzeit die bestehende Website in einem neuen Tab':'opens the existing website in a new tab'})</span></a>
+        <a class="service-panel__link" href={item.href}>{label} <span aria-hidden="true">↗</span></a>
       </div>
     </article>
   )}
