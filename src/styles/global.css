@@ -900,3 +900,59 @@ section[id]{scroll-margin-top:100px}
 .products-featured__signet--openkubes{width:148px;height:148px;filter:drop-shadow(0 13px 18px rgba(0,211,233,.24))}
 .products-featured__signet-ring{width:150px;height:150px;flex:none;display:grid;place-items:center;border:1px solid #26778a;border-radius:50%;background:radial-gradient(circle,#0e3949 0%,#0b2439 65%,transparent 80%);box-shadow:0 0 0 13px #11d4d40c,0 0 38px #12dddd22}
 .products-featured__signet--kubernautic{width:110px;height:110px;border-radius:16px;filter:drop-shadow(0 8px 15px rgba(0,220,226,.16))}
+
+/* Careers — focused enterprise recruitment landing pages */
+.career-page{background:#f5f9fb;color:#142c41}
+.career-hero{padding:80px 0;background:radial-gradient(ellipse at 75% 30%,#143a51,#081625 68%);color:#eefaff}
+.career-hero h1{font-size:clamp(40px,5vw,66px);line-height:1.11;letter-spacing:-.055em;margin:23px 0;max-width:930px}
+.career-hero h1 em{font-style:normal;color:#55dcd3}
+.career-intro{max-width:760px;color:#b3cbda;line-height:1.8;font-size:16px}
+.career-back{display:inline-flex;margin:12px 0 0;color:#7ce5dd;font-size:13px;font-weight:750}
+.career-content{padding:72px 0 100px}
+.career-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin:25px 0}
+.career-list__item{padding:34px;border:1px solid #d5e5ed;border-radius:11px;background:#fff;border-top:3px solid #4fd4d1;display:flex;flex-direction:column;min-height:270px}
+.career-list__item>span{font-size:10px;letter-spacing:.16em;color:#5888a0;font-weight:850}
+.career-list__item h2{font-size:clamp(24px,2.6vw,32px);letter-spacing:-.04em;margin:24px 0 13px}
+.career-list__item p{font-size:13px;color:#617b8d;line-height:1.7}
+.career-list__item>a{margin-top:auto;align-self:flex-start;color:#087b86;font-size:13px;font-weight:800;border-bottom:1px solid #40b8b4;padding-bottom:5px}
+.career-content__grid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(290px,.8fr);gap:48px;align-items:start}
+.career-description{background:white;border:1px solid #d9e6ed;border-radius:12px;padding:43px}
+.career-description h2{font-size:26px;letter-spacing:-.04em;margin:38px 0 16px}
+.career-description h2:first-child{margin-top:0}
+.career-description>p,.career-description li{font-size:14px;line-height:1.85;color:#4a6476}
+.career-description ul{padding-left:20px;margin:0}
+.career-description li{padding-left:4px;margin-bottom:10px}
+.career-apply{position:sticky;top:110px;border:1px solid #285c6a;border-radius:10px;background:#0c263a;color:#e7faff;padding:30px}
+.career-apply h2{font-size:24px;line-height:1.25;letter-spacing:-.04em;margin:17px 0 24px}
+.career-apply__button{display:block;text-align:center;background:#64e4d8;border-radius:5px;padding:14px 16px;color:#08303a;font-size:13px;font-weight:850}
+.career-apply>p:not(.eyebrow){font-size:12px;line-height:1.8;color:#b6ccda}
+.career-apply a:not(.career-apply__button){color:#89eee4;overflow-wrap:anywhere}
+@media(max-width:860px){.career-content__grid,.career-list{grid-template-columns:1fr}.career-apply{position:static}.career-content{padding:50px 0}}
+@media(max-width:520px){.career-description{padding:24px}.career-hero{padding:59px 0}}
+/* Sovereign Agentic AI Operations: a service, not a licensed product. */
+.agentic-service{background:#f3f8fb}
+.agentic-service__hero{background:radial-gradient(ellipse at 80% 30%,#143b50,#071827 68%);color:#eefbff;padding:100px 0}
+.agentic-service__intro{max-width:1200px}
+.agentic-service h1{font-size:clamp(42px,5.3vw,74px);line-height:1.1;letter-spacing:-.06em;margin:22px 0}
+.agentic-service h1 em,.agentic-service__body h2 em{font-style:normal;background:linear-gradient(95deg,#58e7d7,#4eade9,#ae9efa);background-clip:text;color:transparent}
+.agentic-service__intro>p:not(.eyebrow){max-width:720px;font-size:16px;line-height:1.82;color:#bfd1de}
+.agentic-service__actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.agentic-service__actions a{padding:14px 18px;border-radius:5px;font-size:13px;font-weight:850}
+.agentic-service__primary{background:#5de3d5;color:#082735}
+.agentic-service__secondary{border:1px solid #67889a;color:#dff8f6}
+.agentic-service__body{padding:85px 0 90px}
+.agentic-service__body h2{font-size:clamp(36px,4.3vw,57px);line-height:1.15;letter-spacing:-.052em;margin:16px 0 37px}
+.agentic-service__body h2 em{background:linear-gradient(95deg,#13aeb3,#2289d4);background-clip:text;color:transparent}
+.agentic-service__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.agentic-service__grid article{padding:30px;background:#fff;border:1px solid #d9e7ef;border-top:3px solid #34bab9;border-radius:9px;min-height:235px}
+.agentic-service__grid article>span{font-size:10px;color:#329da3;font-weight:850;letter-spacing:.15em}
+.agentic-service__grid h3{font-size:25px;letter-spacing:-.04em;margin:25px 0 14px}
+.agentic-service__grid p{font-size:14px;color:#587184;line-height:1.75}
+.agentic-service__govern{padding:80px 0;background:#0b2638;color:#f0faff}
+.agentic-service__govern-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.agentic-service__govern h2{font-size:clamp(34px,4vw,50px);letter-spacing:-.05em}
+.agentic-service__govern p:not(.eyebrow){font-size:14px;line-height:1.8;color:#bad0dc}
+.agentic-service__govern ol{margin:20px 0;padding-left:22px}
+.agentic-service__govern li{margin-bottom:15px;font-size:13px;line-height:1.7;color:#d1e6ed}
+.agentic-service__disclaimer{margin-top:40px;font-size:11px!important;color:#8ca8b7!important}
+@media(max-width:700px){.agentic-service__grid,.agentic-service__govern-grid{grid-template-columns:1fr}.agentic-service__hero,.agentic-service__body,.agentic-service__govern{padding:65px 0}}
