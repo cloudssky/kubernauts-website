@@ -794,3 +794,9 @@ section[id]{scroll-margin-top:100px}
  .innovation-brand-lockup__signet{flex-basis:30px;width:30px;height:30px}
  .innovation-brand-lockup__signet--kubernautic svg{width:30px;height:30px}
 }
+
+/* Header v2: vivid OpenKubes rainbow with subtle dark separation on the light header. */
+.site-header .brand-logo .family-wordmark--dark{
+  filter:drop-shadow(0 1px 0 rgba(8,32,49,.15));
+}
+.site-header .brand-logo .brand-type{font-weight:900}
