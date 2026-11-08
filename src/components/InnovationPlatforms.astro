@@ -50,7 +50,10 @@ const copy = de ? {
     </div>
     <div class="innovation-card__body">
       <p class="innovation-card__kicker">{copy.foundation}</p>
-      <h3><OpenKubesWordmark theme="light"/></h3>
+      <h3 class="innovation-brand-lockup innovation-brand-lockup--openkubes">
+        <span class="innovation-brand-lockup__signet innovation-brand-lockup__signet--openkubes" aria-hidden="true">⬡</span>
+        <OpenKubesWordmark theme="dark"/>
+      </h3>
       <h4>{copy.okName}</h4>
       <p>{copy.okDesc}</p>
       <ul>{copy.okTags.map(tag=><li>{tag}</li>)}</ul>
@@ -72,7 +75,10 @@ const copy = de ? {
     </div>
     <div class="innovation-card__body">
       <p class="innovation-card__kicker">AGENTIC AI · OPERATIONS</p>
-      <h3><FamilyWordmark name="kubernautic" theme="light" /></h3>
+      <h3 class="innovation-brand-lockup innovation-brand-lockup--kubernautic">
+        <span class="innovation-brand-lockup__signet innovation-brand-lockup__signet--kubernautic" aria-hidden="true"><svg viewBox="0 0 36 36" width="31" height="31" fill="none"><rect x="1.5" y="1.5" width="33" height="33" rx="6" stroke="#46E5E0" stroke-width="1.5"/><path d="M11 9v18m0-9 12-9M11 18l13 9" stroke="#58EAE3" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="26" cy="8" r="2.5" fill="#68E7DF"/></svg></span>
+        <FamilyWordmark name="kubernautic" theme="dark" />
+      </h3>
       <h4>{copy.aiName}</h4>
       <p>{copy.aiDesc}</p>
       <ul>{copy.aiTags.map(tag=><li>{tag}</li>)}</ul>
