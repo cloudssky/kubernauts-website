@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import FamilyWordmark from '../../../components/FamilyWordmark.astro';
+import AnnouncementBar from '../../../components/AnnouncementBar.astro';
+import SiteNavigation from '../../../components/SiteNavigation.astro';
+import CorporateFooter from '../../../components/CorporateFooter.astro';
+import KubernauticOverview from '../../../components/KubernauticOverview.astro';
+const lang='de';
+---
+<BaseLayout lang={lang} title="Kubernautic | Agentic AI für Kubernetes Operations | Kubernauts" description="Kubernautic: AI-native Kubernetes Operations mit Observability, kontextbasierter Analyse, Governance und menschlicher Kontrolle." canonicalPath="/de/kubernautic/">
+  <AnnouncementBar lang={lang}/>
+  <header class="site-header"><div class="header wrap">
+    <a class="logo brand-logo" href="/de/" aria-label="Kubernauts"><img src="/brand/kubernauts-hexagon-light.svg" alt="" width="44" height="44"/><span class="brand-type"><FamilyWordmark name="kubernauts" theme="dark" /></span></a>
+    <SiteNavigation lang={lang}/>
+    <div class="header-right"><a class="lang" lang="en" href="/en/kubernautic/">EN</a><a class="btn outline" href="/de/contact/">Kontakt ↗</a></div>
+  </div></header>
+  <KubernauticOverview lang={lang}/>
+  <CorporateFooter lang={lang}/>
+</BaseLayout>
