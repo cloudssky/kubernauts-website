@@ -1,0 +1,110 @@
+---
+interface Props {lang:'de'|'en'}
+const {lang}=Astro.props;
+const de=lang==='de';
+const d=de?{
+  eyebrow:'KUBERNAUTIC · AGENTIC AI OPERATIONS',
+  title:'Intelligence für',highlight:'Kubernetes Operations.',
+  intro:'Kubernautic ist unsere eigenständige Produktinitiative für AI-native Kubernetes Operations: Signale verstehen, Kontext analysieren und Entscheidungen kontrolliert vorbereiten.',
+  explore:'Produktwebsite entdecken',talk:'Anwendungsfall besprechen',
+  status:'PRODUKTINITIATIVE · AI-NATIVE OPERATIONS',
+  overline:'ENGINEERED INTELLIGENCE',
+  principle:'Observe. Reason. Govern.',
+  principleDesc:'Intelligenz unterstützt den Betrieb. Menschen behalten die Kontrolle über produktive Änderungen.',
+  capabilities:'WAS KUBERNAUTIC VERBINDET',
+  capTitle:'Von Signalen zu',capAccent:'nachvollziehbaren Entscheidungen.',
+  pillars:[
+    {num:'01',name:'Observe',sub:'Signals & Events',desc:'Metriken, Logs, Ereignisse und Zustandsdaten als Grundlage für eine konsistente Sicht auf verteilte Kubernetes-Systeme.'},
+    {num:'02',name:'Reason',sub:'Context & Analysis',desc:'Kontextbezogene Analyse hilft, Symptome einzuordnen, Zusammenhänge zu erkennen und Handlungsvorschläge zu formulieren.'},
+    {num:'03',name:'Govern',sub:'Policies & Approval',desc:'Klare Regeln, überprüfbare Evidenz und menschliche Freigaben begrenzen und kontrollieren mögliche Aktionen.'}
+  ],
+  valuesTitle:'Human in Control.',valuesDesc:'KI-gestützte Unterstützung ist kein Ersatz für verantwortliche Plattform-Operations. Kubernautic verfolgt einen nachvollziehbaren Ansatz mit Governance, Freigaben und überprüfbaren Entscheidungen.',
+  values:['Evidence before action','Policy-driven boundaries','Human approval','Auditable operations'],
+  bridge:'DIE KUBERNAUTS-MARKENFAMILIE',
+  bridgeTitle:'Engineering und Intelligence.',bridgeText:'Kubernauts konzipiert, implementiert und betreibt Enterprise-Plattformen. OpenKubes liefert ein offenes Kubernetes-Framework. Kubernautic ergänzt die Perspektive AI-nativer Operations.',
+  back:'Zurück zu allen Produkten',external:'Kubernautic besuchen',contact:'Mit unseren Engineers sprechen',
+  disclaimer:'Diese Seite beschreibt unsere Produktvision und Initiative. Konkrete Funktionen und Verfügbarkeit sind vom jeweiligen Entwicklungs- und Implementierungsstand abhängig.'
+}:{
+  eyebrow:'KUBERNAUTIC · AGENTIC AI OPERATIONS',
+  title:'Intelligence for',highlight:'Kubernetes Operations.',
+  intro:'Kubernautic is our distinct initiative for AI-native Kubernetes operations: understand signals, reason over context and prepare actions within governed boundaries.',
+  explore:'Explore product website',talk:'Discuss a use case',
+  status:'PRODUCT INITIATIVE · AI-NATIVE OPERATIONS',
+  overline:'ENGINEERED INTELLIGENCE',
+  principle:'Observe. Reason. Govern.',
+  principleDesc:'Intelligence supports operations. Humans remain in control of production changes.',
+  capabilities:'THE KUBERNAUTIC APPROACH',
+  capTitle:'From signals to',capAccent:'accountable decisions.',
+  pillars:[
+    {num:'01',name:'Observe',sub:'Signals & Events',desc:'Metrics, logs, events and state information provide a consistent view of distributed Kubernetes systems.'},
+    {num:'02',name:'Reason',sub:'Context & Analysis',desc:'Context-aware analysis helps interpret symptoms, connect evidence and formulate possible responses.'},
+    {num:'03',name:'Govern',sub:'Policies & Approval',desc:'Explicit rules, reviewable evidence and human approvals constrain and govern potential actions.'}
+  ],
+  valuesTitle:'Human in Control.',valuesDesc:'AI-assisted intelligence does not replace accountable platform operations. Kubernautic takes an evidence-driven approach with governance, approvals and traceable decisions.',
+  values:['Evidence before action','Policy-driven boundaries','Human approval','Auditable operations'],
+  bridge:'THE KUBERNAUTS BRAND FAMILY',
+  bridgeTitle:'Engineering meets intelligence.',bridgeText:'Kubernauts engineers and operates enterprise platforms. OpenKubes provides an open Kubernetes framework. Kubernautic adds an AI-native operations perspective.',
+  back:'Back to all products',external:'Visit Kubernautic',contact:'Talk to our engineers',
+  disclaimer:'This page describes the product initiative and vision. Individual capabilities and availability depend on their development and implementation stage.'
+};
+---
+<main class="nautic-page">
+  <section class="nautic-hero">
+    <div class="wrap nautic-hero__grid">
+      <div class="nautic-hero__copy">
+        <p class="eyebrow">{d.eyebrow}</p>
+        <h1>{d.title}<br/><em>{d.highlight}</em></h1>
+        <p class="nautic-hero__lead">{d.intro}</p>
+        <div class="nautic-hero__actions">
+          <a class="nautic-button nautic-button--primary" href={'/'+lang+'/contact/'}>{d.talk} <span aria-hidden="true">↗</span></a>
+          <a class="nautic-button nautic-button--outline" href="https://kubernautic.com" target="_blank" rel="noopener noreferrer">{d.explore} <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="nautic-hero__status">{d.status}</p>
+      </div>
+      <div class="nautic-orbit" role="img" aria-label="Kubernautic AI Operations: Observe, Reason and Govern">
+        <div class="nautic-orbit__ring nautic-orbit__ring--outer"></div>
+        <div class="nautic-orbit__ring nautic-orbit__ring--middle"></div>
+        <div class="nautic-orbit__core"><span class="nautic-orbit__glyph">K</span><span>AGENTIC CORE</span></div>
+        <span class="nautic-orbit__node nautic-orbit__node--one">OBSERVE</span>
+        <span class="nautic-orbit__node nautic-orbit__node--two">REASON</span>
+        <span class="nautic-orbit__node nautic-orbit__node--three">GOVERN</span>
+        <span class="nautic-orbit__foot">HUMAN IN CONTROL</span>
+      </div>
+    </div>
+  </section>
+  <section class="nautic-principle">
+    <div class="wrap nautic-principle__grid">
+      <div><p class="eyebrow">{d.overline}</p><h2>{d.principle}</h2></div>
+      <p>{d.principleDesc}</p>
+    </div>
+  </section>
+  <section class="nautic-capabilities">
+    <div class="wrap">
+      <p class="eyebrow">{d.capabilities}</p>
+      <h2>{d.capTitle}<br/><em>{d.capAccent}</em></h2>
+      <div class="nautic-capabilities__grid">
+        {d.pillars.map(p=><article class="nautic-capability">
+          <div class="nautic-capability__head"><span>{p.num} / OPERATION</span><span aria-hidden="true">✳</span></div>
+          <h3>{p.name}</h3><span class="nautic-capability__sub">{p.sub}</span><p>{p.desc}</p>
+        </article>)}
+      </div>
+    </div>
+  </section>
+  <section class="nautic-govern">
+    <div class="wrap nautic-govern__grid">
+      <div><p class="eyebrow">GOVERNED OPERATIONS</p><h2>{d.valuesTitle}</h2><p>{d.valuesDesc}</p></div>
+      <ul>{d.values.map((v,i)=><li><span>{String(i+1).padStart(2,'0')}</span>{v}</li>)}</ul>
+    </div>
+  </section>
+  <section class="nautic-bridge">
+    <div class="wrap nautic-bridge__grid">
+      <div><p class="eyebrow">{d.bridge}</p><h2>{d.bridgeTitle}</h2><p>{d.bridgeText}</p></div>
+      <div class="nautic-bridge__actions">
+        <a href={'/'+lang+'/products/'}>{d.back} <span aria-hidden="true">↗</span></a>
+        <a href="https://kubernautic.com" target="_blank" rel="noopener noreferrer">{d.external} <span aria-hidden="true">↗</span></a>
+        <a href={'/'+lang+'/contact/'}>{d.contact} <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <div class="wrap"><p class="nautic-disclaimer">{d.disclaimer}</p></div>
+  </section>
+</main>
