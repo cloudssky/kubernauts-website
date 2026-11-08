@@ -842,3 +842,55 @@ section[id]{scroll-margin-top:100px}
 @media(max-width:950px){
   .ads-landing__hero h1 em{display:inline;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 }
+
+/* Kubernautic internal product overview */
+.nautic-page{color:#f0faff;background:#081421}
+.nautic-page .eyebrow{color:#63ded7}
+.nautic-hero{padding:95px 0 100px;background:radial-gradient(ellipse at 76% 43%,#12334b,#071421 68%)}
+.nautic-hero__grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:center;gap:60px}
+.nautic-hero h1{font-size:clamp(43px,4.9vw,70px);letter-spacing:-.06em;line-height:1.09;margin:20px 0 26px}
+.nautic-hero h1 em,.nautic-capabilities h2 em{font-style:normal;background:linear-gradient(105deg,#59e6db,#58b5e5,#b6a3f7);background-clip:text;color:transparent}
+.nautic-hero__lead{font-size:16px;line-height:1.85;color:#b9cedc;max-width:580px}
+.nautic-hero__actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.nautic-button{display:inline-flex;gap:12px;align-items:center;padding:14px 18px;border-radius:5px;font-weight:800;font-size:12px}
+.nautic-button--primary{background:#63e4d8;color:#082533}
+.nautic-button--outline{border:1px solid #65879a;color:#e5f4fb}
+.nautic-button:hover{filter:brightness(1.1)}
+.nautic-hero__status{margin:39px 0 0;font-size:10px;letter-spacing:.14em;font-weight:800;color:#7da9bb}
+.nautic-orbit{height:440px;position:relative;display:grid;place-items:center;isolation:isolate}
+.nautic-orbit__ring{position:absolute;width:360px;height:360px;border:1px solid #21546a;border-radius:50%;opacity:.85}
+.nautic-orbit__ring--outer{width:435px;height:435px;border-style:dashed;opacity:.35}
+.nautic-orbit__ring--middle{box-shadow:0 0 70px #0bcac51b}
+.nautic-orbit__core{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2px;width:210px;height:210px;border-radius:50%;border:1px solid #62e9dc;background:radial-gradient(circle,#11616a,#082438 75%);box-shadow:0 0 0 18px #19e6d50a,0 0 70px #12b9c54d}
+.nautic-orbit__glyph{font-size:115px;font-weight:900;line-height:1;letter-spacing:-.08em;color:#7af2e4}
+.nautic-orbit__core>span:last-child{font-size:10px;font-weight:800;letter-spacing:.13em;color:#9bdddf}
+.nautic-orbit__node{position:absolute;border:1px solid #2c687c;border-radius:6px;background:#0c2a3e;padding:10px 13px;font-size:10px;font-weight:800;letter-spacing:.13em;color:#b2eeee;z-index:2}
+.nautic-orbit__node--one{left:0;top:85px}.nautic-orbit__node--two{right:0;top:85px}.nautic-orbit__node--three{right:8px;bottom:66px}
+.nautic-orbit__foot{position:absolute;bottom:11px;left:20px;font-size:9px;letter-spacing:.15em;color:#60d7d2}
+.nautic-principle,.nautic-bridge{padding:76px 0;background:#f6fafc;color:#152d40}
+.nautic-principle__grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.nautic-principle h2,.nautic-govern h2,.nautic-bridge h2{font-size:clamp(31px,3.5vw,48px);letter-spacing:-.055em;line-height:1.13;margin:12px 0}
+.nautic-principle__grid>p{font-size:16px;line-height:1.8;color:#536e80}
+.nautic-capabilities{padding:90px 0;background:#0a1d30}
+.nautic-capabilities h2{font-size:clamp(35px,4vw,53px);line-height:1.13;letter-spacing:-.055em;margin:12px 0 40px}
+.nautic-capabilities__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.nautic-capability{padding:31px;border:1px solid #28536b;border-radius:10px;background:linear-gradient(145deg,#173c51,#0b2438);min-height:330px}
+.nautic-capability__head{display:flex;justify-content:space-between;align-items:center;color:#6bdddb;font-size:10px;font-weight:800;letter-spacing:.13em}
+.nautic-capability__head>span:last-child{font-size:33px}
+.nautic-capability h3{font-size:34px;letter-spacing:-.045em;margin:25px 0 3px}
+.nautic-capability__sub{color:#64e4d6;font-size:11px;font-weight:750}
+.nautic-capability p{font-size:13px;line-height:1.85;color:#b2cbd8;margin-top:19px}
+.nautic-govern{padding:88px 0;background:#0b2639}
+.nautic-govern__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center}
+.nautic-govern p:not(.eyebrow){color:#b6cedc;line-height:1.83;font-size:15px}
+.nautic-govern ul{list-style:none;padding:0;margin:0}
+.nautic-govern li{padding:16px 0;border-bottom:1px solid #2a4d61;color:#e7f9fc;font-weight:750;font-size:14px}
+.nautic-govern li span{display:inline-block;width:42px;color:#67e1d7;font-size:11px}
+.nautic-bridge__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:65px;align-items:center}
+.nautic-bridge p:not(.eyebrow){font-size:15px;color:#577084;line-height:1.85}
+.nautic-bridge__actions{display:flex;flex-direction:column;gap:12px}
+.nautic-bridge__actions a{border:1px solid #d6e6ed;border-radius:6px;padding:15px 18px;background:#fff;font-size:13px;font-weight:800;color:#20556b}
+.nautic-bridge__actions a:hover{border-color:#46c8c2;color:#078b91}
+.nautic-disclaimer{margin:38px 0 0;font-size:11px!important;color:#8295a1!important}
+@media(max-width:960px){.nautic-hero__grid,.nautic-principle__grid,.nautic-govern__grid,.nautic-bridge__grid{grid-template-columns:1fr;gap:28px}.nautic-capabilities__grid{grid-template-columns:1fr}.nautic-capability{min-height:0}.nautic-orbit{margin-top:20px}}
+@media(max-width:570px){.nautic-hero{padding:65px 0}.nautic-orbit{height:340px;transform:scale(.78);transform-origin:center}.nautic-principle,.nautic-govern,.nautic-bridge,.nautic-capabilities{padding:60px 0}.nautic-orbit__node--one{left:-18px}.nautic-orbit__node--two{right:-18px}}
