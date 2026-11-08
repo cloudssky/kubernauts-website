@@ -24,3 +24,9 @@ Use the transparent signet on suitable dark backgrounds. Keep sufficient padding
 - Orange: `#FF781B`
 
 The production corporate website remains untouched.
+
+## Wordmark and website integration
+
+- `public/brand/kubernauts-wordmark-light.svg` and `kubernauts-wordmark-dark.svg` are **draft** wordmark explorations. Their live SVG text relies on installed fonts; for production export, convert approved type to vector outlines and check kerning.
+- The bilingual site header and footer currently use real SVG signet plus styled live HTML text for crisp responsiveness and accessibility.
+- Do not ship brand assets as final before checking icon shape, color consistency, legibility, and trademark conflicts.
