@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import SiteNavigation from '../../../components/SiteNavigation.astro';
 import CorporateFooter from '../../../components/CorporateFooter.astro';
 import AnnouncementBar from '../../../components/AnnouncementBar.astro';
 const t={"heading":"Talk to our Kubernetes experts.","sub":"From architecture and platform engineering to Kubernetes operations and AI infrastructure: let's plan your next step together.","details":"DIRECT CONTACT","address":"OUR OFFICE","meeting":"Discuss your Kubernetes project","meetingText":"Book a no-obligation 30-minute introductory conversation with our Kubernetes and platform engineering experts.","features":["30 minutes","Online via Zoom","No obligation"],"cta":"Schedule a project conversation","calendly":"Booking takes place through Calendly in a new browser tab.","community":"KUBERNAUTS COMMUNITY","communityHead":"Kubernauts Worldwide Meetup","communityText":"Share open-source expertise, discuss practical engineering challenges, and connect with the cloud-native community.","communityLink":"Explore the community","email":"Or reach us directly by email.","back":"Homepage","nav":["Services","Industries","Platforms","Approach"],"contact":"Contact","note":"Personal. Technical. No obligation."};
@@ -14,16 +15,7 @@ const navIds=["services","industries","platforms","approach"];
         <img src="/brand/kubernauts-hexagon-light.svg" alt="" width="44" height="44"/>
         <span class="brand-type"><span class="brand-kuber">KUBER</span><span class="brand-nauts"><span>N</span><span>A</span><span>U</span><span>T</span><span>S</span></span></span>
       </a>
-      <nav class="navigation" aria-label="Main navigation">
-        {t.nav.map((name,i)=><a href={`/${lang}/#${navIds[i]}`}>{name}</a>)}
-      </nav>
-      <details class="mobile-menu">
-        <summary aria-label="Open menu"><span class="hamburger" aria-hidden="true">☰</span><span>Menu</span></summary>
-        <nav class="mobile-menu-panel" aria-label="Mobile navigation">
-          {t.nav.map((name,i)=><a href={`/${lang}/#${navIds[i]}`}>{name}</a>)}
-          <a href="/en/contact/">{t.contact} ↗</a>
-        </nav>
-      </details>
+      <SiteNavigation lang="en" />
       <div class="header-right"><a class="lang" lang="de" href="/de/contact/">DE</a><a class="btn outline" href="/en/contact/" aria-current="page">{t.contact} ↗</a></div>
     </div>
   </header>
