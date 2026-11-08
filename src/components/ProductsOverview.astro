@@ -57,7 +57,7 @@ const path='/'+lang+'/contact/';
           <div class="products-capability__top"><span>{item.eyebrow}</span><span aria-hidden="true">⬡</span></div>
           <h3>{item.name}</h3><p>{item.desc}</p>
           <ul>{item.tags.map(tag=><li>{tag}</li>)}</ul>
-          <a href={["bare-metal","robotics","security"].includes(item.id) ? `/${lang}/products/${item.id}/` : path}>{["bare-metal","robotics","security"].includes(item.id) ? d.detail : d.consult} ↗</a>
+          <a href={item.id==="private-ai" ? `/${lang}/openkubes/inhouse-ai/` : ["bare-metal","robotics","security"].includes(item.id) ? `/${lang}/products/${item.id}/` : path}>{["bare-metal","robotics","security","private-ai"].includes(item.id) ? d.detail : d.consult} ↗</a>
         </article>)}
       </div>
       <p class="products-capabilities__note">{d.note}</p>
