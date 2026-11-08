@@ -40,3 +40,6 @@ The production corporate website remains untouched.
 - Light-background palette uses darker accessible shades; dark-background palette uses brighter shades.
 - Site lettermarks are live text and therefore responsive and selectable. The Illustrator/SVG export remains a separate task.
 - The website retains `noindex` while the relaunch is in development. Verify against the actual kubernautic.com master brand asset before final release.
+
+## Approved OpenKubes Cube v2
+The eight-color study at `public/brand/openkubes-cube-v2.svg` was selected for the Kubernauts Platforms & Innovation showcase on 2026-11-08. The prior `openkubes-cube-illustration.svg` remains as V1 reference. Both hero artwork and small wordmark signet in `InnovationPlatforms.astro` use V2. This applies to the Kubernauts website; updating the independent OpenKubes master identity requires a separate decision.
