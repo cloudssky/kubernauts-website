@@ -800,3 +800,15 @@ section[id]{scroll-margin-top:100px}
   filter:drop-shadow(0 1px 0 rgba(8,32,49,.15));
 }
 .site-header .brand-logo .brand-type{font-weight:900}
+
+/* Real product-signets in the Platforms & Innovation showcase. */
+.innovation-art__product-logo{position:relative;z-index:2;display:block;object-fit:contain;filter:drop-shadow(0 15px 28px rgba(0,220,226,.23))}
+.innovation-art__product-logo--openkubes{width:min(230px,56%);height:220px;filter:drop-shadow(0 17px 19px rgba(0,211,233,.25))}
+.innovation-art__ai-rings{position:relative;display:grid;place-items:center;width:198px;height:198px;border:1px solid #26778a;border-radius:50%;background:radial-gradient(circle,#0e3949 0%,#0b2439 65%,transparent 80%);box-shadow:0 0 0 21px #11d4d40c,0 0 46px #12dddd22}
+.innovation-art__ai-rings::before,.innovation-art__ai-rings::after{content:"";position:absolute;inset:-22px;border:1px dashed #295e70;border-radius:50%;pointer-events:none}
+.innovation-art__ai-rings::after{inset:-39px;border-style:solid;opacity:.5}
+.innovation-art__product-logo--kubernautic{width:146px;height:146px;border-radius:21px}
+.innovation-brand-lockup__signet{object-fit:contain;display:block;width:38px;height:38px;flex:0 0 38px}
+.innovation-brand-lockup__signet--openkubes{filter:drop-shadow(0 0 5px #17adba40)}
+.innovation-brand-lockup__signet--kubernautic{border-radius:8px}
+@media(max-width:520px){.innovation-art__product-logo--openkubes{width:174px;height:170px}.innovation-art__ai-rings{transform:scale(.8)}.innovation-brand-lockup__signet{width:30px;height:30px;flex:0 0 30px}}
