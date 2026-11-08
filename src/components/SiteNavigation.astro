@@ -15,17 +15,6 @@ const nav=[
 ];
 ---
 <nav class="navigation main-navigation" aria-label={de?'Hauptnavigation':'Main navigation'}>
-  <details class="nav-services">
-    <summary>{de?'Leistungen':'Services'} <span class="nav-services__chevron" aria-hidden="true">⌄</span></summary>
-    <div class="nav-services__menu">
-      {items.map((item)=><a href={item.url} class="nav-services__item">
-        <span class="nav-services__dot" aria-hidden="true"></span>
-        <span><strong>{item.label}</strong><small>{item.detail}</small></span>
-        <span aria-hidden="true">↗</span>
-      </a>)}
-      <a class="nav-services__all" href={base+'#services'}>{de?'Alle Leistungen':'All services'} <span aria-hidden="true">→</span></a>
-    </div>
-  </details>
   <details class="nav-products">
     <summary>{de?'Produkte':'Products'} <span class="nav-services__chevron" aria-hidden="true">⌄</span></summary>
     <div class="nav-products__menu">
@@ -38,18 +27,22 @@ const nav=[
       <a href={base+'products/security/'}><strong>OpenKubes Security</strong><small>Zero Trust · Policies · Governance</small></a>
     </div>
   </details>
+  <details class="nav-services">
+    <summary>{de?'Leistungen':'Services'} <span class="nav-services__chevron" aria-hidden="true">⌄</span></summary>
+    <div class="nav-services__menu">
+      {items.map((item)=><a href={item.url} class="nav-services__item">
+        <span class="nav-services__dot" aria-hidden="true"></span>
+        <span><strong>{item.label}</strong><small>{item.detail}</small></span>
+        <span aria-hidden="true">↗</span>
+      </a>)}
+      <a class="nav-services__all" href={base+'#services'}>{de?'Alle Leistungen':'All services'} <span aria-hidden="true">→</span></a>
+    </div>
+  </details>
   {nav.map(item=><a href={item.href}>{item.label}</a>)}
 </nav>
 <details class="mobile-menu">
   <summary aria-label={de?'Menü öffnen':'Open menu'}><span class="hamburger" aria-hidden="true">☰</span><span>{de?'Menü':'Menu'}</span></summary>
   <nav class="mobile-menu-panel" aria-label={de?'Mobile Navigation':'Mobile navigation'}>
-    <details class="mobile-services">
-      <summary>{de?'Leistungen':'Services'} <span aria-hidden="true">⌄</span></summary>
-      <div class="mobile-services__links">
-        {items.map(item=><a href={item.url}>{item.label}</a>)}
-        <a href={base+'#services'}>{de?'Alle Leistungen':'All services'}</a>
-      </div>
-    </details>
     <details class="mobile-services">
       <summary>{de?'Produkte':'Products'} <span aria-hidden="true">⌄</span></summary>
       <div class="mobile-services__links">
@@ -60,6 +53,13 @@ const nav=[
         <a href={base+'products/bare-metal/'}>OpenKubes Bare Metal</a>
         <a href={base+'products/robotics/'}>OpenKubes Robotics</a>
         <a href={base+'products/security/'}>OpenKubes Security</a>
+      </div>
+    </details>
+    <details class="mobile-services">
+      <summary>{de?'Leistungen':'Services'} <span aria-hidden="true">⌄</span></summary>
+      <div class="mobile-services__links">
+        {items.map(item=><a href={item.url}>{item.label}</a>)}
+        <a href={base+'#services'}>{de?'Alle Leistungen':'All services'}</a>
       </div>
     </details>
     {nav.map(item=><a href={item.href}>{item.label}</a>)}
