@@ -3,8 +3,8 @@ interface Props { lang:'de'|'en'; }
 const {lang}=Astro.props;
 const de=lang==='de';
 const groups=[
-  {name:de?'Leistungen':'Services',links:[{label:'Platform Engineering',href:'#services'},{label:'Kubernetes Operations',href:'#services'},{label:'AI & MLOps',href:'#services'},{label:de?'Branchen':'Industries',href:'#industries'}]},
-  {name:de?'Plattformen':'Platforms',links:[{label:'OpenKubes',href:'https://openkubes.org'},{label:'Kubernautic',href:'https://kubernautic.com'},{label:de?'Unser Vorgehen':'Our Approach',href:'#approach'}]},
+  {name:de?'Leistungen':'Services',links:[{label:'Platform Engineering',href:`/${lang}/#services`},{label:'Kubernetes Operations',href:'#services'},{label:'AI & MLOps',href:'#services'},{label:de?'Branchen':'Industries',href:`/${lang}/#industries`}]},
+  {name:de?'Plattformen':'Platforms',links:[{label:'OpenKubes',href:'https://openkubes.org'},{label:'Kubernautic',href:'https://kubernautic.com'},{label:de?'Unser Vorgehen':'Our Approach',href:`/${lang}/#approach`}]},
 ];
 const legal=de?'/de/impressum/':'/en/imprint/';
 const privacy='https://kubernauts.de/de/datenschutz.html';
