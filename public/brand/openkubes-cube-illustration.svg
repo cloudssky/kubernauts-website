@@ -1,21 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
-<title id="title">OpenKubes cube signet</title>
+<title id="title">OpenKubes Cube</title>
 <defs>
-<linearGradient id="top" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#16B0FF"/><stop offset="1" stop-color="#0572E6"/></linearGradient>
-<linearGradient id="topSide" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#145BBE"/><stop offset="1" stop-color="#083E9A"/></linearGradient>
-<linearGradient id="green" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#12D347"/><stop offset="1" stop-color="#047A3A"/></linearGradient>
-<linearGradient id="orange" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFAA0E"/><stop offset="1" stop-color="#FF5214"/></linearGradient>
-<linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#137BE7"/><stop offset="1" stop-color="#093A95"/></linearGradient>
+<linearGradient id="crown" x1=".12" y1=".1" x2=".85" y2=".95" gradientUnits="objectBoundingBox"><stop stop-color="#13A3FB"/><stop offset=".55" stop-color="#0875E6"/><stop offset="1" stop-color="#0864CD"/></linearGradient>
+<linearGradient id="cubeTop" x1="0" y1="0" x2=".85" y2="1"><stop stop-color="#1377DB"/><stop offset="1" stop-color="#0753BD"/></linearGradient>
+<linearGradient id="cubeLeft" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1576DA"/><stop offset="1" stop-color="#043C9D"/></linearGradient>
+<linearGradient id="cubeRight" x1="0" y1="0" x2=".95" y2="1"><stop stop-color="#126FCE"/><stop offset="1" stop-color="#05439D"/></linearGradient>
+<linearGradient id="lowerBlue" x1="0" y1="0" x2=".85" y2="1"><stop stop-color="#0B64C4"/><stop offset="1" stop-color="#073893"/></linearGradient>
+<linearGradient id="green" x1=".15" y1="0" x2="1" y2="1"><stop stop-color="#079C39"/><stop offset="1" stop-color="#056B35"/></linearGradient>
+<linearGradient id="orange" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FF990E"/><stop offset="1" stop-color="#FF5E0D"/></linearGradient>
 </defs>
-<!-- Four open corner facets, following the uploaded multicolor cube brand. -->
-<path fill="url(#top)" d="M263 35 Q269 31 280 35 L473 137 365 198 262 144 160 196 160 110Z"/>
-<path fill="url(#green)" d="M137 147 63 189Q50 197 50 214V385L126 344V253L171 231V133Z"/>
-<path fill="url(#orange)" d="M449 182 495 161V308L448 284V356L496 377V408Q496 423 483 430L287 539V455L449 366Z" transform="translate(-4 -38)"/>
-<path fill="url(#blue)" d="M50 387 126 349V396L257 464V501Q257 511 247 507L65 410Q50 403 50 387Z"/>
-<!-- Central three-dimensional cube -->
-<path fill="#071B30" d="M165 242 267 181 370 239V361L267 422 165 366Z"/>
-<path fill="url(#topSide)" d="M179 245 267 196 356 245 267 294Z"/>
-<path fill="url(#blue)" d="M179 265 255 309V405L179 363Z"/>
-<path fill="url(#blue)" d="M279 309 356 265V362L279 405Z"/>
-<path fill="#062544" opacity=".95" d="M256 309 267 315 279 309V407L267 414 256 406Z"/>
+<!-- Open enclosure vector traced from supplied brand master. -->
+<path fill="url(#green)" d="M4 165 Q4 150 19 141 L123 66 V155 L77 180 V273 L4 304 Z"/>
+<path fill="url(#crown)" d="M144 56 226 10 Q240 2 253 10 L463 121 383 164 241 92 144 143 Z"/>
+<path fill="url(#orange)" d="M403 182 478 142 V299 L403 269 Z"/>
+<path fill="url(#lowerBlue)" d="M4 329 77 297 V342 L227 417 V503 Q223 508 217 504 L19 404 Q4 397 4 378 Z"/>
+<path fill="url(#orange)" d="M255 418 403 343 V294 L478 327 V383 Q478 396 462 404 L266 505 Q255 511 255 497 Z"/>
+<!-- Center cube with original negative-space channels. -->
+<path fill="url(#cubeTop)" d="M115 190 240 127 366 190 240 250 Z"/>
+<path fill="url(#cubeLeft)" d="M99 206 227 271 V388 L99 327 Z"/>
+<path fill="url(#cubeRight)" d="M255 271 382 205 V327 L255 388 Z"/>
 </svg>
