@@ -495,3 +495,13 @@ section[id]{scroll-margin-top:100px}
 .platform-service__closing p:not(.eyebrow){font-size:15px;line-height:1.8;color:#b6cad7;max-width:690px}
 @media(max-width:920px){.platform-service__hero-grid,.platform-service__intro-grid,.platform-service__open-grid{grid-template-columns:1fr;gap:32px}}
 @media(max-width:590px){.platform-service__hero{padding:55px 0}.platform-service__intro,.platform-service__skills,.platform-service__open,.platform-service__closing{padding:60px 0}.platform-service__skills-grid{grid-template-columns:1fr}.platform-service__skills-grid article{min-height:0;padding:24px}}
+
+/* AI & MLOps service landing: distinguish AI infrastructure without breaking the service design system */
+.ai-service .platform-service__hero{background:radial-gradient(ellipse at 73% 31%,#183858,#091827 75%)}
+.ai-service h1 em{background:linear-gradient(90deg,#69e9df,#63bff4,#ab9df3);background-clip:text;color:transparent}
+.ai-service .platform-service__proof{background:linear-gradient(155deg,#14364e,#101e38);border-color:#3b6077}
+.ai-service__mark{width:67px;height:67px;display:grid;place-items:center;border:1px solid #70dcd9;border-radius:15px;color:#a6f6f1;font-size:25px;font-weight:850;letter-spacing:-.09em;background:radial-gradient(circle,#145968,#112c48);box-shadow:0 0 40px #20caca35}
+.ai-service .platform-service__skills-grid article:nth-child(4n+1){border-top-color:#2298f1}
+.ai-service .platform-service__skills-grid article:nth-child(4n+2){border-top-color:#19baba}
+.ai-service .platform-service__skills-grid article:nth-child(4n+3){border-top-color:#8bcf6d}
+.ai-service .platform-service__skills-grid article:nth-child(4n){border-top-color:#f3a85d}
