@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import AnnouncementBar from '../../../../components/AnnouncementBar.astro';
+import SiteNavigation from '../../../../components/SiteNavigation.astro';
+import CorporateFooter from '../../../../components/CorporateFooter.astro';
+import OpenKubesIndustrialEdge from '../../../../components/OpenKubesIndustrialEdge.astro';
+const lang='en';
+---
+<BaseLayout lang={lang} title="OpenKubes Industrial Edge | Kubernauts" description="OpenKubes Industrial Edge: distributed Kubernetes, edge AI, GitOps, fleet operations, security and offline environments." canonicalPath="/en/openkubes/openkubes-edge/index.html">
+ <AnnouncementBar lang={lang}/>
+ <header class="site-header"><div class="header wrap">
+  <a class="logo brand-logo" href="/en/" aria-label="Kubernauts"><img src="/brand/kubernauts-hexagon-light.svg" alt="" width="44" height="44"/><span class="brand-type"><span class="brand-kuber">KUBER</span><span class="brand-nauts"><span>N</span><span>A</span><span>U</span><span>T</span><span>S</span></span></span></a>
+  <SiteNavigation lang={lang}/>
+  <div class="header-right"><a class="lang" lang="de" href="/de/openkubes/openkubes-edge/index.html">DE</a><a class="btn outline" href="/en/contact/">Contact ↗</a></div>
+ </div></header>
+ <OpenKubesIndustrialEdge lang={lang}/>
+ <CorporateFooter lang={lang}/>
+</BaseLayout>
