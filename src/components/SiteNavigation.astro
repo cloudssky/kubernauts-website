@@ -10,7 +10,7 @@ const items=[
 ];
 const nav=[
  {label:de?'Branchen':'Industries',href:base+'#industries'},
- {label:de?'Plattformen':'Platforms',href:base+'#platforms'},
+
  {label:de?'Vorgehen':'Approach',href:base+'#approach'}
 ];
 ---
@@ -26,6 +26,15 @@ const nav=[
       <a class="nav-services__all" href={base+'#services'}>{de?'Alle Leistungen':'All services'} <span aria-hidden="true">→</span></a>
     </div>
   </details>
+  <details class="nav-products">
+    <summary>{de?'Produkte':'Products'} <span class="nav-services__chevron" aria-hidden="true">⌄</span></summary>
+    <div class="nav-products__menu">
+      <a href={base+'products/'} class="nav-products__all">{de?'Alle Produkte & Plattformen':'All products & platforms'} <span aria-hidden="true">↗</span></a>
+      <a href="https://openkubes.org" target="_blank" rel="noopener noreferrer"><strong>OpenKubes</strong><small>{de?'Souveränes Plattformframework':'Sovereign platform framework'}</small></a>
+      <a href="https://kubernautic.com" target="_blank" rel="noopener noreferrer"><strong>Kubernautic</strong><small>Agentic AI Operations</small></a>
+      <a href={base+'products/#products-solutions'}><strong>{de?'Spezialisierte Lösungen':'Specialized solutions'}</strong><small>Bare Metal · Robotics · Private AI · Edge</small></a>
+    </div>
+  </details>
   {nav.map(item=><a href={item.href}>{item.label}</a>)}
 </nav>
 <details class="mobile-menu">
@@ -38,13 +47,22 @@ const nav=[
         <a href={base+'#services'}>{de?'Alle Leistungen':'All services'}</a>
       </div>
     </details>
+    <details class="mobile-services">
+      <summary>{de?'Produkte':'Products'} <span aria-hidden="true">⌄</span></summary>
+      <div class="mobile-services__links">
+        <a href={base+'products/'}>{de?'Alle Produkte':'All products'}</a>
+        <a href="https://openkubes.org" target="_blank" rel="noopener noreferrer">OpenKubes ↗</a>
+        <a href="https://kubernautic.com" target="_blank" rel="noopener noreferrer">Kubernautic ↗</a>
+        <a href={base+'products/#products-solutions'}>{de?'Spezialisierte Lösungen':'Specialized solutions'}</a>
+      </div>
+    </details>
     {nav.map(item=><a href={item.href}>{item.label}</a>)}
     <a href={base+'contact/'}>{de?'Kontakt':'Contact'} ↗</a>
   </nav>
 </details>
 
 <script>
-  document.querySelectorAll<HTMLDetailsElement>('.nav-services').forEach((menu) => {
+  document.querySelectorAll<HTMLDetailsElement>('.nav-services, .nav-products').forEach((menu) => {
     let openedByHover = false;
     menu.addEventListener('pointerenter', (event) => {
       if (event.pointerType === 'mouse' && window.matchMedia('(min-width: 1021px)').matches) {
