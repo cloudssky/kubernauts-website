@@ -1023,3 +1023,31 @@ section[id]{scroll-margin-top:100px}
 @media(max-width:1080px){.enterprise-ai__hero-grid{grid-template-columns:1fr;gap:45px}.enterprise-ai__diagram{max-width:680px;width:100%;margin:auto}.enterprise-ai__metrics,.enterprise-ai__assessment-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.enterprise-ai__services{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:700px){.enterprise-ai__hero,.enterprise-ai__outcomes,.enterprise-ai__capabilities,.enterprise-ai__cases,.enterprise-ai__assessment,.enterprise-ai__trust{padding:65px 0}.enterprise-ai__trust-grid,.enterprise-ai__case-grid{grid-template-columns:1fr}.enterprise-ai__assessment-end{flex-direction:column;align-items:flex-start}}
 @media(max-width:500px){.enterprise-ai__metrics,.enterprise-ai__services,.enterprise-ai__assessment-steps{grid-template-columns:1fr}.enterprise-ai__diagram{min-height:430px;padding:17px}.enterprise-ai__diagram-core{width:150px;height:150px}.enterprise-ai__diagram-systems span{font-size:9px}.enterprise-ai__copy h1{font-size:clamp(36px,10vw,49px)}}
+
+/* Agentic workflow Hero v2 — connective architecture from the approved visual concept */
+.enterprise-ai__diagram{min-height:480px;gap:0;padding:26px;justify-content:initial;background:radial-gradient(circle at 51% 41%,#115065 0%,#09253b 58%,#071b2e 100%);box-shadow:0 16px 45px #0004,0 0 28px #20dcd512;border-color:#3d97a8}
+.enterprise-ai__diagram-label{text-align:center;font-size:11px;letter-spacing:.15em;z-index:4}
+.enterprise-ai__diagram-core{margin:36px auto 0;width:190px;height:190px;z-index:3;border:2px solid #65f7ed;box-shadow:0 0 0 15px #34dfd80b,0 0 0 35px #34dfd805,0 0 48px #1adbd973}
+.enterprise-ai__diagram-core::before{content:"";position:absolute;inset:-26px;border:1px dashed #2fe7db69;border-radius:50%;animation:enterprise-ai-orbit 38s linear infinite}
+.enterprise-ai__diagram-core strong{font-size:19px}
+.enterprise-ai__diagram-connectors{position:absolute;inset:0;z-index:1;pointer-events:none}
+.enterprise-ai__diagram-connectors svg{display:block;width:100%;height:100%;overflow:visible}
+.enterprise-ai__connection{fill:none;stroke:#53ece6;stroke-width:2.5;stroke-linecap:round;stroke-dasharray:9 14;filter:drop-shadow(0 0 5px #59fff0);animation:enterprise-ai-flow 3.5s linear infinite}
+.enterprise-ai__connection--delay1{animation-delay:-.8s}
+.enterprise-ai__connection--delay2{animation-delay:-1.6s}
+.enterprise-ai__connection--delay3{animation-delay:-2.4s}
+.enterprise-ai__connection-dot{fill:#8dfff2;filter:drop-shadow(0 0 6px #38e5d9)}
+.enterprise-ai__diagram-systems{margin-top:58px;gap:10px;z-index:3}
+.enterprise-ai__diagram-systems>span{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:7px;padding:8px 3px 10px;min-height:79px;border-color:#4cbcc6;box-shadow:0 0 13px #1bc9c51c;background:#092a3aeb}
+.enterprise-ai__system-icon{color:#88f5ea;display:block}
+.enterprise-ai__system-icon svg{width:22px;height:22px;display:block}
+.enterprise-ai__diagram-flow{margin-top:22px;gap:8px}
+.enterprise-ai__diagram-flow span{position:relative;border-top:2px solid #6cece6;padding-top:15px;font-size:12px}
+.enterprise-ai__diagram-flow span::before{content:"";position:absolute;width:9px;height:9px;border:3px solid #0d5260;background:#96fff5;border-radius:50%;top:-7px;left:calc(50% - 7px);box-shadow:0 0 11px #46e5e2}
+.enterprise-ai__diagram-flow span:not(:last-child)::after{content:"»";position:absolute;right:-11px;top:20px;color:#62e6db}
+.enterprise-ai__diagram-governance{align-self:stretch;margin-top:auto;border:1px solid #228f9d;border-radius:50px;background:#082b3b;padding:10px;text-align:center}
+@keyframes enterprise-ai-flow{to{stroke-dashoffset:-46}}
+@keyframes enterprise-ai-orbit{to{transform:rotate(360deg)}}
+@media(max-width:1080px){.enterprise-ai__diagram{max-width:560px}}
+@media(max-width:500px){.enterprise-ai__diagram{min-height:430px;padding:18px}.enterprise-ai__diagram-core{width:150px;height:150px;margin-top:35px}.enterprise-ai__diagram-systems{margin-top:60px;gap:5px}.enterprise-ai__diagram-systems>span{min-height:65px}.enterprise-ai__system-icon svg{width:19px;height:19px}.enterprise-ai__diagram-flow span{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.enterprise-ai__connection,.enterprise-ai__diagram-core::before{animation:none!important}}
