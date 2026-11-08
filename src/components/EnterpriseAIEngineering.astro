@@ -83,8 +83,23 @@ const contact='/' + lang + '/contact/';
    </div>
    <div class="enterprise-ai__diagram" role="img" aria-label={de?'Agentic-AI-Workflow mit Unternehmenssystemen, Planung, Aktionen und Freigaben':'Agentic AI workflow connecting enterprise systems, planning, actions and approvals'}>
      <p class="enterprise-ai__diagram-label">{d.visual}</p>
-     <div class="enterprise-ai__diagram-core"><span class="enterprise-ai__diagram-symbol">✳</span><strong>AGENTIC AI</strong><small>ORCHESTRATION CORE</small></div>
-     <div class="enterprise-ai__diagram-systems">{d.systems.map(s=><span>{s}</span>)}</div>
+     <div class="enterprise-ai__diagram-core"><span class="enterprise-ai__diagram-symbol" aria-hidden="true">✳</span><strong>AGENTIC AI</strong><small>ORCHESTRATION CORE</small></div>
+     <div class="enterprise-ai__diagram-connectors" aria-hidden="true">
+       <svg viewBox="0 0 560 480" preserveAspectRatio="none" focusable="false">
+         <path class="enterprise-ai__connection" d="M280 245 V274 Q280 286 267 286 H73 Q60 286 60 301 V321"/>
+         <path class="enterprise-ai__connection enterprise-ai__connection--delay1" d="M280 245 V274 Q280 286 267 286 H210 Q197 286 197 301 V321"/>
+         <path class="enterprise-ai__connection enterprise-ai__connection--delay2" d="M280 245 V274 Q280 286 293 286 H350 Q363 286 363 301 V321"/>
+         <path class="enterprise-ai__connection enterprise-ai__connection--delay3" d="M280 245 V274 Q280 286 293 286 H487 Q500 286 500 301 V321"/>
+         {[60,197,363,500].map(x=><circle class="enterprise-ai__connection-dot" cx={x} cy="321" r="4"/>)}
+       </svg>
+     </div>
+     <div class="enterprise-ai__diagram-systems">{d.systems.map((name,i)=><span>
+       <span class="enterprise-ai__system-icon" aria-hidden="true">
+         {i===0 && <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 3 9 5-9 5-9-5 9-5ZM3 12l9 5 9-5M3 16l9 5 9-5"/></svg>}
+         {i===1 && <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20v-2a6 6 0 0 1 12 0v2M15 15a5 5 0 0 1 6 5"/></svg>}
+         {i===2 && <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m8 5-6 7 6 7m8-14 6 7-6 7M14 3l-4 18"/></svg>}
+         {i===3 && <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 2h10l4 4v16H5V2ZM15 2v5h4M8 12h8M8 16h7"/></svg>}
+       </span><span>{name}</span></span>)}</div>
      <div class="enterprise-ai__diagram-flow">{d.steps.map((step,i)=><span><small>0{i+1}</small>{step}</span>)}</div>
      <p class="enterprise-ai__diagram-governance">{d.governance}</p>
    </div>
