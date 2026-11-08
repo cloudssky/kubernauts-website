@@ -1,0 +1,5 @@
+---
+interface Props {theme?:'dark'|'light'}
+const {theme='light'}=Astro.props;
+---
+<span class:list={['openkubes-wordmark',`openkubes-wordmark--${theme}`]} aria-label="OpenKubes."><span aria-hidden="true">O</span><span aria-hidden="true">p</span><span aria-hidden="true">e</span><span aria-hidden="true">n</span><span aria-hidden="true">K</span><span aria-hidden="true">u</span><span aria-hidden="true">b</span><span aria-hidden="true">e</span><span aria-hidden="true">s</span><span aria-hidden="true">.</span></span>
