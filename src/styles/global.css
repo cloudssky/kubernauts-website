@@ -956,3 +956,70 @@ section[id]{scroll-margin-top:100px}
 .agentic-service__govern li{margin-bottom:15px;font-size:13px;line-height:1.7;color:#d1e6ed}
 .agentic-service__disclaimer{margin-top:40px;font-size:11px!important;color:#8ca8b7!important}
 @media(max-width:700px){.agentic-service__grid,.agentic-service__govern-grid{grid-template-columns:1fr}.agentic-service__hero,.agentic-service__body,.agentic-service__govern{padding:65px 0}}
+
+/* Enterprise AI Engineering & Integration — agentic software beyond chatbots */
+.enterprise-ai{background:#f5f9fc;color:#142d40}
+.enterprise-ai .eyebrow{color:#44d9d4}
+.enterprise-ai__hero{padding:100px 0 105px;background:radial-gradient(ellipse at 75% 42%,#123a50,#081727 70%);color:#f1fbff}
+.enterprise-ai__hero-grid{display:grid;grid-template-columns:minmax(0,1.07fr) minmax(0,.93fr);gap:54px;align-items:center}
+.enterprise-ai__copy h1{font-size:clamp(43px,4.75vw,71px);line-height:1.1;letter-spacing:-.062em;margin:21px 0 26px;overflow-wrap:normal}
+.enterprise-ai__copy h1 em{font-style:normal;background:linear-gradient(90deg,#59e6d8,#59b6ea,#b8a4f4);background-clip:text;color:transparent}
+.enterprise-ai__lead{font-size:16px;line-height:1.83;color:#d0e1eb;max-width:660px}
+.enterprise-ai__promise{font-size:13px;line-height:1.8;color:#8fb0c2;max-width:640px;margin-top:19px}
+.enterprise-ai__actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.enterprise-ai__btn{display:inline-flex;gap:12px;align-items:center;padding:15px 18px;border-radius:5px;font-size:12px;font-weight:850;line-height:1.4;transition:filter .2s}
+.enterprise-ai__btn:hover{filter:brightness(1.1)}
+.enterprise-ai__btn--primary{background:#5ee2d7;color:#092d38}
+.enterprise-ai__btn--outline{border:1px solid #66879b;color:#e9f8fa}
+.enterprise-ai__diagram{min-height:480px;padding:27px;border:1px solid #2c6779;border-radius:12px;background:radial-gradient(circle at 50% 40%,#124758,#0b263d 70%);display:flex;flex-direction:column;justify-content:space-between;gap:21px;position:relative;isolation:isolate;overflow:hidden;box-shadow:0 18px 45px #0004}
+.enterprise-ai__diagram::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.28;background-image:linear-gradient(#5b9aac30 1px,transparent 1px),linear-gradient(90deg,#5b9aac30 1px,transparent 1px);background-size:26px 26px}
+.enterprise-ai__diagram-label,.enterprise-ai__diagram-governance{position:relative;z-index:1;font-size:10px;font-weight:850;letter-spacing:.15em;color:#7be5df;margin:0}
+.enterprise-ai__diagram-core{position:relative;z-index:1;align-self:center;width:184px;height:184px;border-radius:50%;border:1px solid #60eadd;box-shadow:0 0 0 15px #34dfd80b,0 0 0 39px #34dfd805,0 0 60px #25d7dc3c;background:radial-gradient(circle,#156474,#082638 75%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;text-align:center}
+.enterprise-ai__diagram-symbol{font-size:57px;line-height:1;color:#97ffee}
+.enterprise-ai__diagram-core strong{font-size:18px;letter-spacing:.09em;color:#e9fffc}
+.enterprise-ai__diagram-core small{font-size:9px;letter-spacing:.14em;color:#9fcdd2}
+.enterprise-ai__diagram-systems,.enterprise-ai__diagram-flow{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
+.enterprise-ai__diagram-systems span{border:1px solid #387188;border-radius:5px;background:#0a2b43;padding:11px 4px;text-align:center;font-size:10px;font-weight:800;color:#c8e5ec}
+.enterprise-ai__diagram-flow span{display:flex;align-items:center;flex-direction:column;gap:5px;border-top:2px solid #46d9ce;padding-top:10px;font-size:11px;font-weight:800;color:#eefdfd;text-align:center}
+.enterprise-ai__diagram-flow small{font-size:9px;color:#66cdd1}
+.enterprise-ai__diagram-governance{text-align:center;padding-top:9px}
+.enterprise-ai__outcomes,.enterprise-ai__capabilities,.enterprise-ai__cases,.enterprise-ai__assessment{padding:86px 0}
+.enterprise-ai__outcomes h2,.enterprise-ai__capabilities h2,.enterprise-ai__cases h2,.enterprise-ai__trust h2,.enterprise-ai__assessment h2{font-size:clamp(36px,4.2vw,58px);letter-spacing:-.055em;line-height:1.14;margin:16px 0 23px}
+.enterprise-ai__outcomes h2 em,.enterprise-ai__capabilities h2 em,.enterprise-ai__trust h2 em{font-style:normal;color:#0eabae}
+.enterprise-ai__outcomes .eyebrow,.enterprise-ai__capabilities .eyebrow,.enterprise-ai__assessment .eyebrow{color:#079ba5}
+.enterprise-ai__section-intro{font-size:15px;color:#607b8c;line-height:1.8;max-width:750px;margin-bottom:30px}
+.enterprise-ai__metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+.enterprise-ai__metrics article{padding:26px 22px;border:1px solid #d7e6ed;border-top:3px solid #2dbbb8;background:white;border-radius:8px}
+.enterprise-ai__metrics article>span,.enterprise-ai__services article>span{font-size:9px;letter-spacing:.14em;font-weight:850;color:#168f9b}
+.enterprise-ai__metrics h3{font-size:22px;letter-spacing:-.04em;margin:20px 0 13px}
+.enterprise-ai__metrics p,.enterprise-ai__services p,.enterprise-ai__case-grid p{font-size:13px;line-height:1.8;color:#5b7386;margin:0}
+.enterprise-ai__capabilities{background:#edf4f7}
+.enterprise-ai__services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:35px}
+.enterprise-ai__services article{border:1px solid #d3e2eb;border-radius:9px;background:#fff;padding:28px;min-height:235px}
+.enterprise-ai__services h3{font-size:23px;line-height:1.22;letter-spacing:-.045em;margin:23px 0 14px}
+.enterprise-ai__cases{background:#081c30;color:#f5fcff}
+.enterprise-ai__cases .eyebrow{color:#61e2d9}
+.enterprise-ai__cases .enterprise-ai__section-intro{color:#b2c9d8}
+.enterprise-ai__case-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.enterprise-ai__case-grid article{border:1px solid #33566b;border-radius:9px;background:#122e43;padding:28px}
+.enterprise-ai__case-grid h3{font-size:22px;letter-spacing:-.04em;margin:0 0 15px}
+.enterprise-ai__case-grid p{color:#b6cbd9}
+.enterprise-ai__trust{padding:90px 0;background:#0b2b3c;color:#f6ffff}
+.enterprise-ai__trust .eyebrow{color:#65e4db}
+.enterprise-ai__trust-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:65px;align-items:center}
+.enterprise-ai__trust-grid>div>p:not(.eyebrow){color:#c0d4e0;line-height:1.85;font-size:14px}
+.enterprise-ai__trust-grid .enterprise-ai__compliance-note{color:#8faeba!important;font-size:11px!important;margin-top:24px}
+.enterprise-ai__trust-grid ul{list-style:none;margin:0;padding:0}
+.enterprise-ai__trust-grid li{display:flex;align-items:flex-start;gap:13px;border-bottom:1px solid #345666;padding:16px 0;color:#edfafa;font-size:13px;line-height:1.65}
+.enterprise-ai__trust-grid li span{color:#68e1d7;font-weight:900}
+.enterprise-ai__assessment-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:35px 0}
+.enterprise-ai__assessment-steps article{padding:24px;border:1px solid #d6e5eb;border-radius:8px;background:#fff}
+.enterprise-ai__assessment-steps article>span{font-size:11px;font-weight:850;color:#0eaaa7}
+.enterprise-ai__assessment-steps h3{font-size:21px;letter-spacing:-.04em;margin:19px 0 10px}
+.enterprise-ai__assessment-steps p{font-size:12px;line-height:1.7;color:#627c8e}
+.enterprise-ai__assessment-end{display:flex;gap:30px;justify-content:space-between;align-items:center;border-top:1px solid #d2e0e8;padding-top:25px}
+.enterprise-ai__assessment-end p{font-size:13px;color:#5f7a8c;line-height:1.75;max-width:750px}
+.enterprise-ai__assessment-end .enterprise-ai__btn{flex:none}
+@media(max-width:1080px){.enterprise-ai__hero-grid{grid-template-columns:1fr;gap:45px}.enterprise-ai__diagram{max-width:680px;width:100%;margin:auto}.enterprise-ai__metrics,.enterprise-ai__assessment-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.enterprise-ai__services{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.enterprise-ai__hero,.enterprise-ai__outcomes,.enterprise-ai__capabilities,.enterprise-ai__cases,.enterprise-ai__assessment,.enterprise-ai__trust{padding:65px 0}.enterprise-ai__trust-grid,.enterprise-ai__case-grid{grid-template-columns:1fr}.enterprise-ai__assessment-end{flex-direction:column;align-items:flex-start}}
+@media(max-width:500px){.enterprise-ai__metrics,.enterprise-ai__services,.enterprise-ai__assessment-steps{grid-template-columns:1fr}.enterprise-ai__diagram{min-height:430px;padding:17px}.enterprise-ai__diagram-core{width:150px;height:150px}.enterprise-ai__diagram-systems span{font-size:9px}.enterprise-ai__copy h1{font-size:clamp(36px,10vw,49px)}}
