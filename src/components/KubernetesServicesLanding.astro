@@ -4,36 +4,45 @@ const {lang}=Astro.props;
 const de=lang==='de';
 const legacyPath='/'+lang+'/kubernauts-kubernetes-services/index.html';
 const d=de ? {
- kicker:'ENTERPRISE KUBERNETES OPERATIONS',
- title:'Kubernetes betreiben.',
- highlight:'Plattformen weiterentwickeln.',
- subtitle:'Platform Engineering, Managed Kubernetes und zuverlässige Operations für geschäftskritische Systeme — von On-Premises über Hybrid Cloud bis Edge.',
+ kicker:'KUBERNETES BERATUNG · CONSULTING · OPERATIONS',
+ title:'Kubernetes Beratung.',
+ highlight:'Von Architektur bis Betrieb.',
+ subtitle:'Kubernetes Consulting für Unternehmen: Wir planen, implementieren und betreiben sichere Kubernetes-Plattformen — On-Premises, in der Cloud und am Industrial Edge.',
  consult:'30-Minuten-Projektgespräch vereinbaren',
  services:'Unsere Leistungen ansehen',
- badge:'ARCHITEKTUR · BETRIEB · SICHERHEIT',
+ badge:'BERATUNG · ENGINEERING · OPERATIONS',
  benefits:['Stabiler Kubernetes-Betrieb','Verlässliche Betriebsprozesse','Security & Governance','Automatisierter Lifecycle'],
- introTitle:'Mehr als ein Cluster.',
- introAccent:'Eine Plattform, die funktioniert.',
- intro:'Mit der Inbetriebnahme eines Kubernetes-Clusters beginnt die eigentliche Verantwortung: Zuverlässigkeit, Observability, Security und Governance müssen dauerhaft zusammenspielen. Wir helfen, diese Anforderungen in reproduzierbare Betriebsmodelle und moderne Plattformarchitektur zu übersetzen.',
- focusLabel:'KUBERNETES ARCHITECTURE ASSESSMENT',
- focusTitle:'Klarheit vor der nächsten Plattformentscheidung.',
+ introTitle:'Kubernetes einführen.',
+ introAccent:'Und zuverlässig betreiben.',
+ intro:'Ob erster produktiver Cluster, Modernisierung einer bestehenden Kubernetes-Landschaft oder komplexe Multi-Cluster-Umgebung: Unsere Kubernetes-Beratung verbindet Infrastrukturarchitektur, Networking, Security, GitOps und Betrieb. Wir planen nachvollziehbar, setzen mit Ihren Teams um und berücksichtigen von Beginn an Lifecycle, Governance und Wiederherstellbarkeit.',
+ focusLabel:'KUBERNETES BERATUNG · ARCHITEKTUR-ASSESSMENT',
+ focusTitle:'Eine belastbare Entscheidungsgrundlage statt Tool-Hype.',
  focusDescription:'Unsere Engineers bewerten bestehende Infrastrukturen und Arbeitsabläufe, priorisieren technische Risiken und entwickeln nachvollziehbare Schritte für die Modernisierung oder den Aufbau Ihrer Plattform.',
  deliverables:['Architektur- und Infrastrukturreview','Security & Governance Assessment','GitOps und Automatisierungsanalyse','Priorisierte technische Roadmap'],
- serviceTitle:'Enterprise Kubernetes Services',
- serviceIntro:'Von Architektur und Implementierung bis zur Betreuung produktiver Umgebungen.',
+ serviceTitle:'Kubernetes Consulting & Services',
+ serviceIntro:'Von der unabhängigen Architekturberatung über die Implementierung bis zum stabilen Kubernetes-Betrieb.',
  tiles:[
- ['01 / PLATFORM ENGINEERING','Kubernetes Platform Engineering','Cluster- und Multi-Cluster-Architekturen, Self-Service, Mandantenfähigkeit und standardisierte Plattform-Lifecycle-Prozesse.'],
- ['02 / OBSERVABILITY','Monitoring & SRE','Monitoring, Logging, Alerting, Dashboards, Kapazitätsplanung sowie Incident- und Change-Prozesse.'],
- ['03 / SECURITY','Security & Compliance','Hardening, Zero Trust, Security Assessments, Governance und sichere Software-Lieferketten.'],
- ['04 / RESILIENCE','Backup & Disaster Recovery','Backup-Strategien, Wiederherstellungsverfahren, Recovery-Tests und Business-Continuity-Planung.'],
- ['05 / DISTRIBUTED','Hybrid & Edge Operations','Konsistente Operations für On-Premises, Hybrid-Cloud-, Edge- und standortübergreifende Kubernetes-Plattformen.'],
- ['06 / MANAGED OPERATIONS','24×7 Support & Managed Operations','Support, Upgrades, technische Betreuung und Lifecycle-Management für mission-critical Umgebungen nach vereinbartem Leistungsumfang.']
+ ['01 / BERATUNG & ARCHITEKTUR','Kubernetes Beratung & Architektur','Anforderungsanalyse, Plattformauswahl, Cluster- und Multi-Cluster-Architektur, On-Premises, Bare Metal, Hybrid Cloud und Edge.'],
+ ['02 / ENGINEERING','Kubernetes Implementierung','Clusteraufbau, Networking, Ingress, Storage, GitOps, Infrastructure as Code und Integration in bestehende IT-Umgebungen.'],
+ ['03 / SECURITY','Kubernetes Security & Hardening','RBAC, Network Policies, Secrets, Supply-Chain-Sicherheit, Audits, Governance und technische Härtung.'],
+ ['04 / BETRIEB','Managed Kubernetes & SRE','Observability, Alerting, Incident- und Change-Prozesse, Upgrades, Kapazitätsplanung und verlässliche Betriebsabläufe.'],
+ ['05 / MODERNISIERUNG','Migration & Plattformmodernisierung','Migration bestehender Anwendungen und Kubernetes-Umgebungen, Versionswechsel sowie reproduzierbare Plattform-Deployments.'],
+ ['06 / RESILIENZ','Backup, Recovery & Enterprise Support','Wiederherstellungsstrategien, Recovery-Tests und technische Betreuung einschließlich vereinbarter Support- und Bereitschaftsmodelle.']
  ],
- whyTitle:'Warum Kubernauts?',
- why:'Unsere Teams verbinden Cloud-Native-Architektur mit praktischer Erfahrung aus Enterprise- und Industrieumgebungen. Statt einzelner Cluster betrachten wir Kubernetes als dauerhaft zu betreibende Plattform — mit definierten Verantwortlichkeiten und nachvollziehbaren Entscheidungen.',
- finalTitle:'Ihr Kubernetes-Projekt verdient einen klaren Plan.',
+ whyTitle:'Kubernetes-Beratung mit Engineering-Verantwortung.',
+ why:'Kubernauts verbindet Kubernetes-Architektur mit Erfahrung aus der Umsetzung und dem Betrieb anspruchsvoller Enterprise- und Industrieplattformen. Wir beraten nicht nur zu Komponenten: Wir betrachten Netzwerk, Security, Automatisierung, Observability und Verantwortlichkeiten als zusammenhängendes System. Architekturentscheidungen und nächste Schritte machen wir nachvollziehbar.',
+ finalTitle:'Kubernetes-Beratung für Ihr nächstes Projekt.'
  finalIntro:'Sprechen Sie direkt mit unseren Engineers über Architektur, Migration, SRE oder Managed Operations.',
  more:'Kontaktmöglichkeiten',
+ related:'Platform Engineering im Detail',
+ faqTitle:'Häufige Fragen zur Kubernetes-Beratung',
+ faq:[
+  ['Was umfasst eine Kubernetes-Beratung?','Wir unterstützen bei Analyse, Architekturentscheidungen, Plattformauswahl, Clusteraufbau, Security, Automatisierung und Betriebsmodellen. Der konkrete Umfang richtet sich nach Ihrer bestehenden Infrastruktur und den technischen Zielen.'],
+  ['Unterstützt Kubernauts Kubernetes On-Premises und in der Cloud?','Ja. Wir betrachten Kubernetes auf Bare Metal, virtualisierten Umgebungen, in Public und Hybrid Clouds sowie am Edge. Infrastruktur, Sicherheitsanforderungen und Betriebsverantwortung entscheiden über die passende Architektur.'],
+  ['Können bestehende Kubernetes-Cluster modernisiert werden?','Wir analysieren bestehende Cluster und helfen bei Upgrades, Migrationen, GitOps-Einführung, Observability, Security-Hardening und der Standardisierung von Betriebsprozessen.'],
+  ['Bietet Kubernauts auch den laufenden Kubernetes-Betrieb an?','Ja, wir unterstützen Betrieb, Monitoring, Incident- und Change-Prozesse sowie Lifecycle-Management. Reaktionszeiten und Bereitschaft richten sich nach dem individuell vereinbarten Supportmodell.'],
+  ['Wie beginnt ein Beratungsprojekt?','Im ersten Gespräch klären wir Ausgangslage, Anforderungen und Ziele. Ein Architektur-Assessment kann daraus Risiken, konkrete Handlungsempfehlungen und eine priorisierte technische Roadmap ableiten.']
+ ],
  note:'Die Terminbuchung erfolgt über Calendly in einem neuen Tab.',
  breadcrumbs:'Startseite'
 } : {
@@ -67,6 +76,15 @@ const d=de ? {
  finalTitle:'Your Kubernetes project deserves a clear plan.',
  finalIntro:'Discuss architecture, migration, SRE or managed operations directly with our engineers.',
  more:'Contact options',
+ related:'Explore Platform Engineering',
+ faqTitle:'Frequently asked questions about Kubernetes consulting',
+ faq:[
+  ['What does Kubernetes consulting include?','We help assess requirements, select architectures, implement clusters, strengthen security, automate workflows and establish reliable operations. The scope depends on your infrastructure and goals.'],
+  ['Do you work with on-premises and cloud Kubernetes?','Yes. We work across bare metal, virtualized infrastructure, public and hybrid cloud, and edge environments. We choose architectures based on technical and operational requirements.'],
+  ['Can you modernize existing Kubernetes clusters?','We support assessments, upgrades, migrations, GitOps adoption, observability and security hardening for existing Kubernetes environments.'],
+  ['Do you provide ongoing Kubernetes operations?','Yes. We support monitoring, operations, incident and change processes, upgrades and lifecycle management under individually agreed support arrangements.'],
+  ['How does a consulting engagement start?','An introductory engineering conversation establishes objectives and constraints. An architecture assessment can then produce a prioritized technical roadmap.']
+ ],
  note:'Scheduling takes place through Calendly in a new browser tab.',
  breadcrumbs:'Homepage'
 };
@@ -120,7 +138,12 @@ const consultUrl='https://calendly.com/kubernauts/30min';
     </div>
   </section>
   <section class="ads-landing__why"><div class="wrap ads-landing__why-grid">
-    <h2>{d.whyTitle}</h2><p>{d.why}</p>
+    <h2>{d.whyTitle}</h2><div><p>{d.why}</p><a class="ads-landing__related" href={'/'+lang+'/kubernauts-kubernetes-services/platform-engineering/'}>{d.related} ↗</a></div>
+  </div></section>
+  <section class="ads-landing__faq" aria-labelledby="k8s-consulting-faq"><div class="wrap">
+    <p class="eyebrow">KUBERNETES / FAQ</p>
+    <h2 id="k8s-consulting-faq">{d.faqTitle}</h2>
+    <div class="ads-landing__faq-list">{d.faq.map(([question,answer])=><details><summary>{question}</summary><p>{answer}</p></details>)}</div>
   </div></section>
   <section class="ads-landing__closing"><div class="wrap">
     <p class="eyebrow">LET'S TALK ENGINEERING</p>
