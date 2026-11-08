@@ -455,3 +455,43 @@ section[id]{scroll-margin-top:100px}
 .mobile-services__links a{font-size:12px!important;padding:10px!important;color:#355369}
 .mobile-menu-panel .mobile-services__links a:hover{background:#ecf7f7}
 @media(max-width:1020px){.main-navigation{display:none}.mobile-menu-panel{min-width:min(330px,calc(100vw - 35px));max-height:calc(100dvh - 125px);overflow-y:auto}}
+
+/* Platform Engineering landing — reusable service detail identity */
+.platform-service{background:#f5f9fb;color:#142a3e}
+.platform-service__hero{background:radial-gradient(ellipse at 75% 32%,#174153,#081827 75%);color:white;padding:82px 0}
+.platform-service__hero-grid{display:grid;grid-template-columns:minmax(0,1.17fr) minmax(300px,.83fr);align-items:center;gap:62px}
+.platform-service h1{font-size:clamp(44px,5vw,73px);letter-spacing:-.06em;line-height:1.08;margin:19px 0 25px}
+.platform-service h1 em{font-style:normal;background:linear-gradient(90deg,#58e1d8,#6cbff0,#b5a3ee);background-clip:text;color:transparent}
+.platform-service__lead{font-size:17px;line-height:1.75;color:#c2d6df;max-width:690px}
+.platform-service__actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.platform-service__primary,.platform-service__secondary{display:inline-flex;gap:12px;align-items:center;padding:15px 19px;font-weight:800;font-size:13px;border-radius:5px}
+.platform-service__primary{background:#67e3d9;color:#092731}.platform-service__primary:hover{background:#9cf8ef}
+.platform-service__secondary{border:1px solid #587587;color:#eefbff}.platform-service__secondary:hover{border-color:#64d9d4}
+.platform-service__proof{background:#0e3044;border:1px solid #35647a;border-radius:11px;padding:26px;box-shadow:0 22px 48px #00162745}
+.platform-service__proof-top{display:flex;align-items:center;justify-content:space-between;gap:15px;color:#77e9dc;font-size:10px;font-weight:850;letter-spacing:.14em}
+.platform-service__proof ul{list-style:none;margin:18px 0 17px;padding:0}
+.platform-service__proof li{display:flex;gap:15px;align-items:center;padding:15px 0;border-bottom:1px solid #335367;font-size:13px;color:#e2f1f5}
+.platform-service__proof li span{font-size:11px;font-weight:850;color:#58d8d2}
+.platform-service__proof>span{font-size:9px;font-weight:850;letter-spacing:.16em;color:#81a6b8}
+.platform-service__intro{padding:86px 0}
+.platform-service__intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.platform-service h2{font-size:clamp(34px,3.7vw,52px);letter-spacing:-.05em;line-height:1.13;margin:18px 0}
+.platform-service__intro-grid>p,.platform-service__open p{color:#5a7282;font-size:15px;line-height:1.85}
+.platform-service__skills{padding:82px 0 94px;background:#edf4f7}
+.platform-service__skills-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px;margin-top:32px}
+.platform-service__skills-grid article{border:1px solid #d7e5ed;border-top:3px solid #20b4af;border-radius:8px;background:white;padding:29px 31px;min-height:205px}
+.platform-service__skills-grid article:nth-child(4n+1){border-top-color:#198cde}.platform-service__skills-grid article:nth-child(4n+3){border-top-color:#6cc46f}.platform-service__skills-grid article:nth-child(4n){border-top-color:#ee934d}
+.platform-service__skills-grid article>span{font-size:10px;letter-spacing:.13em;font-weight:850;color:#6c8493}
+.platform-service__skills-grid h3{font-size:23px;letter-spacing:-.04em;margin:21px 0 12px}
+.platform-service__skills-grid p{font-size:13.5px;line-height:1.8;color:#5a7180;margin:0}
+.platform-service__open{padding:90px 0;background:#f7fafc}
+.platform-service__open-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:72px;align-items:center}
+.platform-service__open a{display:inline-block;color:#087f85;font-size:14px;font-weight:850;border-bottom:1px solid #51aaa8;padding-bottom:6px;margin-top:18px}
+.platform-service__layers{display:grid;gap:8px;padding:27px;background:radial-gradient(ellipse at center,#113b55,#081827);border-radius:11px}
+.platform-service__layers span{display:grid;place-items:center;min-height:77px;border:1px solid #50dbd480;color:#fff;background:linear-gradient(120deg,#087ab1,#14bba6);font-size:15px;font-weight:850;letter-spacing:.05em;transform:skewY(-6deg);border-radius:8px}
+.platform-service__layers span:nth-child(2){background:linear-gradient(90deg,#0c9faa,#0c7e8e)}.platform-service__layers span:nth-child(3){background:linear-gradient(90deg,#145db9,#0a407f)}
+.platform-service__closing{background:#081b2d;color:#fff;padding:84px 0}
+.platform-service__closing h2{max-width:680px}
+.platform-service__closing p:not(.eyebrow){font-size:15px;line-height:1.8;color:#b6cad7;max-width:690px}
+@media(max-width:920px){.platform-service__hero-grid,.platform-service__intro-grid,.platform-service__open-grid{grid-template-columns:1fr;gap:32px}}
+@media(max-width:590px){.platform-service__hero{padding:55px 0}.platform-service__intro,.platform-service__skills,.platform-service__open,.platform-service__closing{padding:60px 0}.platform-service__skills-grid{grid-template-columns:1fr}.platform-service__skills-grid article{min-height:0;padding:24px}}
