@@ -827,3 +827,18 @@ section[id]{scroll-margin-top:100px}
 .ads-landing__faq-list details p{margin:0;padding:0 24px 24px;max-width:810px;color:#526b7b;font-size:15px;line-height:1.8}
 .ads-landing__faq-list summary:focus-visible{outline:2px solid #1eb3bc;outline-offset:-3px}
 @media(max-width:600px){.ads-landing__faq{padding:58px 0 65px}.ads-landing__faq-list summary{font-size:15px;padding:18px 50px 18px 18px}.ads-landing__faq-list details p{padding:0 18px 20px}}
+
+/* Kubernetes consulting hero: avoid gradient glyph clipping at the final "s" in "bis". */
+.ads-landing__hero h1{letter-spacing:-.045em;overflow:visible}
+.ads-landing__hero h1 em{
+  display:inline-block;
+  padding-right:.105em;
+  margin-right:-.02em;
+  line-height:1.12;
+  overflow:visible;
+  -webkit-background-clip:text;
+  background-clip:text;
+}
+@media(max-width:950px){
+  .ads-landing__hero h1 em{display:inline;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+}
