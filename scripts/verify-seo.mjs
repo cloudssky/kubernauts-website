@@ -49,6 +49,13 @@ for(const [de,en] of pairs){
 for(const legacy of ['de/products/', 'en/products/', 'de/openkubes/inhouse-ai/', 'en/openkubes/inhouse-ai/']){
   assert.ok(read(legacy+'index.html').includes('content="noindex,follow"'), `Legacy route indexable: ${legacy}`);
 }
+const consultingDE=read('de/kubernauts-kubernetes-services/index.html');
+const consultingEN=read('en/kubernauts-kubernetes-services/index.html');
+assert.ok(consultingDE.includes('Kubernetes Beratung &amp; Consulting') || consultingDE.includes('Kubernetes Beratung & Consulting'), 'German consulting SEO title missing');
+assert.ok(consultingDE.includes('Häufige Fragen zur Kubernetes-Beratung'), 'German consulting FAQ missing');
+assert.ok(consultingDE.includes('Kubernetes Beratung.'), 'German consulting H1 missing');
+assert.ok(consultingDE.includes('/de/kubernauts-kubernetes-services/platform-engineering/'), 'Internal Platform Engineering link missing');
+assert.ok(consultingEN.includes('Frequently asked questions about Kubernetes consulting'), 'English consulting FAQ missing');
 const review=read('brand-compare/index.html');
 assert.ok(review.includes('content="noindex,follow"'),'Brand comparison exposed to indexing');
 const robots=read('robots.txt');
