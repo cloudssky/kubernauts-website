@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import SiteNavigation from '../../../components/SiteNavigation.astro';
 import CorporateFooter from '../../../components/CorporateFooter.astro';
 import AnnouncementBar from '../../../components/AnnouncementBar.astro';
 const t={"heading":"Sprechen Sie mit unseren Kubernetes-Experten.","sub":"Ob Architektur, Platform Engineering, Kubernetes-Betrieb oder AI-Infrastruktur: Wir helfen Ihnen, den nächsten Schritt zu planen.","details":"DIREKTER KONTAKT","address":"UNSER STANDORT","meeting":"Kubernetes-Projekt besprechen","meetingText":"Vereinbaren Sie ein unverbindliches 30-minütiges Erstgespräch mit unseren Kubernetes- und Platform-Engineering-Experten.","features":["30 Minuten","Online via Zoom","Unverbindlich"],"cta":"Projektgespräch vereinbaren","calendly":"Die Terminbuchung erfolgt über Calendly in einem neuen Browser-Tab.","community":"KUBERNAUTS COMMUNITY","communityHead":"Kubernauts Worldwide Meetup","communityText":"Open-Source-Wissen teilen, spannende Projekte diskutieren und gemeinsam die Cloud-Native-Community stärken.","communityLink":"Zur Community","email":"Alternativ können Sie uns direkt eine E-Mail schreiben.","back":"Startseite","nav":["Leistungen","Branchen","Plattformen","Vorgehen"],"contact":"Kontakt","note":"Persönlich. Technisch fundiert. Unverbindlich."};
@@ -14,16 +15,7 @@ const navIds=["services","industries","platforms","approach"];
         <img src="/brand/kubernauts-hexagon-light.svg" alt="" width="44" height="44"/>
         <span class="brand-type"><span class="brand-kuber">KUBER</span><span class="brand-nauts"><span>N</span><span>A</span><span>U</span><span>T</span><span>S</span></span></span>
       </a>
-      <nav class="navigation" aria-label="Hauptnavigation">
-        {t.nav.map((name,i)=><a href={`/${lang}/#${navIds[i]}`}>{name}</a>)}
-      </nav>
-      <details class="mobile-menu">
-        <summary aria-label="Menü öffnen"><span class="hamburger" aria-hidden="true">☰</span><span>Menü</span></summary>
-        <nav class="mobile-menu-panel" aria-label="Mobile Navigation">
-          {t.nav.map((name,i)=><a href={`/${lang}/#${navIds[i]}`}>{name}</a>)}
-          <a href="/de/contact/">{t.contact} ↗</a>
-        </nav>
-      </details>
+      <SiteNavigation lang="de" />
       <div class="header-right"><a class="lang" lang="en" href="/en/contact/">EN</a><a class="btn outline" href="/de/contact/" aria-current="page">{t.contact} ↗</a></div>
     </div>
   </header>
