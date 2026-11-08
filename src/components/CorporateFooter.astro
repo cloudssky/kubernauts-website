@@ -1,0 +1,42 @@
+---
+interface Props { lang:'de'|'en'; }
+const {lang}=Astro.props;
+const de=lang==='de';
+const groups=[
+  {name:de?'Leistungen':'Services',links:[{label:'Platform Engineering',href:'#services'},{label:'Kubernetes Operations',href:'#services'},{label:'AI & MLOps',href:'#services'},{label:de?'Branchen':'Industries',href:'#industries'}]},
+  {name:de?'Plattformen':'Platforms',links:[{label:'OpenKubes',href:'https://openkubes.org'},{label:'Kubernautic',href:'https://kubernautic.com'},{label:de?'Unser Vorgehen':'Our Approach',href:'#approach'}]},
+];
+const legal=de?'/de/impressum/':'/en/imprint/';
+const privacy='https://kubernauts.de/de/datenschutz.html';
+---
+<footer class="corporate-footer">
+  <div class="wrap corporate-footer__grid">
+    <div class="corporate-footer__identity">
+      <a class="brand-logo footer-brand" href={`/${lang}/`} aria-label="Kubernauts Startseite">
+        <img src="/brand/kubernauts-hexagon.svg" width="48" height="48" alt="" />
+        <span class="brand-type"><span class="brand-kuber">KUBER</span><span class="brand-nauts"><span>N</span><span>A</span><span>U</span><span>T</span><span>S</span></span></span>
+      </a>
+      <p>{de?'Enterprise Kubernetes, Platform Engineering und souveräne KI-Infrastruktur.':'Enterprise Kubernetes, platform engineering and sovereign AI infrastructure.'}</p>
+      <span class="corporate-footer__office">Kubernauts GmbH · Köln, Deutschland</span>
+    </div>
+    {groups.map(group=><nav class="corporate-footer__column" aria-label={group.name}>
+      <h3>{group.name}</h3>
+      {group.links.map(link=><a href={link.href} target={link.href.startsWith('https')?'_blank':undefined} rel={link.href.startsWith('https')?'noopener noreferrer':undefined}>{link.label}</a>)}
+    </nav>)}
+    <div class="corporate-footer__column">
+      <h3>{de?'Kontakt':'Contact'}</h3>
+      <a href="mailto:contact@kubernauts.de">contact@kubernauts.de</a>
+      <a href="tel:+4922137990680">+49 221 379 90 680</a>
+      <span>Im Mediapark 4C<br/>50670 Köln</span>
+    </div>
+  </div>
+  <div class="wrap corporate-footer__bottom">
+    <span>© {new Date().getFullYear()} Kubernauts GmbH</span>
+    <nav aria-label={de?'Rechtliches':'Legal'}>
+      <a href={legal}>{de?'Impressum':'Legal notice'}</a>
+      <a href={privacy} target="_blank" rel="noopener noreferrer">{de?'Datenschutz':'Privacy policy'} ↗</a>
+      <a href={de?'/en/':'/de/'} lang={de?'en':'de'}>{de?'English':'Deutsch'}</a>
+    </nav>
+    <span class="corporate-footer__signature">ENGINEER · OPERATE · INNOVATE</span>
+  </div>
+</footer>
