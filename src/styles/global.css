@@ -155,3 +155,31 @@ footer .brand-logo .brand-kuber{color:#f0f9ff}
 .industry-tile__focus span{display:block;font-size:9px;font-weight:800;letter-spacing:.13em;color:var(--industry-accent);margin-bottom:3px}
 @media(max-width:980px){.industries-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.industries-intro{grid-template-columns:1fr;gap:8px}.industries-intro .muted{margin:0;max-width:650px}}
 @media(max-width:620px){.industries-grid{grid-template-columns:1fr}.industry-tile{min-height:235px}.industries-intro{margin-bottom:32px}}
+
+/* Sticky navigation; announcement remains in normal flow and scrolls away. */
+.site-header{position:sticky;top:0;z-index:90;background:#f7fafc;box-shadow:0 1px 0 rgba(12,33,50,.12)}
+.site-header .header{background:transparent}
+section[id]{scroll-margin-top:100px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+/* KubeCon announcement (time-bound campaign). */
+.event-announcement{background:linear-gradient(95deg,#103b52,#0c2d44 58%,#102e48);border-bottom:1px solid #21556b;color:#e7f9fb}
+.event-announcement__inner{display:flex;align-items:center;justify-content:center;gap:14px;min-height:40px;padding-top:7px;padding-bottom:7px}
+.event-announcement__marker{color:#6de9d9;font-size:18px;line-height:1}
+.event-announcement p{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin:0;font-size:12px;line-height:1.45;letter-spacing:.015em}
+.event-announcement strong{color:#79e9e1;font-weight:800}
+.event-announcement__details{color:#dce9f3}
+.event-announcement__invite{color:#fff;font-weight:600}
+.event-announcement__cta{white-space:nowrap;color:#09212b;background:#76e7db;border-radius:4px;padding:6px 11px;font-size:11px;font-weight:800;transition:background .2s}
+.event-announcement__cta:hover{background:#a3f8f1}
+.event-announcement__cta:focus-visible{outline:2px solid #fff}
+@media(max-width:860px){
+ .event-announcement__inner{gap:9px;justify-content:space-between}
+ .event-announcement p{gap:3px 9px;justify-content:flex-start;font-size:11px}
+ .event-announcement__marker{display:none}
+ .event-announcement__invite{width:100%}
+}
+@media(max-width:480px){
+ .event-announcement__details{display:none}
+ .event-announcement__cta{font-size:10px;padding:7px}
+ section[id]{scroll-margin-top:84px}
+}
