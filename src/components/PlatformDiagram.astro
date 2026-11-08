@@ -46,9 +46,9 @@ const data = {
        the left/down and right/up isometric edges instead of crossing the vertex. -->
   <g font-family="Inter,Arial,sans-serif" font-weight="800"
      fill="#FFFFFF" stroke="#154347" stroke-width="1.4" paint-order="stroke fill">
-    <text transform="translate(255 244) rotate(22.5)" x="0" y="0"
+    <text class="platform-face-label" x="0" y="0"
           font-size="15.5" letter-spacing=".5">PLATFORM</text>
-    <text transform="translate(425 273) rotate(-22.5)" x="0" y="0"
+    <text class="engineering-face-label" x="0" y="0"
           font-size="13.2" letter-spacing=".2">ENGINEERING</text>
   </g>
   <g text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="800"
@@ -62,20 +62,20 @@ const data = {
   <!-- Wires and terminals -->
   <g fill="none" stroke-width="2.5" stroke-linecap="round">
     <path d="M300 226 L221 163 L143 163" stroke="#078CF2"/>
-    <path d="M468 221 L547 163 L630 163" stroke="#61CE4D"/>
+    <path d="M468 221 L547 163 L623 163" stroke="#61CE4D"/>
     <path d="M286 314 L218 345 L141 345" stroke="#F2B82D"/>
-    <path d="M477 313 L545 345 L631 345" stroke="#FF781B"/>
+    <path d="M477 313 L545 345 L624 345" stroke="#FF781B"/>
   </g>
   <g><circle cx="221" cy="163" r="5" fill="#078CF2"/><circle cx="547" cy="163" r="5" fill="#61CE4D"/><circle cx="218" cy="345" r="5" fill="#F2B82D"/><circle cx="545" cy="345" r="5" fill="#FF781B"/></g>
   <!-- Service nodes -->
   <g font-family="Inter,Arial,sans-serif">
     <rect x="8" y="113" width="197" height="100" rx="11" fill="#0C2439" stroke="#1488E3" stroke-width="1.8"/>
-    <rect x="557" y="113" width="195" height="100" rx="11" fill="#0C2439" stroke="#49C96A" stroke-width="1.8"/>
+    <rect x="550" y="113" width="195" height="100" rx="11" fill="#0C2439" stroke="#49C96A" stroke-width="1.8"/>
     <rect x="8" y="305" width="197" height="100" rx="11" fill="#0C2439" stroke="#E5AD2F" stroke-width="1.8"/>
-    <rect x="557" y="305" width="195" height="100" rx="11" fill="#0C2439" stroke="#F27B32" stroke-width="1.8"/>
-    <g font-weight="800" font-size="15" fill="#F4FBFF"><text x="25" y="146">{data.platform}</text><text x="574" y="146">{data.gitops}</text><text x="25" y="338">{data.ops}</text><text x="574" y="338">{data.ai}</text></g>
-    <g font-size="11.5" fill="#AAC7D7"><text x="25" y="170">{data.platformSub}</text><text x="574" y="170">{data.gitopsSub}</text><text x="25" y="362">{data.opsSub}</text><text x="574" y="362">{data.aiSub}</text></g>
-    <g fill="none" stroke-width="2.5" stroke-linejoin="round"><path d="M25 185 l14 -7 14 7 -14 7Z M25 195 l14 7 14 -7" stroke="#078CF2"/><path d="M575 192 L590 174 L606 190 M590 174 V193" stroke="#61CE4D"/><circle cx="40" cy="384" r="10" stroke="#F2B82D"/><path d="M34 384 h12" stroke="#F2B82D"/><rect x="577" y="376" width="20" height="18" rx="3" stroke="#FF781B"/></g>
+    <rect x="550" y="305" width="195" height="100" rx="11" fill="#0C2439" stroke="#F27B32" stroke-width="1.8"/>
+    <g font-weight="800" font-size="15" fill="#F4FBFF"><text x="25" y="146">{data.platform}</text><text x="567" y="146">{data.gitops}</text><text x="25" y="338">{data.ops}</text><text x="567" y="338">{data.ai}</text></g>
+    <g font-size="11.5" fill="#AAC7D7"><text x="25" y="170">{data.platformSub}</text><text x="567" y="170">{data.gitopsSub}</text><text x="25" y="362">{data.opsSub}</text><text x="567" y="362">{data.aiSub}</text></g>
+    <g fill="none" stroke-width="2.5" stroke-linejoin="round"><path d="M25 185 l14 -7 14 7 -14 7Z M25 195 l14 7 14 -7" stroke="#078CF2"/><path d="M568 192 L583 174 L599 190 M583 174 V193" stroke="#61CE4D"/><circle cx="40" cy="384" r="10" stroke="#F2B82D"/><path d="M34 384 h12" stroke="#F2B82D"/><rect x="570" y="376" width="20" height="18" rx="3" stroke="#FF781B"/></g>
   </g>
   <g text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="12.5" font-weight="700" fill="#CAE5EE">
     <text x="119" y="555">ON-PREM</text><text x="245" y="567">PRIVATE CLOUD</text><text x="386" y="579">PUBLIC CLOUD</text><text x="532" y="565">EDGE</text><text x="650" y="554">GPU / AI</text>
