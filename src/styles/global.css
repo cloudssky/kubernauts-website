@@ -251,3 +251,8 @@ section[id]{scroll-margin-top:100px}
 @media(max-width:1120px){.approach-timeline{grid-template-columns:repeat(3,minmax(0,1fr))}.approach-stage{min-height:310px}}
 @media(max-width:770px){.approach-intro{grid-template-columns:1fr;gap:17px}.approach-timeline{grid-template-columns:repeat(2,minmax(0,1fr))}.approach-stage{min-height:290px}.approach-closing{flex-direction:column;align-items:flex-start}}
 @media(max-width:490px){.approach-timeline{grid-template-columns:1fr}.approach-stage{min-height:0}.approach-stage__head{margin-bottom:20px}.approach-closing a{white-space:normal}}
+
+/* Keep the long German fifth-stage heading on one line at desktop widths. */
+@media(min-width:1121px){
+  .approach-stage:nth-child(5) h3{font-size:clamp(18px,1.55vw,21px);letter-spacing:-.045em;white-space:nowrap}
+}
