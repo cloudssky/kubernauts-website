@@ -636,3 +636,24 @@ section[id]{scroll-margin-top:100px}
 .service-panel__bottom .service-panel__link+.service-panel__link{margin-top:12px}
 @media(max-width:920px){.transformation-service__process-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:590px){.transformation-service__process{padding:60px 0}.transformation-service__process-grid{grid-template-columns:1fr}.transformation-service__process-grid article{min-height:0}}
+
+/* Industrial Edge — sovereign distributed infrastructure motif */
+.product-detail--industrial-edge .product-detail__hero{background:radial-gradient(ellipse at 76% 40%,#144654,#071827 74%)}
+.product-detail--industrial-edge h1 em{background:linear-gradient(90deg,#62e1d6,#65bfe8,#89c878);background-clip:text;color:transparent}
+.product-detail--industrial-edge .product-detail__visual{background:linear-gradient(145deg,#113b4b,#0a2536)}
+.industrial-edge__network{display:flex;flex-direction:column;align-items:center;gap:27px;margin:30px 0 24px;position:relative}
+.industrial-edge__hub{display:grid;place-items:center;text-align:center;border:1px solid #7ce8dd;border-radius:9px;padding:22px 34px;color:#dffffd;background:linear-gradient(145deg,#13616a,#0b3a4b);font-size:20px;font-weight:850;letter-spacing:.07em;box-shadow:0 0 32px #37d6c530;position:relative}
+.industrial-edge__hub span{display:block;color:#9fd6db;font-size:9px;letter-spacing:.13em;margin-top:8px}
+.industrial-edge__hub:after{content:'';height:26px;width:1px;position:absolute;top:100%;background:#6dddd0}
+.industrial-edge__site-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;width:100%}
+.industrial-edge__site-grid div{min-width:0;text-align:center;border:1px solid #39768a;border-top:2px solid #60dcd0;background:#0c3447;border-radius:7px;padding:17px 5px;font-weight:850;letter-spacing:.04em;font-size:10px;color:#dff8f7}
+.industrial-edge__site-grid span{display:block;margin-top:6px;font-size:9px;color:#84c5ce}
+.industrial-edge__usecases{background:#f7fafc;padding:85px 0}
+.industrial-edge__usecases h2{margin-bottom:31px}
+.industrial-edge__usecase-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.industrial-edge__usecase-grid>div{display:flex;align-items:center;gap:18px;min-height:90px;border:1px solid #d8e6ed;border-radius:7px;padding:20px;background:white}
+.industrial-edge__usecase-grid span{font-weight:850;font-size:12px;color:#15a6a4}
+.industrial-edge__usecase-grid strong{font-size:14px;line-height:1.4;color:#244254}
+.industrial-edge__usecases a{display:inline-block;margin-top:27px;color:#0b8791;border-bottom:1px solid #6db3b8;padding-bottom:6px;font-weight:800;font-size:13px}
+@media(max-width:870px){.industrial-edge__usecase-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:590px){.industrial-edge__usecases{padding:60px 0}.industrial-edge__usecase-grid{grid-template-columns:1fr}.industrial-edge__hub{width:100%;padding:20px 12px}}
