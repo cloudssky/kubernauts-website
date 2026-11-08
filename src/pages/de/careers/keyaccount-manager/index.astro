@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import FamilyWordmark from '../../../components/FamilyWordmark.astro';
+import AnnouncementBar from '../../../components/AnnouncementBar.astro';
+import SiteNavigation from '../../../components/SiteNavigation.astro';
+import CorporateFooter from '../../../components/CorporateFooter.astro';
+import CareersContent from '../../../components/CareersContent.astro';
+const lang='de';
+---
+<BaseLayout lang="de" title="Key Account Manager (f/m/d) | Karriere | Kubernauts" description="Karriere bei Kubernauts: Open Source, Kubernetes, Cloud Native und Enterprise Engineering." canonicalPath="/de/careers/keyaccount-manager/">
+<AnnouncementBar lang="de"/>
+<header class="site-header"><div class="header wrap"><a class="logo brand-logo" href="/de/" aria-label="Kubernauts"><img src="/brand/kubernauts-hexagon-light.svg" alt="" width="44" height="44"/><span class="brand-type"><FamilyWordmark name="kubernauts" theme="dark"/></span></a><SiteNavigation lang="de"/><div class="header-right"><a class="lang" href="/en/">EN</a><a class="btn outline" href="/de/contact/">Kontakt ↗</a></div></div></header>
+<CareersContent lang="de" role="kam"/>
+<CorporateFooter lang="de"/>
+</BaseLayout>
