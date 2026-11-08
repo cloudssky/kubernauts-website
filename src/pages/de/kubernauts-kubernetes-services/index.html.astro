@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import AnnouncementBar from '../../../components/AnnouncementBar.astro';
+import CorporateFooter from '../../../components/CorporateFooter.astro';
+import KubernetesServicesLanding from '../../../components/KubernetesServicesLanding.astro';
+const lang='de';
+const nav=[["Leistungen","services"],["Branchen","industries"],["Plattformen","platforms"],["Vorgehen","approach"]];
+const contact='Kontakt';
+const other='EN';
+---
+<BaseLayout lang={lang}
+ title="Enterprise Kubernetes Operations & Platform Engineering | Kubernauts"
+ description="Enterprise Kubernetes Operations, Kubernetes Beratung, Platform Engineering, GitOps, Security und Managed Kubernetes von Kubernauts."
+ canonicalPath="/de/kubernauts-kubernetes-services/index.html">
+ <AnnouncementBar lang={lang}/>
+ <header class="site-header"><div class="header wrap">
+  <a class="logo brand-logo" href="/de/" aria-label="Kubernauts"><img src="/brand/kubernauts-hexagon-light.svg" alt="" width="44" height="44"/><span class="brand-type"><span class="brand-kuber">KUBER</span><span class="brand-nauts"><span>N</span><span>A</span><span>U</span><span>T</span><span>S</span></span></span></a>
+  <nav class="navigation" aria-label="Hauptnavigation">{nav.map(([label,id])=><a href={`/${lang}/#${id}`}>{label}</a>)}</nav>
+  <details class="mobile-menu"><summary aria-label="Menü öffnen"><span class="hamburger" aria-hidden="true">☰</span><span>Menü</span></summary><nav class="mobile-menu-panel" aria-label="Mobile Navigation">{nav.map(([label,id])=><a href={`/${lang}/#${id}`}>{label}</a>)}<a href="/de/contact/">{contact} ↗</a></nav></details>
+  <div class="header-right"><a class="lang" lang="en" href="/en/kubernauts-kubernetes-services/index.html">{other.toUpperCase()}</a><a class="btn outline" href="/de/contact/">{contact} ↗</a></div>
+ </div></header>
+ <KubernetesServicesLanding lang={lang}/>
+ <CorporateFooter lang={lang}/>
+</BaseLayout>
