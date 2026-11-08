@@ -1,0 +1,12 @@
+---
+interface Props {
+  name: 'kubernauts' | 'kubernautic';
+  theme?: 'light' | 'dark';
+}
+const {name,theme='light'} = Astro.props;
+const letters=(name==='kubernauts'?'KUBERNAUTS':'KUBERNAUTIC').split('');
+const label=name==='kubernauts'?'KUBERNAUTS':'KUBERNAUTIC.';
+---
+<span class={`family-wordmark family-wordmark--${theme} family-wordmark--${name}`} role="img" aria-label={label}>
+  <span class="family-wordmark__letters" aria-hidden="true">{letters.map((letter,i)=><span class={`family-wordmark__char family-wordmark__char--${i+1}`}>{letter}</span>)}{name==='kubernautic'&&<span class="family-wordmark__dot">.</span>}</span>
+</span>
