@@ -73,11 +73,11 @@ footer .brand-logo .brand-kuber{color:#f0f9ff}
 /* SVG label positioning: edit these six values in DevTools, then send them back. */
 .platform-diagram{
   --platform-label-x:255px;
-  --platform-label-y:244px;
-  --platform-label-angle:22.5deg;
+  --platform-label-y:247px;
+  --platform-label-angle:18.5deg;
   --engineering-label-x:425px;
   --engineering-label-y:273px;
-  --engineering-label-angle:-22.5deg;
+  --engineering-label-angle:-19.5deg;
 }
 .platform-diagram .platform-face-label{
   transform:translate(var(--platform-label-x),var(--platform-label-y)) rotate(var(--platform-label-angle));
