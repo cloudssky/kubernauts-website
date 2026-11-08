@@ -767,3 +767,30 @@ section[id]{scroll-margin-top:100px}
 @media(max-width:520px){
  .innovation-card__body h3 .family-wordmark--kubernautic{font-size:clamp(23px,6.5vw,32px)}
 }
+
+/* Product wordmarks match the dark Brand System v2 preview, not muted light type. */
+.innovation-brand-lockup{
+  display:flex!important;align-items:center;justify-content:flex-start;gap:13px;
+  min-height:76px;margin:0 0 15px!important;padding:15px 17px;
+  border:1px solid #274c61;border-radius:9px;
+  background:#071421;color:#f5fbff;overflow:hidden;
+}
+.innovation-brand-lockup .openkubes-wordmark,
+.innovation-brand-lockup .family-wordmark{
+  display:inline-flex;font-size:clamp(21px,2.25vw,30px)!important;
+  font-weight:850;letter-spacing:-.035em;white-space:nowrap;
+}
+.innovation-brand-lockup__signet{
+  display:inline-flex;align-items:center;justify-content:center;flex:0 0 37px;
+  width:37px;height:37px;color:#48dad4;
+}
+.innovation-brand-lockup__signet--kubernautic svg{display:block;width:36px;height:36px}
+.innovation-brand-lockup__signet--openkubes{font-size:33px;line-height:1;color:#2fc8e5}
+.innovation-brand-lockup .openkubes-wordmark>span:last-child{color:#fff}
+@media(max-width:520px){
+ .innovation-brand-lockup{gap:9px;padding:12px}
+ .innovation-brand-lockup .family-wordmark,
+ .innovation-brand-lockup .openkubes-wordmark{font-size:clamp(16px,5vw,23px)!important}
+ .innovation-brand-lockup__signet{flex-basis:30px;width:30px;height:30px}
+ .innovation-brand-lockup__signet--kubernautic svg{width:30px;height:30px}
+}
