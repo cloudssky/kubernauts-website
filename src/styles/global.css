@@ -256,3 +256,57 @@ section[id]{scroll-margin-top:100px}
 @media(min-width:1121px){
   .approach-stage:nth-child(5) h3{font-size:clamp(18px,1.55vw,21px);letter-spacing:-.045em;white-space:nowrap}
 }
+
+/* Contact conversion section */
+.contact-stage{background:radial-gradient(ellipse at 25% 40%,#11394d,#071b2e 68%);color:#f5fcff;padding:92px 0}
+.contact-stage__grid{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(320px,.82fr);gap:70px;align-items:center}
+.contact-stage h2{font-size:clamp(40px,4.5vw,64px);line-height:1.08;letter-spacing:-.055em;margin:18px 0 25px}
+.contact-stage h2 em{font-style:normal;color:#5de1da}
+.contact-stage__intro{color:#bcd0dd;font-size:15px;line-height:1.8;max-width:590px}
+.contact-stage__button{display:inline-flex;align-items:center;gap:24px;margin-top:20px;background:#6ce5da;color:#082331;border-radius:5px;padding:16px 20px;font-size:13px;font-weight:850}
+.contact-stage__button:hover{background:#9af8ed}
+.contact-stage__note{color:#87a5b7;font-size:11px;letter-spacing:.05em;margin:24px 0 0}
+.contact-stage__note span{color:#5ce4d6;margin-right:9px}
+.contact-stage__aside{border:1px solid #2c586d;border-radius:10px;background:#0f2c41;padding:32px;box-shadow:0 20px 50px #03101c40}
+.contact-stage__aside-top,.contact-stage__aside-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:9px;font-weight:850;letter-spacing:.13em;color:#6ad9d6}
+.contact-stage__aside-top{padding-bottom:22px;border-bottom:1px solid #335266}
+.contact-stage__aside-bottom{padding-top:23px;border-top:1px solid #335266}
+.contact-stage__info{display:flex;flex-direction:column;gap:7px;margin:24px 0}
+.contact-stage__label{font-size:9px;font-weight:850;letter-spacing:.16em;color:#82a3b6;margin-bottom:7px}
+.contact-stage__info a{font-size:17px;color:#f3fbfd;font-weight:700;overflow-wrap:anywhere}
+.contact-stage__info a:hover{color:#6ee4dc}
+.contact-stage__info address{font-size:14px;line-height:1.7;font-style:normal;color:#e1ebf2}
+
+/* Corporate footer */
+.corporate-footer{background:#071321;color:#c6d8e2;padding-top:70px}
+.corporate-footer__grid{display:grid;grid-template-columns:minmax(0,1.6fr) repeat(3,minmax(0,1fr));gap:42px;padding-bottom:65px}
+.footer-brand .brand-type{font-size:18px;color:#eefbff}
+.corporate-footer__identity>p{font-size:13px;color:#a5bfcd;line-height:1.8;max-width:360px;margin:23px 0}
+.corporate-footer__office{font-size:11px;color:#81a0b2}
+.corporate-footer__column{display:flex;flex-direction:column;align-items:flex-start;gap:13px}
+.corporate-footer__column h3{font-size:12px;letter-spacing:.09em;color:#f0fbff;margin:4px 0 14px}
+.corporate-footer__column a,.corporate-footer__column>span{font-size:12px;line-height:1.6;color:#9eb9c9}
+.corporate-footer__column a:hover,.corporate-footer__bottom a:hover{color:#69e6d9}
+.corporate-footer__bottom{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid #21384b;padding:25px 0 31px;font-size:11px;color:#859dad}
+.corporate-footer__bottom nav{display:flex;flex-wrap:wrap;gap:19px}
+.corporate-footer__signature{letter-spacing:.12em;font-size:10px;color:#51b7b6}
+
+/* Relaunch legal notice preview; noindex until approved. */
+.legal-header{border-bottom:1px solid #d9e5ed;background:#f8fbfc}
+.legal-header .wrap{min-height:80px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.legal-back{color:#1e5f74;font-weight:750;font-size:13px}
+.legal-home{display:flex;align-items:center;gap:12px;font-weight:850;letter-spacing:.1em;color:#153047;font-size:14px}
+.legal-page{background:#f5f9fb;padding:70px 0 90px}
+.legal-page__inner{max-width:840px}
+.legal-page h1{font-size:clamp(42px,6vw,68px);line-height:1.1;letter-spacing:-.05em;margin:18px 0}
+.legal-lead{color:#657e90;font-size:16px;margin:0 0 35px}
+.legal-card{padding:35px;background:white;border:1px solid #dbe6ed;border-radius:10px}
+.legal-card h2{font-size:16px;color:#153047;margin:26px 0 9px}
+.legal-card h2:first-child{margin-top:0}
+.legal-card p,.legal-card address{font-style:normal;font-size:14px;line-height:1.8;color:#466074;margin:0}
+.legal-card a{color:#097a86;text-decoration:underline}
+.legal-pending{color:#a16722!important}
+.legal-draft{font-size:12px;color:#8d6a3e;line-height:1.7;margin:20px 0}
+.legal-privacy{font-size:13px;font-weight:750;color:#157d8b;text-decoration:underline}
+@media(max-width:950px){.contact-stage__grid{grid-template-columns:1fr;gap:40px}.corporate-footer__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:580px){.contact-stage{padding:70px 0}.contact-stage__aside{padding:24px}.corporate-footer__grid{grid-template-columns:1fr;gap:28px}.corporate-footer{padding-top:45px}.legal-header .wrap{min-height:70px}.legal-page{padding:45px 0}.legal-card{padding:23px}.corporate-footer__bottom{align-items:flex-start;flex-direction:column}}
