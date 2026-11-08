@@ -1,0 +1,133 @@
+---
+interface Props {lang:'de'|'en'}
+const {lang}=Astro.props;
+const de=lang==='de';
+const legacyPath='/'+lang+'/kubernauts-kubernetes-services/index.html';
+const d=de ? {
+ kicker:'ENTERPRISE KUBERNETES OPERATIONS',
+ title:'Kubernetes betreiben.',
+ highlight:'Plattformen weiterentwickeln.',
+ subtitle:'Platform Engineering, Managed Kubernetes und zuverlässige Operations für geschäftskritische Systeme — von On-Premises über Hybrid Cloud bis Edge.',
+ consult:'30-Minuten-Projektgespräch vereinbaren',
+ services:'Unsere Leistungen ansehen',
+ badge:'ARCHITEKTUR · BETRIEB · SICHERHEIT',
+ benefits:['Stabiler Kubernetes-Betrieb','Verlässliche Betriebsprozesse','Security & Governance','Automatisierter Lifecycle'],
+ introTitle:'Mehr als ein Cluster.',
+ introAccent:'Eine Plattform, die funktioniert.',
+ intro:'Mit der Inbetriebnahme eines Kubernetes-Clusters beginnt die eigentliche Verantwortung: Zuverlässigkeit, Observability, Security und Governance müssen dauerhaft zusammenspielen. Wir helfen, diese Anforderungen in reproduzierbare Betriebsmodelle und moderne Plattformarchitektur zu übersetzen.',
+ focusLabel:'KUBERNETES ARCHITECTURE ASSESSMENT',
+ focusTitle:'Klarheit vor der nächsten Plattformentscheidung.',
+ focusDescription:'Unsere Engineers bewerten bestehende Infrastrukturen und Arbeitsabläufe, priorisieren technische Risiken und entwickeln nachvollziehbare Schritte für die Modernisierung oder den Aufbau Ihrer Plattform.',
+ deliverables:['Architektur- und Infrastrukturreview','Security & Governance Assessment','GitOps und Automatisierungsanalyse','Priorisierte technische Roadmap'],
+ serviceTitle:'Enterprise Kubernetes Services',
+ serviceIntro:'Von Architektur und Implementierung bis zur Betreuung produktiver Umgebungen.',
+ tiles:[
+ ['01 / PLATFORM ENGINEERING','Kubernetes Platform Engineering','Cluster- und Multi-Cluster-Architekturen, Self-Service, Mandantenfähigkeit und standardisierte Plattform-Lifecycle-Prozesse.'],
+ ['02 / OBSERVABILITY','Monitoring & SRE','Monitoring, Logging, Alerting, Dashboards, Kapazitätsplanung sowie Incident- und Change-Prozesse.'],
+ ['03 / SECURITY','Security & Compliance','Hardening, Zero Trust, Security Assessments, Governance und sichere Software-Lieferketten.'],
+ ['04 / RESILIENCE','Backup & Disaster Recovery','Backup-Strategien, Wiederherstellungsverfahren, Recovery-Tests und Business-Continuity-Planung.'],
+ ['05 / DISTRIBUTED','Hybrid & Edge Operations','Konsistente Operations für On-Premises, Hybrid-Cloud-, Edge- und standortübergreifende Kubernetes-Plattformen.'],
+ ['06 / MANAGED OPERATIONS','24×7 Support & Managed Operations','Support, Upgrades, technische Betreuung und Lifecycle-Management für mission-critical Umgebungen nach vereinbartem Leistungsumfang.']
+ ],
+ whyTitle:'Warum Kubernauts?',
+ why:'Unsere Teams verbinden Cloud-Native-Architektur mit praktischer Erfahrung aus Enterprise- und Industrieumgebungen. Statt einzelner Cluster betrachten wir Kubernetes als dauerhaft zu betreibende Plattform — mit definierten Verantwortlichkeiten und nachvollziehbaren Entscheidungen.',
+ finalTitle:'Ihr Kubernetes-Projekt verdient einen klaren Plan.',
+ finalIntro:'Sprechen Sie direkt mit unseren Engineers über Architektur, Migration, SRE oder Managed Operations.',
+ more:'Kontaktmöglichkeiten',
+ note:'Die Terminbuchung erfolgt über Calendly in einem neuen Tab.',
+ breadcrumbs:'Startseite'
+} : {
+ kicker:'ENTERPRISE KUBERNETES OPERATIONS',
+ title:'Operate Kubernetes.',
+ highlight:'Evolve your platforms.',
+ subtitle:'Platform engineering, managed Kubernetes and reliable operations for mission-critical systems across on-premises, hybrid cloud and edge.',
+ consult:'Book a 30-minute project conversation',
+ services:'Explore our services',
+ badge:'ARCHITECTURE · OPERATIONS · SECURITY',
+ benefits:['Reliable Kubernetes operations','Repeatable operating models','Security & governance','Automated lifecycle'],
+ introTitle:'More than a cluster.',
+ introAccent:'A platform built to last.',
+ intro:'Deploying a Kubernetes cluster is only the beginning. Reliability, observability, security and governance must work together over time. We turn these requirements into repeatable operating models and modern platform architecture.',
+ focusLabel:'KUBERNETES ARCHITECTURE ASSESSMENT',
+ focusTitle:'Clarity before your next platform decision.',
+ focusDescription:'Our engineers assess infrastructure, operational processes and technical risk to develop actionable priorities for platform modernization or new deployment.',
+ deliverables:['Architecture & infrastructure review','Security & governance assessment','GitOps and automation analysis','Prioritized technical roadmap'],
+ serviceTitle:'Enterprise Kubernetes Services',
+ serviceIntro:'From architecture and implementation to production operations.',
+ tiles:[
+ ['01 / PLATFORM ENGINEERING','Kubernetes Platform Engineering','Cluster and multi-cluster architecture, self-service, multi-tenancy and consistent platform lifecycle.'],
+ ['02 / OBSERVABILITY','Monitoring & SRE','Monitoring, logging, alerting, dashboards, capacity planning, incident and change processes.'],
+ ['03 / SECURITY','Security & Compliance','Hardening, zero trust, security assessments, governance and secure supply chains.'],
+ ['04 / RESILIENCE','Backup & Disaster Recovery','Backup strategy, recovery procedures, recovery testing and business continuity planning.'],
+ ['05 / DISTRIBUTED','Hybrid & Edge Operations','Consistent operations across on-premises, hybrid cloud, edge and distributed sites.'],
+ ['06 / MANAGED OPERATIONS','24×7 Support & Managed Operations','Agreed support, upgrades, engineering assistance and lifecycle management for mission-critical environments.']
+ ],
+ whyTitle:'Why Kubernauts?',
+ why:'We combine cloud-native architecture with hands-on experience in enterprise and industrial environments. We treat Kubernetes as an operational platform with clear ownership and verifiable engineering decisions — not a collection of isolated clusters.',
+ finalTitle:'Your Kubernetes project deserves a clear plan.',
+ finalIntro:'Discuss architecture, migration, SRE or managed operations directly with our engineers.',
+ more:'Contact options',
+ note:'Scheduling takes place through Calendly in a new browser tab.',
+ breadcrumbs:'Homepage'
+};
+const consultUrl='https://calendly.com/kubernauts/30min';
+---
+<main class="ads-landing">
+  <section class="ads-landing__hero">
+    <div class="wrap ads-landing__hero-grid">
+      <div>
+        <p class="eyebrow">{d.kicker}</p>
+        <h1>{d.title}<br/><em>{d.highlight}</em></h1>
+        <p class="ads-landing__lead">{d.subtitle}</p>
+        <div class="ads-landing__actions">
+          <a class="ads-landing__primary" href={consultUrl} target="_blank" rel="noopener noreferrer">{d.consult} ↗</a>
+          <a class="ads-landing__secondary" href={'/'+lang+'/#services'}>{d.services} ↗</a>
+        </div>
+        <p class="ads-landing__small">{d.note}</p>
+      </div>
+      <div class="ads-landing__visual" aria-label={d.badge}>
+        <p>{d.badge}</p>
+        <div class="ads-landing__hexagon"><img src="/brand/kubernauts-hexagon.svg" alt="" width="110" height="110"/></div>
+        <ul>{d.benefits.map((item,i)=><li><span>{String(i+1).padStart(2,'0')}</span>{item}</li>)}</ul>
+      </div>
+    </div>
+  </section>
+  <section class="ads-landing__intro-section">
+    <div class="wrap ads-landing__intro">
+      <div><p class="eyebrow">KUBERNAUTS / OPERATIONS</p><h2>{d.introTitle}<br/><em>{d.introAccent}</em></h2></div>
+      <p>{d.intro}</p>
+    </div>
+  </section>
+  <section class="ads-landing__assessment">
+    <div class="wrap ads-landing__assessment-grid">
+      <div>
+        <p class="eyebrow">{d.focusLabel}</p>
+        <h2>{d.focusTitle}</h2>
+        <p>{d.focusDescription}</p>
+        <a class="ads-landing__primary" href={consultUrl} target="_blank" rel="noopener noreferrer">{d.consult} ↗</a>
+      </div>
+      <ol>{d.deliverables.map((item,i)=><li><span>{String(i+1).padStart(2,'0')}</span>{item}</li>)}</ol>
+    </div>
+  </section>
+  <section class="ads-landing__services">
+    <div class="wrap">
+      <p class="eyebrow">ENGINEERING · OPERATIONS · GOVERNANCE</p>
+      <h2>{d.serviceTitle}</h2>
+      <p class="ads-landing__section-lead">{d.serviceIntro}</p>
+      <div class="ads-landing__service-grid">{d.tiles.map(([num,name,desc])=>
+        <article><span>{num}</span><h3>{name}</h3><p>{desc}</p></article>
+      )}</div>
+    </div>
+  </section>
+  <section class="ads-landing__why"><div class="wrap ads-landing__why-grid">
+    <h2>{d.whyTitle}</h2><p>{d.why}</p>
+  </div></section>
+  <section class="ads-landing__closing"><div class="wrap">
+    <p class="eyebrow">LET'S TALK ENGINEERING</p>
+    <h2>{d.finalTitle}</h2><p>{d.finalIntro}</p>
+    <div class="ads-landing__actions">
+      <a class="ads-landing__primary" href={consultUrl} target="_blank" rel="noopener noreferrer">{d.consult} ↗</a>
+      <a class="ads-landing__secondary" href={'/'+lang+'/contact/'}>{d.more} ↗</a>
+    </div>
+  </div></section>
+</main>
