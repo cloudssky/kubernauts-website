@@ -170,3 +170,14 @@ Sprachpaare: `/`, `/kubernauts-kubernetes-services/index.html`, `/kubernauts-kub
 
 ### Audit-Grenzen
 Websuch-Ergebnisse zeigen auffindbare URLs und Inhalt, liefern aber weder vollständige Crawldaten noch Search Console, HTTP-Header, interne Analytics oder Ads-Conversions. Das alte `/sitemap.xml` und `/robots.txt` waren in der verfügbaren Leseumgebung nicht abrufbar. Die Einstufung „Route fehlt“ basiert auf dem vollständigen Repo-Tree; Status `200`/`301` auf der künftigen Live-Domain ist damit **nicht** bestätigt.
+
+## Editorial decisions recorded after audit (2026-11-09)
+
+These decisions supersede migration recommendations above where they differ.
+
+- **24×7 Managed Operations:** **Do not migrate as a separate sales/service page.** Do not promise a blanket 24×7 SLA. Preserve the legacy URL in the redirect/retirement inventory and determine suitable 301 vs 410 based on search/links/contractual reality.
+- **Sovereign Agentic AI Operations:** approved as a fifth **Service**, explicitly not under Products. Added DE/EN pages at `/{lang}/kubernauts-kubernetes-services/sovereign-agentic-ai-operations/` and linked in Services navigation. The original `/de/openkubes/sovereign-agentic-ai-operations/` still needs an explicit redirect decision at launch.
+- **Careers:** publish **only** Key Account Manager and SRE Solution Architect. DE careers hub and full German descriptions added at `/de/careers/`, `/de/careers/keyaccount-manager/`, and `/de/careers/sre-solution-architect/`. The legacy `/de/careers/keyaccount-manager/index.html` maps to the static index file under the same directory; final HTTP verification remains necessary.
+- **Other legacy jobs:** Kubernetes Engineer, Lead DevOps Engineer and other advertisements should not be carried into the new jobs overview. Their historic URLs require a case-by-case 301/410 decision.
+- **Language coverage:** `/en/careers/` lists the positions in English and links to the approved German job descriptions. Full translated English role pages were **not** invented.
+- **Indexing:** No production allowlist expansion until content, legal, language parity and redirect plan are reviewed. The new pages currently build as noindex under existing policy.
