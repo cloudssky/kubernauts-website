@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+<title id="title">OpenKubes cube signet</title>
+<defs>
+<linearGradient id="top" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#16B0FF"/><stop offset="1" stop-color="#0572E6"/></linearGradient>
+<linearGradient id="topSide" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#145BBE"/><stop offset="1" stop-color="#083E9A"/></linearGradient>
+<linearGradient id="green" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#12D347"/><stop offset="1" stop-color="#047A3A"/></linearGradient>
+<linearGradient id="orange" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFAA0E"/><stop offset="1" stop-color="#FF5214"/></linearGradient>
+<linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#137BE7"/><stop offset="1" stop-color="#093A95"/></linearGradient>
+</defs>
+<!-- Four open corner facets, following the uploaded multicolor cube brand. -->
+<path fill="url(#top)" d="M263 35 Q269 31 280 35 L473 137 365 198 262 144 160 196 160 110Z"/>
+<path fill="url(#green)" d="M137 147 63 189Q50 197 50 214V385L126 344V253L171 231V133Z"/>
+<path fill="url(#orange)" d="M449 182 495 161V308L448 284V356L496 377V408Q496 423 483 430L287 539V455L449 366Z" transform="translate(-4 -38)"/>
+<path fill="url(#blue)" d="M50 387 126 349V396L257 464V501Q257 511 247 507L65 410Q50 403 50 387Z"/>
+<!-- Central three-dimensional cube -->
+<path fill="#071B30" d="M165 242 267 181 370 239V361L267 422 165 366Z"/>
+<path fill="url(#topSide)" d="M179 245 267 196 356 245 267 294Z"/>
+<path fill="url(#blue)" d="M179 265 255 309V405L179 363Z"/>
+<path fill="url(#blue)" d="M279 309 356 265V362L279 405Z"/>
+<path fill="#062544" opacity=".95" d="M256 309 267 315 279 309V407L267 414 256 406Z"/>
+</svg>
