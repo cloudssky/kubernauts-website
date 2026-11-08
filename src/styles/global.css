@@ -894,3 +894,9 @@ section[id]{scroll-margin-top:100px}
 .nautic-disclaimer{margin:38px 0 0;font-size:11px!important;color:#8295a1!important}
 @media(max-width:960px){.nautic-hero__grid,.nautic-principle__grid,.nautic-govern__grid,.nautic-bridge__grid{grid-template-columns:1fr;gap:28px}.nautic-capabilities__grid{grid-template-columns:1fr}.nautic-capability{min-height:0}.nautic-orbit{margin-top:20px}}
 @media(max-width:570px){.nautic-hero{padding:65px 0}.nautic-orbit{height:340px;transform:scale(.78);transform-origin:center}.nautic-principle,.nautic-govern,.nautic-bridge,.nautic-capabilities{padding:60px 0}.nautic-orbit__node--one{left:-18px}.nautic-orbit__node--two{right:-18px}}
+
+/* Product overview: reuse exact homepage brand assets instead of OK/K placeholders. */
+.products-featured__visual .products-featured__signet{display:block;object-fit:contain;flex:none}
+.products-featured__signet--openkubes{width:148px;height:148px;filter:drop-shadow(0 13px 18px rgba(0,211,233,.24))}
+.products-featured__signet-ring{width:150px;height:150px;flex:none;display:grid;place-items:center;border:1px solid #26778a;border-radius:50%;background:radial-gradient(circle,#0e3949 0%,#0b2439 65%,transparent 80%);box-shadow:0 0 0 13px #11d4d40c,0 0 38px #12dddd22}
+.products-featured__signet--kubernautic{width:110px;height:110px;border-radius:16px;filter:drop-shadow(0 8px 15px rgba(0,220,226,.16))}
