@@ -1115,3 +1115,21 @@ section[id]{scroll-margin-top:100px}
 .insight-article__layout aside>a{color:#087b89;font-size:13px;font-weight:850}
 @media(max-width:960px){.insights-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.insights-ai__inner,.insight-article__layout{grid-template-columns:1fr}}
 @media(max-width:680px){.insights-hero,.insight-article__hero{padding:65px 0}.insights-library,.insight-article__content{padding:58px 0}.insights-grid,.insights-library__intro{grid-template-columns:1fr}.insights-ai{padding:55px 0}.insights-topics span{font-size:9px}}
+
+/* Industry & use-case launch pages */
+.sector-page{background:#f4f8fb;color:#132d42}
+.sector-hero{padding:88px 0 95px;background:radial-gradient(ellipse at 75% 45%,#164157,#081729 70%);color:#f5fcff}
+.sector-hero .eyebrow{color:#5de4da}
+.sector-hero h1{font-size:clamp(38px,5vw,67px);line-height:1.13;letter-spacing:-.055em;max-width:920px;margin:25px 0}
+.sector-hero .wrap>p:not(.eyebrow){font-size:17px;color:#c1d6e0;line-height:1.8;max-width:750px}
+.sector-cta{display:inline-flex;padding:15px 19px;background:#5fe4d6;color:#082e37;font-size:13px;font-weight:850;border-radius:5px;margin-top:22px}
+.sector-content{padding:80px 0 95px}
+.sector-content .eyebrow{color:#159fa6}
+.sector-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:19px;margin:28px 0 35px}
+.sector-grid article{padding:35px;background:#fff;border:1px solid #d6e6ed;border-top:3px solid #3bc5c0;border-radius:10px}
+.sector-grid article>span{font-size:10px;font-weight:850;letter-spacing:.14em;color:#2e9da4}
+.sector-grid h2{font-size:26px;line-height:1.2;letter-spacing:-.04em;margin:22px 0 16px}
+.sector-grid p{font-size:14px;color:#567285;line-height:1.85}
+.sector-grid a,.sector-back{display:inline-block;margin-top:15px;font-size:13px;font-weight:850;color:#087f8c;border-bottom:1px solid #4bbdb9;padding-bottom:5px}
+.sector-note{color:#718796;font-size:12px;line-height:1.7}
+@media(max-width:690px){.sector-hero,.sector-content{padding:60px 0}.sector-grid{grid-template-columns:1fr}.sector-grid article{padding:25px}}
