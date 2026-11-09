@@ -1,0 +1,36 @@
+---
+interface Props {lang:'de'|'en'}
+const {lang}=Astro.props;
+const de=lang==='de';
+const d=de?{
+kicker:'SOVEREIGN AGENTIC AI OPERATIONS · ENGINEERING SERVICE',
+title:'Agentic AI für',accent:'souveräne Operations.',
+intro:'Wir unterstützen Unternehmen dabei, AI-gestützte Analyse und kontrollierte Automatisierung in ihre Kubernetes- und Plattformbetriebsprozesse zu integrieren – herstellerunabhängig, nachvollziehbar und mit menschlicher Freigabe.',
+cta:'Agentic-AI-Projekt besprechen',more:'Unser Engineering-Ansatz',services:'WAS WIR ENTWICKELN',heading:'Von Betriebsdaten zu',headingAccent:'verantwortbaren Entscheidungen.',
+items:[
+{title:'Observability & Evidence',desc:'Metriken, Logs, Events, Traces und Betriebszustände konsolidieren – als belastbare Grundlage für Analysen.'},
+{title:'Agentic Diagnostics',desc:'KI-gestützte Ursachenanalyse, Kontextkorrelation und evidenzbasierte Handlungsvorschläge für Plattformteams.'},
+{title:'Agent & Operations Catalog',desc:'Wiederverwendbare Agenten- und Operations-Verträge sowie definierte Integrationen in bestehende Workflows.'},
+{title:'Policy & Human Approval',desc:'Richtlinien, Risikoabstufungen, Audit-Trails und menschliche Freigabe vor produktiven Änderungen.'}],
+principle:'Human in Control.',note:'Kubernauts bietet Architektur, Integration und Engineering. Kubernautic ist eine eigenständige Produktinitiative und kann ein Baustein sein – ist aber keine Voraussetzung für unsere Services.',
+method:'UNSER VORGEHEN',methodSteps:['Assess: Use Cases, Datenzugänge und Risiken evaluieren','Architect: Agent-Grenzen, Policies und Evidenzverträge entwerfen','Build: Integrationen und Read-only-Diagnostics implementieren','Govern: Freigaben, Tests und Monitoring für spätere Aktionen definieren'],
+disclaimer:'Automatisierte Remediation wird nicht pauschal versprochen. Umfang und Freigabegrenzen werden projektspezifisch definiert.'
+}:{
+kicker:'SOVEREIGN AGENTIC AI OPERATIONS · ENGINEERING SERVICE',
+title:'Agentic AI for',accent:'sovereign operations.',
+intro:'We help organizations integrate AI-assisted analysis and governed automation into Kubernetes and platform operations — vendor-independent, explainable, and with human approval.',
+cta:'Discuss an agentic AI project',more:'Our engineering approach',services:'WHAT WE ENGINEER',heading:'From operational signals to',headingAccent:'accountable decisions.',
+items:[
+{title:'Observability & Evidence',desc:'Consolidate metrics, logs, events, traces, and operational states as trustworthy analytical evidence.'},
+{title:'Agentic Diagnostics',desc:'AI-assisted root-cause analysis, contextual correlation and evidence-backed recommendations for platform teams.'},
+{title:'Agent & Operations Catalog',desc:'Reusable agent and operations contracts, plus explicitly defined integrations into existing workflows.'},
+{title:'Policy & Human Approval',desc:'Policies, risk tiers, audit trails and human approvals before changes reach production.'}],
+principle:'Human in Control.',note:'Kubernauts provides architecture, integration and engineering. Kubernautic is a separate product initiative that may be used but is not a prerequisite for our services.',
+method:'OUR APPROACH',methodSteps:['Assess: Evaluate use cases, data access and risks','Architect: Design agent boundaries, policies and evidence contracts','Build: Implement integrations and read-only diagnostics','Govern: Define approvals, tests and observability for later actions'],
+disclaimer:'Autonomous remediation is not universally promised. Scope and approvals are defined per project.'
+};
+---
+<main class="agentic-service">
+<section class="agentic-service__hero"><div class="wrap agentic-service__intro"><p class="eyebrow">{d.kicker}</p><h1>{d.title}<br/><em>{d.accent}</em></h1><p>{d.intro}</p><div class="agentic-service__actions"><a href={'/'+lang+'/contact/'} class="agentic-service__primary">{d.cta} ↗</a><a href={'/'+lang+'/#approach'} class="agentic-service__secondary">{d.more} ↗</a></div></div></section>
+<section class="agentic-service__body"><div class="wrap"><p class="eyebrow">{d.services}</p><h2>{d.heading}<br/><em>{d.headingAccent}</em></h2><div class="agentic-service__grid">{d.items.map((item,i)=><article><span>0{i+1} / ENGINEERING</span><h3>{item.title}</h3><p>{item.desc}</p></article>)}</div></div></section>
+<section class="agentic-service__govern"><div class="wrap agentic-service__govern-grid"><div><p class="eyebrow">GOVERNED OPERATIONS</p><h2>{d.principle}</h2><p>{d.note}</p></div><div><p class="eyebrow">{d.method}</p><ol>{d.methodSteps.map(s=><li>{s}</li>)}</ol></div></div><div class="wrap"><p class="agentic-service__disclaimer">{d.disclaimer}</p></div></section></main>

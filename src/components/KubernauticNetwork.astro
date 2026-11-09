@@ -1,0 +1,52 @@
+---
+// Faithful adaptation of the Agentic Core visual from openkubes/kubernautic-website
+// (src/components/Network.astro); scaled for Kubernauts product pages.
+---
+<div class="kubernautic-network-stage" aria-label="Kubernautic Agentic Core — Observe, Reason, Govern, Kubernetes" role="img">
+  <div class="network-scene" aria-hidden="true">
+  <div class="scene-orbit orbit-one"></div><div class="scene-orbit orbit-two"></div><div class="scene-orbit orbit-three"></div>
+  <svg class="network-wires" viewBox="0 0 800 650" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+    <defs><linearGradient id="wire" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#42dce5" stop-opacity=".14"/><stop offset=".5" stop-color="#60e6ef" stop-opacity=".65"/><stop offset="1" stop-color="#a58cff" stop-opacity=".12"/></linearGradient></defs>
+    <path d="M400 310 L170 170 M400 310 L635 150 M400 310 L680 400 M400 310 L250 520 M400 310 L120 380 M400 310 L510 560" stroke="url(#wire)" stroke-width="1.6" stroke-dasharray="5 8" fill="none"/>
+    <path d="M170 170 L635 150 L680 400 L510 560 L250 520 L120 380 Z" fill="none" stroke="#7bbad4" stroke-opacity=".12"/>
+    <circle cx="170" cy="170" r="3" fill="#60e6ef"/><circle cx="635" cy="150" r="3" fill="#60e6ef"/><circle cx="680" cy="400" r="3" fill="#a58cff"/><circle cx="250" cy="520" r="3" fill="#60e6ef"/>
+  </svg>
+  <div class="core-halo"><div class="core-inner"><div class="core-glyph">⌘</div><span>AGENTIC CORE</span></div></div>
+  <div class="scene-node node-observe"><span class="node-icon">◉</span><div><strong>Observe</strong><small>Signals &amp; events</small></div><i class="status-dot"></i></div>
+  <div class="scene-node node-reason"><span class="node-icon violet">✳</span><div><strong>Reason</strong><small>Context &amp; analysis</small></div><i class="status-dot"></i></div>
+  <div class="scene-node node-policy"><span class="node-icon">◇</span><div><strong>Govern</strong><small>Policies &amp; approval</small></div><i class="status-dot"></i></div>
+  <div class="scene-node node-k8s"><span class="node-icon">⬡</span><div><strong>Kubernetes</strong><small>Connected clusters</small></div><i class="status-dot"></i></div>
+  <div class="scene-tag tag-one"><span class="ping"></span> ALL SYSTEMS OBSERVED</div><div class="scene-tag tag-two">HUMAN IN CONTROL <span>✓</span></div>
+  <div class="scene-caption">INTELLIGENT OPERATIONS FABRIC <span> / </span> 001</div>
+</div>
+
+</div>
+<style>
+.kubernautic-network-stage{width:100%;height:440px;position:relative;isolation:isolate;overflow:visible;}
+.network-scene{width:800px;height:650px;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(.67);transform-origin:center;filter:drop-shadow(0 0 30px #1f6b8036);isolation:isolate;color:#eefbff}
+.network-scene::before{content:"";position:absolute;inset:80px 0;background:radial-gradient(circle at 50% 49%,#1f8fa333,transparent 42%),radial-gradient(circle at 50% 50%,#4540a522,transparent 65%);z-index:-1}
+.scene-orbit{border:1px solid #6ecfdd14;border-radius:50%;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
+.orbit-one{height:300px;width:300px}.orbit-two{height:490px;width:490px}.orbit-three{height:580px;width:580px;border-style:dashed}
+.network-wires{position:absolute;inset:0;width:100%;height:100%;animation:network-float 10s ease-in-out infinite}
+.core-halo{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:215px;height:215px;border-radius:50%;background:radial-gradient(circle,#4cdad934,#0a2831 55%,#061822 67%);box-shadow:inset 0 0 0 1px #6de3ed55,0 0 0 16px #4fd8e509,0 0 90px #2fc2d633;display:grid;place-items:center;animation:network-breathe 6s ease-in-out infinite}
+.core-halo::before{content:"";position:absolute;inset:19px;border:1px dashed #70e6eb60;border-radius:50%;animation:network-spin 40s linear infinite}
+.core-inner{text-align:center;display:flex;flex-direction:column;align-items:center;gap:15px;color:#9ff7ed;font:10px ui-monospace,SFMono-Regular,monospace;letter-spacing:1.2px}
+.core-glyph{font-size:76px;line-height:1;color:#a0fff0;text-shadow:0 0 40px #3cf9dd80}
+.scene-node{position:absolute;display:flex;align-items:center;gap:10px;padding:11px 13px;background:#0e1b2bdc;border:1px solid #31566f;border-radius:10px;box-shadow:0 15px 60px #020913aa;z-index:2;min-width:155px}
+.scene-node .node-icon{width:34px;height:34px;display:grid;place-items:center;border-radius:7px;background:#123747;color:#63f5ec;font-size:23px}
+.scene-node .node-icon.violet{background:#2b224b;color:#bd9fff}
+.scene-node strong{font:600 12px Inter,ui-sans-serif,sans-serif;display:block}
+.scene-node small{font:9px ui-monospace,SFMono-Regular,monospace;color:#708da6;display:block}
+.status-dot{width:5px;height:5px;background:#7bf2d3;border-radius:100%;margin-left:auto}
+.node-observe{top:13%;left:5%}.node-reason{top:12%;right:-2%}.node-policy{top:63%;right:-7%}.node-k8s{top:72%;left:4%}
+.scene-tag{position:absolute;font:9px ui-monospace,SFMono-Regular,monospace;color:#8ab1bb;letter-spacing:.5px;border:1px solid #284556;background:#081827e8;padding:10px 12px;border-radius:4px}
+.tag-one{left:6%;top:50%}.tag-two{right:8%;bottom:9%}.tag-two span{color:#72e3c7}
+.ping{width:5px;height:5px;background:#76ebc5;border-radius:50%;display:inline-block;margin-right:6px}
+.scene-caption{position:absolute;bottom:0;left:28%;color:#4a6c7e;font:9px ui-monospace,SFMono-Regular,monospace;letter-spacing:1px}
+.scene-caption span{color:#6a4baa}
+@keyframes network-spin{to{transform:rotate(360deg)}}
+@keyframes network-breathe{0%,100%{box-shadow:inset 0 0 0 1px #6de3ed55,0 0 0 16px #4fd8e509,0 0 90px #2fc2d633}50%{box-shadow:inset 0 0 0 1px #6de3ed88,0 0 0 22px #4fd8e50c,0 0 110px #2fc2d655}}
+@keyframes network-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@media(max-width:570px){.kubernautic-network-stage{height:310px}.network-scene{transform:translate(-50%,-50%) scale(.41)}}
+@media(prefers-reduced-motion:reduce){.network-wires,.core-halo,.core-halo::before{animation:none!important}}
+</style>

@@ -1,0 +1,44 @@
+---
+import { insights } from '../data/insights';
+interface Props { lang: 'de'|'en'; }
+const {lang}=Astro.props;
+const de=lang==='de';
+const heading=de?'Ideen, die prägen.':'Ideas that shape.';
+const accent=de?'Systeme, die bleiben.':'Systems that last.';
+const lead=de?'Kurze Perspektiven auf Platform Engineering, Agentic AI, souveräne Infrastruktur und belastbare Enterprise-Systeme.':'Short perspectives on platform engineering, agentic AI, sovereign infrastructure and resilient enterprise systems.';
+const links={oki:'https://oki.openkubes.org/#start',aia:'https://aia.openkubes.org/en#start'};
+---
+<main class="insights-page">
+<section class="insights-hero">
+ <div class="wrap">
+  <p class="eyebrow">KUBERNAUTS / ENGINEERING & AI INSIGHTS</p>
+  <h1>{heading}<br/><em>{accent}</em></h1>
+  <p>{lead}</p>
+  <div class="insights-topics"><span>ARCHITECTURE</span><span>AGENTIC AI</span><span>PLATFORM ENGINEERING</span><span>SOVEREIGNTY</span></div>
+ </div>
+</section>
+<section class="insights-library">
+ <div class="wrap">
+  <div class="insights-library__intro"><div><p class="eyebrow">{de?'WISSEN AUS DER PRAXIS':'PERSPECTIVES FROM PRACTICE'}</p><h2>{de?'Engineering mit Haltung.':'Engineering with principles.'}</h2></div><p>{de?'Keine langen Whitepaper: Jede Perspektive erklärt ein Architekturprinzip, den praktischen Nutzen und den nächsten Schritt.':'No lengthy whitepapers: each perspective explains an architecture principle, its practical value, and where to explore further.'}</p></div>
+  <div class="insights-grid">
+   {insights.map((insight,i)=><article class="insights-card">
+    <a class="insights-card__visual" href={'/'+lang+'/insights/'+insight.slug+'/'} aria-label={insight.title[lang]}>
+      <span class="insights-card__category">{insight.category}</span>
+      <span class={'insights-card__symbol insights-card__symbol--'+i} aria-hidden="true">{['⬡','⌘','↻','✳','↗','◈','✦'][i]}</span>
+      <span class="insights-card__number">{insight.number} / 07</span>
+    </a>
+    <div class="insights-card__body"><span class="insights-card__meta">{insight.readTime.toUpperCase()} · {de?'LESEZEIT':'READ TIME'}</span><h3><a href={'/'+lang+'/insights/'+insight.slug+'/'}>{insight.title[lang]}</a></h3><p>{insight.subtitle[lang]}</p><a class="insights-card__read" href={'/'+lang+'/insights/'+insight.slug+'/'}>{de?'Insight lesen':'Read insight'} ↗</a></div>
+   </article>)}
+  </div>
+ </div>
+</section>
+<section class="insights-ai">
+ <div class="wrap insights-ai__inner">
+  <div><p class="eyebrow">MEET OUR AI</p><h2>{de?'Oki & Aia entdecken.':'Discover Oki & Aia.'}</h2><p>{de?'Zwei Zugänge zum OpenKubes-Ökosystem. Ihre aktuellen Funktionen zeigen die jeweiligen Projektseiten.':'Two experiences in the OpenKubes ecosystem. Their respective project sites show what is currently available.'}</p></div>
+  <div class="insights-ai__links">
+   <a href={links.oki} target="_blank" rel="noopener noreferrer"><span class="insights-ai__icon">O</span><span><strong>Oki</strong><small>oki.openkubes.org</small></span><span aria-hidden="true">↗</span></a>
+   <a href={links.aia} target="_blank" rel="noopener noreferrer"><span class="insights-ai__icon insights-ai__icon--aia">A</span><span><strong>Aia</strong><small>aia.openkubes.org</small></span><span aria-hidden="true">↗</span></a>
+  </div>
+ </div>
+</section>
+</main>

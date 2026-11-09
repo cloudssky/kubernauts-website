@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import FamilyWordmark from '../../../../components/FamilyWordmark.astro';
+import AnnouncementBar from '../../../../components/AnnouncementBar.astro';
+import SiteNavigation from '../../../../components/SiteNavigation.astro';
+import CorporateFooter from '../../../../components/CorporateFooter.astro';
+import SovereignAgenticService from '../../../../components/SovereignAgenticService.astro';
+const lang='de';
+---
+<BaseLayout lang={lang} title="Sovereign Agentic AI Operations | Engineering Services | Kubernauts" description="Engineering für souveräne Agentic AI Operations: AI Diagnostics, Observability, Policies, Human Approval und Kubernetes." canonicalPath="/de/kubernauts-kubernetes-services/sovereign-agentic-ai-operations/">
+<AnnouncementBar lang={lang}/>
+<header class="site-header"><div class="header wrap"><a class="logo brand-logo" href="/de/" aria-label="Kubernauts"><img src="/brand/kubernauts-hexagon-light.svg" alt="" width="44" height="44"/><span class="brand-type"><FamilyWordmark name="kubernauts" theme="dark"/></span></a><SiteNavigation lang={lang}/><div class="header-right"><a class="lang" href="/en/kubernauts-kubernetes-services/sovereign-agentic-ai-operations/">EN</a><a class="btn outline" href="/de/contact/">Kontakt ↗</a></div></div></header>
+<SovereignAgenticService lang={lang}/><CorporateFooter lang={lang}/>
+</BaseLayout>

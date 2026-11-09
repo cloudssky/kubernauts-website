@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import FamilyWordmark from '../../../../components/FamilyWordmark.astro';
+import AnnouncementBar from '../../../../components/AnnouncementBar.astro';
+import SiteNavigation from '../../../../components/SiteNavigation.astro';
+import CorporateFooter from '../../../../components/CorporateFooter.astro';
+import CloudNativeTransformationLanding from '../../../../components/CloudNativeTransformationLanding.astro';
+const lang='en';
+const nav=[["Services","services"],["Industries","industries"],["Platforms","platforms"],["Approach","approach"]];
+const contact='Contact';
+const other='DE';
+---
+<BaseLayout lang={lang}
+ title="Cloud Native Transformation | Kubernetes Modernization | Kubernauts"
+ description="Cloud Native Transformation: application modernization, Kubernetes migration, containers, GitOps, CI/CD, SRE and security."
+ canonicalPath="/en/kubernauts-kubernetes-services/cloud-native-transformation/">
+ <AnnouncementBar lang={lang}/>
+ <header class="site-header"><div class="header wrap">
+  <a class="logo brand-logo" href="/en/" aria-label="Kubernauts"><img src="/brand/kubernauts-hexagon-light.svg" alt="" width="44" height="44"/><span class="brand-type"><FamilyWordmark name="kubernauts" theme="dark" /></span></a>
+  <SiteNavigation lang="en" />
+  <div class="header-right"><a class="lang" lang="de" href="/de/kubernauts-kubernetes-services/cloud-native-transformation/">{other.toUpperCase()}</a><a class="btn outline" href="/en/contact/">{contact} ↗</a></div>
+ </div></header>
+ <CloudNativeTransformationLanding lang={lang}/>
+ <CorporateFooter lang={lang}/>
+</BaseLayout>

@@ -1,0 +1,80 @@
+---
+import '../styles/global.css';
+import ConsentManager from '../components/ConsentManager.astro';
+import { seoApprovedPaths, alternateLanguages } from '../config/seo';
+
+interface Props {
+  title: string;
+  description: string;
+  lang: 'de' | 'en';
+  canonicalPath?: string;
+}
+
+const { title, description, lang, canonicalPath } = Astro.props;
+const site = 'https://kubernauts.de';
+const currentPath = canonicalPath ?? `/${lang}/`;
+const absoluteCanonical = new URL(currentPath, site).toString();
+
+// Safe by default: the relaunch remains unindexed unless explicitly enabled.
+// A future production release must set SITE_INDEXABLE=true at build time.
+const releaseApproved = process.env.SITE_INDEXABLE === 'true';
+const indexable = releaseApproved && seoApprovedPaths.has(currentPath);
+const robots = indexable ? 'index,follow' : 'noindex,follow';
+
+const alternates = alternateLanguages[currentPath];
+
+const ld = currentPath === '/de/' || currentPath === '/en/' ? [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': `${site}/#organization`,
+    name: 'Kubernauts GmbH',
+    url: site,
+    logo: `${site}/brand/kubernauts-hexagon-light.svg`,
+    email: 'support@kubernauts.de',
+    telephone: '+49 221 379 90 680',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Im Mediapark 4C',
+      postalCode: '50670',
+      addressLocality: 'Köln',
+      addressCountry: 'DE'
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${site}/#website`,
+    name: 'Kubernauts',
+    url: site,
+    inLanguage: ['de', 'en'],
+    publisher: {'@id': `${site}/#organization`},
+  },
+] : [];
+const structuredData = JSON.stringify(ld).replace(/</g, '\\u003c');
+---
+<!doctype html>
+<html lang={lang}>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content={description} />
+  <meta name="theme-color" content="#071421" />
+  <meta name="robots" content={robots} />
+  <title>{title}</title>
+  <link rel="canonical" href={absoluteCanonical} />
+  {alternates && <link rel="alternate" hreflang="de" href={new URL(alternates.de,site).toString()} />}
+  {alternates && <link rel="alternate" hreflang="en" href={new URL(alternates.en,site).toString()} />}
+  {alternates && <link rel="alternate" hreflang="x-default" href={new URL(alternates.de,site).toString()} />}
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Kubernauts" />
+  <meta property="og:locale" content={lang === 'de' ? 'de_DE' : 'en_US'} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={absoluteCanonical} />
+  <meta name="twitter:card" content="summary" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  {ld.length > 0 && <script type="application/ld+json" set:html={structuredData} />}
+</head>
+<body><slot /><ConsentManager lang={lang} /></body>
+</html>

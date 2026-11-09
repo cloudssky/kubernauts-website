@@ -1,0 +1,43 @@
+---
+interface Props { lang: 'de'|'en'; }
+const {lang}=Astro.props;
+const de=lang==='de';
+const copy=de?{
+  kicker:'LASSEN SIE UNS SPRECHEN',
+  title:'Die nächste Plattform beginnt',
+  title2:'mit einem Gespräch.',
+  intro:'Ob neue Kubernetes-Plattform, Modernisierung, Managed Operations oder souveräne KI-Infrastruktur: Wir hören zuerst zu und entwickeln gemeinsam einen sinnvollen technischen Weg.',
+  action:'Projektanfrage senden',
+  detail:'Direkter Austausch mit unserem Engineering-Team',
+  address:'Standort Köln',
+  contact:'KONTAKT',
+  location:'STANDORT'
+}:{
+  kicker:'LET’S TALK ENGINEERING',
+  title:'Your next platform starts',
+  title2:'with a conversation.',
+  intro:'Whether it is a new Kubernetes platform, modernization, managed operations or sovereign AI infrastructure: we start by understanding your goals and planning a practical engineering path.',
+  action:'Start a project conversation',
+  detail:'Talk directly to our engineering team',
+  address:'Cologne, Germany',
+  contact:'CONTACT',
+  location:'LOCATION'
+};
+---
+<section id="contact" class="contact-stage" aria-labelledby="contact-heading">
+  <div class="wrap contact-stage__grid">
+    <div class="contact-stage__main">
+      <p class="eyebrow">{copy.kicker}</p>
+      <h2 id="contact-heading">{copy.title}<br /><em>{copy.title2}</em></h2>
+      <p class="contact-stage__intro">{copy.intro}</p>
+      <a class="contact-stage__button" href={de ? "/de/contact/" : "/en/contact/"}>{copy.action}<span aria-hidden="true">↗</span></a>
+      <p class="contact-stage__note"><span aria-hidden="true">●</span>{copy.detail}</p>
+    </div>
+    <aside class="contact-stage__aside" aria-label={de?'Kontaktdaten':'Contact information'}>
+      <div class="contact-stage__aside-top"><span>KUBERNAUTS</span><span>ENGINEERING / OPERATIONS</span></div>
+      <div class="contact-stage__info"><span class="contact-stage__label">{copy.contact}</span><a href="mailto:contact@kubernauts.de">contact@kubernauts.de ↗</a><a href="tel:+4922137990680">+49 221 379 90 680</a></div>
+      <div class="contact-stage__info"><span class="contact-stage__label">{copy.location}</span><address>Kubernauts GmbH<br/>Im Mediapark 4C<br/>50670 Köln · Deutschland</address></div>
+      <div class="contact-stage__aside-bottom"><span>PLATFORM ENGINEERING</span><span>OPEN SOURCE · SOVEREIGN AI</span></div>
+    </aside>
+  </div>
+</section>

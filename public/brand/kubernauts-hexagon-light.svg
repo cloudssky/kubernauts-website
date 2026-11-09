@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Kubernauts Hexagon Signet — light backgrounds</title>
+  <desc id="desc">Rounded multicolor hexagon with a geometric K, compass markers and a navigation orbit.</desc>
+  <defs>
+    <linearGradient id="outline" x1="0" y1="0.1" x2="1" y2="0.95" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#087FED"/><stop offset="0.24" stop-color="#25C5CE"/><stop offset="0.43" stop-color="#61CE4D"/><stop offset="0.61" stop-color="#FFD227"/><stop offset="0.82" stop-color="#FF781B"/><stop offset="1" stop-color="#078CF2"/>
+    </linearGradient>
+    <linearGradient id="kStroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0C92FC"/><stop offset="0.52" stop-color="#087DEE"/><stop offset="1" stop-color="#00D7B1"/>
+    </linearGradient>
+  </defs>
+  <!-- One continuous rounded hexagonal platform mark. -->
+  <path d="M256 32 C264 32 273 36 280 40 L431 127 C442 134 448 145 448 158 L448 352 C448 366 441 377 429 384 L280 471 C265 480 248 480 233 471 L82 384 C70 377 64 366 64 352 L64 158 C64 145 71 134 83 127 L231 41 C239 36 248 32 256 32Z" fill="none" stroke="url(#outline)" stroke-width="22" stroke-linejoin="round"/>
+  <!-- Subtle partial compass ring for light backgrounds -->
+  <g fill="none" stroke="#6A7888" stroke-width="9" stroke-linecap="round" opacity=".72">
+    <path d="M166 131 A158 158 0 0 1 214 108"/><path d="M302 109 A158 158 0 0 1 349 134"/>
+    <path d="M371 190 A158 158 0 0 1 382 235"/><path d="M373 291 A158 158 0 0 1 347 342"/>
+    <path d="M298 383 A158 158 0 0 1 252 389"/><path d="M203 379 A158 158 0 0 1 162 352"/>
+    <path d="M133 300 A158 158 0 0 1 122 260"/><path d="M124 210 A158 158 0 0 1 147 167"/>
+  </g>
+  <!-- Direction indicators (navigation DNA). -->
+  <path d="M256 73 L267 128 L256 119 L245 128Z" fill="#00CBA7"/>
+  <path d="M256 437 L244 383 L256 392 L268 383Z" fill="#FF761C"/>
+  <path d="M89 256 L151 240 L139 256 L151 272Z" fill="#078CF2"/>
+  <path d="M423 256 L361 240 L373 256 L361 272Z" fill="#087CE4"/>
+  <!-- Strong geometric K -->
+  <path d="M176 163 H220 V349 H176Z" fill="#00BFAF"/>
+  <path d="M221 257 L298 163 H355 L272 257Z" fill="#0F90ED"/>
+  <path d="M271 259 L355 349 H295 L221 259Z" fill="#00BE9E"/>
+  <path d="M221 258 L270 258 L244 286Z" fill="#0463A7"/>
+  <!-- Navigational orbital path, intentionally crossing the K. -->
+  <path d="M146 342 C168 372 241 328 302 286 C359 247 379 212 375 183" fill="none" stroke="#10283D" stroke-width="8" stroke-linecap="round"/>
+  <path d="M146 342 C131 323 155 294 174 283" fill="none" stroke="#10283D" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="374" cy="183" r="14" fill="#10283D"/>
+</svg>

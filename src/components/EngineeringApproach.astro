@@ -1,0 +1,54 @@
+---
+interface Props { lang: 'de' | 'en'; }
+const { lang } = Astro.props;
+const de = lang === 'de';
+const steps = de ? [
+  { title:'Verstehen', subtitle:'ASSESS', description:'Wir analysieren Ziele, Workloads, bestehende Infrastruktur und betriebliche Risiken, bevor wir technische Entscheidungen treffen.', deliverable:'Ist-Analyse · Anforderungen · Risiken', icon:'search' },
+  { title:'Entwerfen', subtitle:'ARCHITECT', description:'Wir definieren Zielarchitektur, Sicherheitsgrenzen, Lifecycle und überprüfbare technische Entscheidungen.', deliverable:'Architecture Decisions · Plattform-Blueprint', icon:'architect' },
+  { title:'Umsetzen', subtitle:'BUILD', description:'Wir implementieren wiederholbare Plattformen mit Kubernetes, Infrastructure as Code, GitOps und automatisierten Prüfungen.', deliverable:'Automatisierung · GitOps · Validierung', icon:'build' },
+  { title:'Betreiben', subtitle:'OPERATE', description:'Wir verbinden Monitoring, Security, Incident- und Change-Prozesse mit klaren Verantwortlichkeiten.', deliverable:'Observability · Runbooks · Betriebsmodell', icon:'operate' },
+  { title:'Weiterentwickeln', subtitle:'EVOLVE', description:'Wir verbessern Plattformen kontrolliert anhand von Telemetrie, Feedback und dokumentierten Entscheidungen.', deliverable:'Lifecycle · Optimierung · Enablement', icon:'evolve' },
+] : [
+  { title:'Assess', subtitle:'DISCOVER', description:'We examine goals, workloads, existing infrastructure and operational risks before making technical decisions.', deliverable:'Assessment · Requirements · Risks', icon:'search' },
+  { title:'Architect', subtitle:'DESIGN', description:'We define the target architecture, security boundaries, lifecycle and reviewable engineering decisions.', deliverable:'Architecture Decisions · Platform Blueprint', icon:'architect' },
+  { title:'Build', subtitle:'IMPLEMENT', description:'We implement repeatable platforms using Kubernetes, infrastructure as code, GitOps and automated validation.', deliverable:'Automation · GitOps · Validation', icon:'build' },
+  { title:'Operate', subtitle:'RUN', description:'We align monitoring, security, incident and change processes with clear operational ownership.', deliverable:'Observability · Runbooks · Operating Model', icon:'operate' },
+  { title:'Evolve', subtitle:'IMPROVE', description:'We improve platforms deliberately through telemetry, feedback and documented decisions.', deliverable:'Lifecycle · Optimization · Enablement', icon:'evolve' },
+];
+const intro=de
+  ? 'Kein einmaliges Setup, sondern ein nachvollziehbarer Weg von der ersten Analyse zur dauerhaft betreibbaren Plattform.'
+  : 'Not a one-off setup, but an evidence-driven path from the first assessment to a platform ready for sustained operations.';
+const deliverableLabel=de?'ERGEBNIS':'OUTPUT';
+const principle=de
+  ? 'Architekturentscheidungen nachvollziehbar. Automatisierung überprüfbar. Betrieb von Anfang an mitgedacht.'
+  : 'Reviewable architecture decisions. Verifiable automation. Operations designed in from day one.';
+const cta=de?'Engineering-Projekt besprechen':'Discuss an engineering project';
+---
+<div class="approach-intro">
+  <p>{intro}</p>
+  <div class="approach-principle"><span class="approach-principle__dot" aria-hidden="true"></span><span>{principle}</span></div>
+</div>
+<ol class="approach-timeline">
+  {steps.map((step,i)=>
+    <li class="approach-stage">
+      <div class="approach-stage__head">
+        <span class="approach-stage__index">{String(i+1).padStart(2,'0')}</span>
+        <span class="approach-stage__icon" aria-hidden="true">
+          {step.icon==='search' && <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><circle cx="17" cy="17" r="10"/><path d="m25 25 10 10"/></svg>}
+          {step.icon==='architect' && <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 4 35 12.5v15L20 36 5 27.5v-15L20 4Z M5 12.5 20 21l15-8.5 M20 21v15"/></svg>}
+          {step.icon==='build' && <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><path d="m11 11-7 9 7 9 M29 11l7 9-7 9 M23 7l-6 26"/></svg>}
+          {step.icon==='operate' && <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 21h7l5-11 6 20 5-10h7"/><rect x="4" y="4" width="32" height="32" rx="7" stroke-width="1"/></svg>}
+          {step.icon==='evolve' && <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><path d="M31 15a12 12 0 1 0 1 9 M31 6v9h-9 M13 22l5 5 9-12"/></svg>}
+        </span>
+      </div>
+      <span class="approach-stage__eyebrow">{step.subtitle}</span>
+      <h3>{step.title}</h3>
+      <p>{step.description}</p>
+      <div class="approach-stage__deliverable"><span>{deliverableLabel}</span>{step.deliverable}</div>
+    </li>
+  )}
+</ol>
+<div class="approach-closing">
+  <p><span aria-hidden="true">↗</span> {de?'Vom ersten Architekturgespräch bis zum laufenden Betrieb.':'From the first architecture discussion to ongoing operations.'}</p>
+  <a href="mailto:contact@kubernauts.de?subject=Platform%20Engineering">{cta} <span aria-hidden="true">↗</span></a>
+</div>

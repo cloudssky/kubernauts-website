@@ -1,0 +1,47 @@
+---
+interface Props {lang:'de'|'en'}
+const {lang}=Astro.props;
+const d={"de":{"eyebrow":"CLOUD NATIVE · TRANSFORMATION","title":"Anwendungen modernisieren.","accent":"Sicher. Schritt für Schritt.","lead":"Wir begleiten Unternehmen bei der Modernisierung von Anwendungen, Software Delivery und Infrastruktur – mit Kubernetes, Containern, GitOps und durchdachten Migrationsstrategien.","benefits":["Klare Roadmap statt Big Bang","Reproduzierbare Delivery Pipelines","Security & Governance von Anfang an","Schrittweise Migration bei kontrolliertem Risiko"],"introLabel":"FROM LEGACY TO CLOUD NATIVE","introTitle":"Transformation ist mehr als Containerisierung.","intro":"Die größte Herausforderung ist selten allein die Technologie. Anwendungen, Teams, Prozesse und Betriebsmodelle müssen zusammenpassen. Wir beginnen mit einer nachvollziehbaren Bestandsaufnahme, priorisieren Abhängigkeiten und setzen Modernisierung in überprüfbaren Schritten um.","capLabel":"UNSERE TRANSFORMATIONSLEISTUNGEN","capTitle":"Modernisierung mit Engineering-Tiefe.","services":[["01 / ASSESS","Cloud Native Readiness Assessment","Anwendungsportfolio, Infrastruktur, Abhängigkeiten, Betriebsprozesse und Migrationsrisiken gemeinsam analysieren."],["02 / ARCHITECTURE","Application & Platform Architecture","Zielarchitektur für Container, Kubernetes, APIs, Datenflüsse, Netzwerke und Sicherheitsgrenzen entwickeln."],["03 / MODERNIZATION","Containerization & Refactoring","Geeignete Anwendungen containerisieren, Konfigurationen externalisieren und schrittweise entkoppeln – ohne unnötige Komplett-Neuentwicklung."],["04 / DELIVERY","CI/CD, GitOps & Infrastructure as Code","Wiederholbare Build-, Test- und Deploymentprozesse mit GitOps, Automatisierung und klaren Freigaben gestalten."],["05 / MIGRATION","Hybrid Cloud & Workload Migration","Migrationswellen und Cutover-Konzepte planen, Workloads zwischen bestehenden und neuen Umgebungen kontrolliert überführen."],["06 / SECURITY","Security, Governance & Compliance","Secrets, Zugriffsmodelle, Policies, Supply-Chain-Prüfungen und auditierbare Prozesse in die Architektur integrieren."],["07 / OPERATIONS","SRE, Observability & Day-2 Operations","Monitoring, Logging, Tracing, SLOs, Runbooks und Lifecycle-Prozesse für den produktiven Betrieb etablieren."],["08 / ENABLEMENT","Team Enablement & Platform Adoption","Produktteams und Operations durch Workshops, gemeinsame Umsetzung und klare Plattformverantwortung befähigen."]],"processLabel":"EIN PRAGMATISCHER WEG","processTitle":"Von der Bestandsaufnahme zur produktiven Plattform.","steps":[["01","Assess","Risiken, Abhängigkeiten und Ziele sichtbar machen."],["02","Design","Zielarchitektur, Betriebsmodell und Migrationspfad definieren."],["03","Pilot","Einen repräsentativen Workload Ende-zu-Ende modernisieren."],["04","Scale","Bewährte Patterns wiederholbar auf weitere Anwendungen ausrollen."]],"closing":"Modernisierung beginnt mit einem klaren Plan.","closingText":"Sprechen Sie mit unseren Engineers über Ihre Legacy-Landschaft, Cloud-Native-Zielarchitektur oder einen ersten Pilot.","cta":"Transformationsprojekt besprechen","contact":"Kontaktmöglichkeiten","all":"Alle Services"},"en":{"eyebrow":"CLOUD NATIVE · TRANSFORMATION","title":"Modernize applications.","accent":"Safely. Step by step.","lead":"We help organizations modernize applications, software delivery and infrastructure using Kubernetes, containers, GitOps and pragmatic migration strategies.","benefits":["Roadmaps instead of big-bang rewrites","Repeatable delivery pipelines","Security & governance by design","Incremental migration with controlled risk"],"introLabel":"FROM LEGACY TO CLOUD NATIVE","introTitle":"Transformation is more than containerization.","intro":"Technology alone is rarely the hardest part. Applications, teams, processes and operating models need to evolve together. We start with a reviewable assessment, prioritize dependencies and deliver change in measurable steps.","capLabel":"OUR TRANSFORMATION SERVICES","capTitle":"Modernization with engineering depth.","services":[["01 / ASSESS","Cloud Native Readiness Assessment","Evaluate application portfolios, infrastructure, dependencies, operational processes and migration risks."],["02 / ARCHITECTURE","Application & Platform Architecture","Design target architecture for containers, Kubernetes, APIs, data flows, networking and security boundaries."],["03 / MODERNIZATION","Containerization & Refactoring","Containerize suitable workloads, externalize configuration and decouple incrementally without unnecessary full rewrites."],["04 / DELIVERY","CI/CD, GitOps & Infrastructure as Code","Establish repeatable builds, tests and deployments with GitOps, automation and explicit approval practices."],["05 / MIGRATION","Hybrid Cloud & Workload Migration","Plan migration waves and cutovers, then move workloads between current and target environments with controlled risk."],["06 / SECURITY","Security, Governance & Compliance","Integrate secrets, identity, policies, supply-chain checks and auditable operational controls into platform design."],["07 / OPERATIONS","SRE, Observability & Day-2 Operations","Establish monitoring, logging, tracing, SLOs, runbooks and lifecycle practices for production systems."],["08 / ENABLEMENT","Team Enablement & Platform Adoption","Support product and operations teams with workshops, joint implementation and clear platform ownership."]],"processLabel":"A PRAGMATIC PATH","processTitle":"From assessment to production-ready platforms.","steps":[["01","Assess","Expose risks, dependencies and objectives."],["02","Design","Define the target architecture, operating model and migration path."],["03","Pilot","Modernize one representative workload end to end."],["04","Scale","Roll proven patterns out across further applications."]],"closing":"Modernization starts with a clear plan.","closingText":"Talk to our engineers about your legacy estate, cloud-native target architecture or a first pilot.","cta":"Discuss a transformation project","contact":"Contact options","all":"All services"}}[lang];
+const booking='https://calendly.com/kubernauts/30min';
+---
+<main class="platform-service transformation-service">
+  <section class="platform-service__hero"><div class="wrap platform-service__hero-grid">
+    <div>
+      <p class="eyebrow">{d.eyebrow}</p>
+      <h1>{d.title}<br/><em>{d.accent}</em></h1>
+      <p class="platform-service__lead">{d.lead}</p>
+      <div class="platform-service__actions">
+        <a class="platform-service__primary" href={booking} target="_blank" rel="noopener noreferrer">{d.cta} ↗</a>
+        <a class="platform-service__secondary" href={'/'+lang+'/contact/'}>{d.contact} ↗</a>
+      </div>
+    </div>
+    <aside class="platform-service__proof">
+      <div class="platform-service__proof-top"><span>ASSESS · ARCHITECT · MIGRATE</span><span class="transformation-service__icon" aria-hidden="true">↗</span></div>
+      <ul>{d.benefits.map((item,i)=><li><span>{String(i+1).padStart(2,'0')}</span>{item}</li>)}</ul>
+      <span>INCREMENTAL · CONTROLLED · MEASURABLE</span>
+    </aside>
+  </div></section>
+  <section class="platform-service__intro"><div class="wrap platform-service__intro-grid">
+    <div><p class="eyebrow">{d.introLabel}</p><h2>{d.introTitle}</h2></div><p>{d.intro}</p>
+  </div></section>
+  <section class="platform-service__skills"><div class="wrap">
+    <p class="eyebrow">{d.capLabel}</p>
+    <h2>{d.capTitle}</h2>
+    <div class="platform-service__skills-grid">{d.services.map(([number,title,description])=><article>
+      <span>{number}</span><h3>{title}</h3><p>{description}</p>
+    </article>)}</div>
+  </div></section>
+  <section class="transformation-service__process"><div class="wrap">
+    <p class="eyebrow">{d.processLabel}</p><h2>{d.processTitle}</h2>
+    <div class="transformation-service__process-grid">{d.steps.map(([number,title,desc])=><article>
+      <span>{number}</span><h3>{title}</h3><p>{desc}</p>
+    </article>)}</div>
+  </div></section>
+  <section class="platform-service__closing"><div class="wrap">
+    <p class="eyebrow">LET'S TALK ENGINEERING</p><h2>{d.closing}</h2><p>{d.closingText}</p>
+    <div class="platform-service__actions">
+      <a class="platform-service__primary" href={booking} target="_blank" rel="noopener noreferrer">{d.cta} ↗</a>
+      <a class="platform-service__secondary" href={'/'+lang+'/#services'}>{d.all} ↗</a>
+    </div>
+  </div></section>
+</main>

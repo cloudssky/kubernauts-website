@@ -1,0 +1,43 @@
+---
+interface Props {lang:'de'|'en'}
+const {lang}=Astro.props;
+const d={"de":{"eyebrow":"KUBERNETES · PLATFORM ENGINEERING","title":"Plattformen entwickeln.","highlight":"Zukunftsfähig betreiben.","intro":"Sichere, skalierbare und automatisierte Kubernetes-Plattformen für moderne Unternehmen — vom Architekturentwurf bis zum produktiven Betrieb.","actions":["Projektgespräch vereinbaren","Unsere Services"],"benefit":["Entwicklerproduktivität erhöhen","Betriebsaufwand reduzieren","Security & Compliance verankern","Skalierbarkeit langfristig sichern"],"overline":"ENGINEERING FÜR DEN GESAMTEN LIFECYCLE","overviewTitle":"Mehr als einzelne Kubernetes-Cluster.","overview":"Platform Engineering schafft eine standardisierte Grundlage für Entwicklung und Betrieb geschäftskritischer Anwendungen. Wir betrachten Netzwerk, Security, Storage, Delivery und Operations als zusammenhängendes System statt als isolierte Komponenten.","focusLabel":"UNSERE PLATTFORMKOMPETENZEN","services":[["01 / ARCHITEKTUR","Plattformarchitektur & Infrastruktur","Kubernetes-Plattformarchitekturen, Multi-Cluster-Umgebungen, Hybrid Cloud, Bare Metal, Hochverfügbarkeit und verteilte Edge-Plattformen."],["02 / CONNECTIVITY","Networking & Connectivity","Multi-Cluster Networking, Cross-Cluster Load Balancing, Service Mesh, API-Gateways, Edge Connectivity und Netzwerk-Observability."],["03 / SECURITY","Security & Compliance","Zero Trust, rollenbasierte Zugriffskontrolle, Policy Enforcement mit OPA und Kyverno, Hardening, SIEM und auditierbare Prozesse."],["04 / DATA","Storage & Data Services","Hochverfügbare Storage-Systeme, Hybrid Storage, Backup, Disaster Recovery, Data Protection und Multi-Tier Storage."],["05 / GITOPS","GitOps & Plattformautomatisierung","Argo CD, Flux, Infrastructure as Code, CI/CD-Pipelines, deklarative Deployments und standardisierte Automatisierung."],["06 / OPERATIONS","Observability & Operations","Prometheus, Grafana, OpenTelemetry, Distributed Tracing, zentrales Logging, Alerting, OpenCost und Capacity Planning."],["07 / EDGE","Multi-Cluster & Edge Operations","Verteilte Kubernetes-Umgebungen, Industrial Edge, standortübergreifende Plattformen und konsistente Lifecycle-Prozesse."],["08 / WORKSHOPS","Platform Engineering Workshops","Gemeinsam mit Ihren Teams entwickeln wir Architekturentscheidungen, Plattformstrategien, Security-Konzept und priorisierte Roadmaps."]],"edgeTitle":"Souverän. Offen. Wiederholbar.","edgeText":"Mit OpenKubes setzen wir auf ein offenes Kubernetes-Plattform-Framework. Architekturentscheidungen, deklarative Verträge und überprüfbare Governance bilden die Grundlage für kontrollierbare Plattformen.","edgeCta":"OpenKubes entdecken","bottomTitle":"Bereit für Platform Engineering?","bottom":"Sprechen Sie mit unseren Engineers über Architektur, Automatisierung und den Aufbau Ihrer nächsten Plattform.","booking":"30-minütiges Projektgespräch","contact":"Weitere Kontaktmöglichkeiten"},"en":{"eyebrow":"KUBERNETES · PLATFORM ENGINEERING","title":"Engineer platforms.","highlight":"Operate with confidence.","intro":"Secure, scalable and automated Kubernetes platforms for modern enterprises — from architectural design through production operations.","actions":["Book a project conversation","Explore our services"],"benefit":["Increase developer productivity","Reduce operational complexity","Embed security & compliance","Enable long-term scalability"],"overline":"ENGINEERING ACROSS THE ENTIRE LIFECYCLE","overviewTitle":"More than individual Kubernetes clusters.","overview":"Platform engineering creates a standardized foundation for delivering and running mission-critical applications. We treat networking, security, storage, delivery and operations as an integrated system rather than isolated components.","focusLabel":"OUR PLATFORM CAPABILITIES","services":[["01 / ARCHITECTURE","Platform Architecture & Infrastructure","Kubernetes architecture, multi-cluster environments, hybrid cloud, bare metal, high availability and distributed edge platforms."],["02 / CONNECTIVITY","Networking & Connectivity","Multi-cluster networking, cross-cluster load balancing, service mesh, API gateways, edge connectivity and network observability."],["03 / SECURITY","Security & Compliance","Zero trust, role-based access, OPA and Kyverno policies, hardening, SIEM integration and auditable governance."],["04 / DATA","Storage & Data Services","Highly available storage, hybrid storage architecture, backup, disaster recovery, data protection and multi-tier storage."],["05 / GITOPS","GitOps & Platform Automation","Argo CD, Flux, infrastructure as code, CI/CD, declarative delivery and repeatable automation."],["06 / OPERATIONS","Observability & Operations","Prometheus, Grafana, OpenTelemetry, distributed tracing, central logging, alerting, OpenCost and capacity planning."],["07 / EDGE","Multi-Cluster & Edge Operations","Distributed Kubernetes, industrial edge, multi-site infrastructure and consistent lifecycle operations."],["08 / WORKSHOPS","Platform Engineering Workshops","Work with your team to develop architectural decisions, platform strategy, security practices and a prioritized roadmap."]],"edgeTitle":"Sovereign. Open. Repeatable.","edgeText":"OpenKubes is our open Kubernetes platform framework, built around reviewable architecture decisions, declarative contracts and accountable governance.","edgeCta":"Explore OpenKubes","bottomTitle":"Ready for Platform Engineering?","bottom":"Discuss architecture, automation and your next platform directly with our engineering team.","booking":"Book a 30-minute conversation","contact":"Other contact options"}}[lang];
+const booking='https://calendly.com/kubernauts/30min';
+---
+<main class="platform-service">
+  <section class="platform-service__hero">
+    <div class="wrap platform-service__hero-grid">
+      <div>
+        <p class="eyebrow">{d.eyebrow}</p>
+        <h1>{d.title}<br/><em>{d.highlight}</em></h1>
+        <p class="platform-service__lead">{d.intro}</p>
+        <div class="platform-service__actions">
+          <a class="platform-service__primary" href={booking} target="_blank" rel="noopener noreferrer">{d.actions[0]} ↗</a>
+          <a class="platform-service__secondary" href={'/'+lang+'/#services'}>{d.actions[1]} ↗</a>
+        </div>
+      </div>
+      <aside class="platform-service__proof">
+        <div class="platform-service__proof-top"><span>PLATFORM ENGINEERING</span><img src="/brand/kubernauts-hexagon.svg" alt="" width="60" height="60"/></div>
+        <ul>{d.benefit.map((b,i)=><li><span>{String(i+1).padStart(2,'0')}</span>{b}</li>)}</ul>
+        <span>ARCHITECT · AUTOMATE · OPERATE</span>
+      </aside>
+    </div>
+  </section>
+  <section class="platform-service__intro"><div class="wrap platform-service__intro-grid">
+    <div><p class="eyebrow">{d.overline}</p><h2>{d.overviewTitle}</h2></div><p>{d.overview}</p>
+  </div></section>
+  <section class="platform-service__skills"><div class="wrap">
+    <p class="eyebrow">{d.focusLabel}</p><h2>Platform Engineering</h2>
+    <div class="platform-service__skills-grid">{d.services.map(([number,title,description])=>
+      <article><span>{number}</span><h3>{title}</h3><p>{description}</p></article>
+    )}</div>
+  </div></section>
+  <section class="platform-service__open"><div class="wrap platform-service__open-grid">
+    <div><p class="eyebrow">OPENKUBES · OPEN FOUNDATIONS</p><h2>{d.edgeTitle}</h2><p>{d.edgeText}</p><a href="https://openkubes.org" target="_blank" rel="noopener noreferrer">{d.edgeCta} ↗</a></div>
+    <div class="platform-service__layers" aria-hidden="true"><span>PLATFORM ENGINEERING</span><span>OPENKUBES</span><span>KUBERNETES</span></div>
+  </div></section>
+  <section class="platform-service__closing"><div class="wrap">
+    <p class="eyebrow">LET'S TALK ENGINEERING</p><h2>{d.bottomTitle}</h2><p>{d.bottom}</p>
+    <div class="platform-service__actions"><a class="platform-service__primary" href={booking} target="_blank" rel="noopener noreferrer">{d.booking} ↗</a><a class="platform-service__secondary" href={'/'+lang+'/contact/'}>{d.contact} ↗</a></div>
+  </div></section>
+</main>

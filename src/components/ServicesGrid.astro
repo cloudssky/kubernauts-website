@@ -1,0 +1,44 @@
+---
+interface Item {
+  number: string;
+  title: string;
+  description: string;
+  capabilities: string[];
+  outcome: string;
+  href: string;
+  detailHref?: string;
+  accent: 'blue'|'teal'|'green'|'orange';
+}
+interface Props { lang:'de'|'en'; items:Item[]; }
+const {lang,items}=Astro.props;
+const label=lang==='de'?'Projekt besprechen':'Discuss your project';
+const detailLabel=lang==='de'?'Leistung entdecken':'Explore service';
+const tag=lang==='de'?'UNSER FOKUS':'OUR FOCUS';
+const serviceCategories=lang==='de' ? ['PLATTFORM-ARCHITEKTUR','KUBERNETES-BETRIEB','AI-INFRASTRUKTUR','MODERNISIERUNG'] : ['PLATFORM ARCHITECTURE','KUBERNETES OPERATIONS','AI INFRASTRUCTURE','MODERNIZATION'];
+---
+<div class="services-grid">
+  {items.map((item)=>
+    <article class={`service-panel service-panel--${item.accent}`}>
+      <div class="service-panel__top">
+        <span class="service-panel__index">{item.number} / {serviceCategories[Number(item.number)-1]}</span>
+        <span class="service-panel__symbol" aria-hidden="true">
+          {item.accent==='blue' && <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M24 5 43 15 24 25 5 15 24 5Z M5 24 24 34 43 24 M5 33 24 43 43 33" stroke-linejoin="round"/></svg>}
+          {item.accent==='teal' && <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="7" width="34" height="34" rx="7"/><path d="M12 25h7l5-10 7 19 5-9h5" stroke-linejoin="round"/></svg>}
+          {item.accent==='green' && <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="24" cy="24" r="8"/><circle cx="8" cy="10" r="4"/><circle cx="40" cy="10" r="4"/><circle cx="8" cy="38" r="4"/><circle cx="40" cy="38" r="4"/><path d="M11 13 18 19 M37 13 30 19 M11 35 18 29 M37 35 30 29"/></svg>}
+          {item.accent==='orange' && <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M24 4 42 14v20L24 44 6 34V14L24 4Z M6 14l18 10 18-10 M24 24v20" stroke-linejoin="round"/></svg>}
+        </span>
+      </div>
+      <div class="service-panel__content">
+        <h3>{item.title}</h3>
+        <p>{item.description}</p>
+      </div>
+      <div class="service-panel__bottom">
+        <p class="service-panel__label">{tag}</p>
+        <ul class="service-panel__tags">{item.capabilities.map(cap=><li>{cap}</li>)}</ul>
+        <p class="service-panel__outcome">{item.outcome}</p>
+        {item.detailHref && <a class="service-panel__link" href={item.detailHref}>{detailLabel} <span aria-hidden="true">↗</span></a>}
+        <a class="service-panel__link" href={item.href}>{label} <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+  )}
+</div>

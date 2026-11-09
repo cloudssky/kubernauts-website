@@ -1,0 +1,107 @@
+---
+interface Props { lang:'de'|'en'; onHome?:boolean; }
+const {lang,onHome=false}=Astro.props;
+const de=lang==='de';
+const base='/'+lang+'/';
+const items=[
+ {label:de?'Platform Engineering':'Platform Engineering',detail:de?'Architektur, GitOps & Automatisierung':'Architecture, GitOps & Automation',url:base+'kubernauts-kubernetes-services/platform-engineering/',icon:'layers'},
+ {label:de?'Enterprise Kubernetes Operations':'Enterprise Kubernetes Operations',detail:de?'Managed Kubernetes, SRE & Security':'Managed Kubernetes, SRE & Security',url:base+'kubernauts-kubernetes-services/index.html',icon:'activity'},
+ {label:'AI & MLOps',detail:de?'Private AI & Modellbetrieb':'Private AI & Model Operations',url:base+'kubernauts-kubernetes-services/ai-mlops-services/',icon:'brain'},
+ {label:'Cloud Native Transformation',detail:de?'Modernisierung, CI/CD & GitOps':'Modernization, CI/CD & GitOps',url:base+'kubernauts-kubernetes-services/cloud-native-transformation/',icon:'refresh'},
+ {label:'AI Software Engineering & Integration',detail:de?'Agentic AI · Business Workflows · Enterprise Integration':'Agentic AI · Business Workflows · Enterprise Integration',url:base+'services/enterprise-ai-engineering/',icon:'brain'},
+ {label:'Sovereign Agentic AI Operations',detail:de?'AI Diagnostics · Governance · Human Approval':'AI Diagnostics · Governance · Human Approval',url:base+'kubernauts-kubernetes-services/sovereign-agentic-ai-operations/',icon:'brain'}
+];
+const nav=[
+ {label:de?'Branchen':'Industries',href:base+'industries/'},
+
+ {label:'Insights',href:base+'insights/'},
+ {label:de?'Vorgehen':'Approach',href:base+'#approach'},
+ {label:de?'Karriere':'Careers',href:base+'careers/'}
+];
+---
+<nav class="navigation main-navigation" aria-label={de?'Hauptnavigation':'Main navigation'}>
+  <details class="nav-products">
+    <summary>{de?'Produkte':'Products'} <span class="nav-services__chevron" aria-hidden="true">⌄</span></summary>
+    <div class="nav-products__menu">
+      <a href={base+'products/'} class="nav-products__all">{de?'Alle Produkte & Plattformen':'All products & platforms'} <span aria-hidden="true">↗</span></a>
+      <a href={base+'openkubes/'}><strong>OpenKubes</strong><small>{de?'Souveränes Plattformframework':'Sovereign platform framework'}</small></a>
+      <a href={base+'kubernautic/'}><strong>Kubernautic</strong><small>Agentic AI Operations</small></a>
+      <a href={base+'products/#products-solutions'}><strong>{de?'Spezialisierte Lösungen':'Specialized solutions'}</strong><small>Bare Metal · Robotics · Private AI · Edge</small></a>
+      <a href={base+'openkubes/inhouse-ai/'}><strong>OpenKubes Inhouse AI</strong><small>Private LLMs · GPU · RAG</small></a>
+      <a href={base+'products/bare-metal/'}><strong>OpenKubes Bare Metal</strong><small>KubeVirt · Cluster API · GPU</small></a>
+      <a href={base+'products/robotics/'}><strong>OpenKubes Robotics</strong><small>ROS 2 · Open-RMF · Physical AI</small></a>
+      <a href={base+'products/security/'}><strong>OpenKubes Security</strong><small>Zero Trust · Policies · Governance</small></a>
+      <a href={base+'openkubes/openkubes-edge/index.html'}><strong>OpenKubes Industrial Edge</strong><small>Distributed Kubernetes · GitOps · Edge AI</small></a>
+    </div>
+  </details>
+  <details class="nav-services">
+    <summary>{de?'Leistungen':'Services'} <span class="nav-services__chevron" aria-hidden="true">⌄</span></summary>
+    <div class="nav-services__menu">
+      <a class="nav-services__all" href={base+'#services'}>{de?'Alle Leistungen':'All services'} <span aria-hidden="true">→</span></a>
+      {items.map((item)=><a href={item.url} class="nav-services__item">
+        <span class="nav-services__dot" aria-hidden="true"></span>
+        <span><strong>{item.label}</strong><small>{item.detail}</small></span>
+        <span aria-hidden="true">↗</span>
+      </a>)}
+    </div>
+  </details>
+  {nav.map(item=><a href={item.href}>{item.label}</a>)}
+</nav>
+<details class="mobile-menu">
+  <summary aria-label={de?'Menü öffnen':'Open menu'}><span class="hamburger" aria-hidden="true">☰</span><span>{de?'Menü':'Menu'}</span></summary>
+  <nav class="mobile-menu-panel" aria-label={de?'Mobile Navigation':'Mobile navigation'}>
+    <details class="mobile-services">
+      <summary>{de?'Produkte':'Products'} <span aria-hidden="true">⌄</span></summary>
+      <div class="mobile-services__links">
+        <a href={base+'products/'}>{de?'Alle Produkte':'All products'}</a>
+        <a href={base+'openkubes/'}>OpenKubes</a>
+        <a href={base+'kubernautic/'}>Kubernautic ↗</a>
+        <a href={base+'products/#products-solutions'}>{de?'Spezialisierte Lösungen':'Specialized solutions'}</a>
+        <a href={base+'openkubes/inhouse-ai/'}>OpenKubes Inhouse AI</a>
+        <a href={base+'products/bare-metal/'}>OpenKubes Bare Metal</a>
+        <a href={base+'products/robotics/'}>OpenKubes Robotics</a>
+        <a href={base+'products/security/'}>OpenKubes Security</a>
+        <a href={base+'openkubes/openkubes-edge/index.html'}>OpenKubes Industrial Edge</a>
+      </div>
+    </details>
+    <details class="mobile-services">
+      <summary>{de?'Leistungen':'Services'} <span aria-hidden="true">⌄</span></summary>
+      <div class="mobile-services__links">
+        <a href={base+'#services'}>{de?'Alle Leistungen':'All services'}</a>
+        {items.map(item=><a href={item.url}>{item.label}</a>)}
+      </div>
+    </details>
+    {nav.map(item=><a href={item.href}>{item.label}</a>)}
+    <a href={base+'contact/'}>{de?'Kontakt':'Contact'} ↗</a>
+  </nav>
+</details>
+
+<script>
+  document.querySelectorAll<HTMLDetailsElement>('.nav-services, .nav-products').forEach((menu) => {
+    let openedByHover = false;
+    menu.addEventListener('pointerenter', (event) => {
+      if (event.pointerType === 'mouse' && window.matchMedia('(min-width: 1021px)').matches) {
+        if (!menu.open) { menu.open = true; openedByHover = true; }
+      }
+    });
+    menu.addEventListener('pointerleave', () => {
+      if (openedByHover) { menu.open = false; openedByHover = false; }
+    });
+    menu.addEventListener('toggle', () => {
+      if (!menu.open) openedByHover = false;
+    });
+    menu.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        menu.open = false;
+        openedByHover = false;
+        menu.querySelector('summary')?.focus();
+      }
+    });
+    document.addEventListener('pointerdown', (event) => {
+      if (menu.open && !menu.contains(event.target as Node)) {
+        menu.open = false;
+        openedByHover = false;
+      }
+    });
+  });
+</script>

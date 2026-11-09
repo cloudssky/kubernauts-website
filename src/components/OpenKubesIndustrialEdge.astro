@@ -1,0 +1,55 @@
+---
+interface Props {lang:'de'|'en'}
+const {lang}=Astro.props;
+const d={"de":{"eyebrow":"OPENKUBES · INDUSTRIAL EDGE","title":"Kubernetes dort,","accent":"wo Ihre Systeme arbeiten.","lead":"OpenKubes Industrial Edge verbindet verteilte Kubernetes-Umgebungen, lokale KI-Verarbeitung und kontrollierbare Plattform-Operations – für Fabriken, Logistik, Energie und industrielle Systeme.","benefits":["Standortübergreifende Plattformstandards","Kontrollierte Updates auch bei eingeschränkter Verbindung","Edge AI und lokale Datenverarbeitung","Security und Observability über die gesamte Flotte"],"challenge":"Ein Betriebsmodell. Viele Standorte.","challengeText":"Produktionsanlagen, Logistikzentren und entfernte Edge-Standorte brauchen eine Plattform, die auch außerhalb zentraler Rechenzentren zuverlässig betrieben werden kann. Wir verbinden lokale Autonomie mit versionierten Konfigurationen, nachvollziehbaren Freigaben und zentraler Transparenz – ohne eine durchgängige Netzverbindung vorauszusetzen.","capTitle":"Verteilte Infrastruktur. Klare Kontrolle.","capabilities":[["Cluster Fleet & Site Management","Standardisierte Cluster- und Plattformkonfigurationen für viele Standorte, inklusive Bootstrap, Inventarisierung und Lifecycle-Management."],["Offline & Air-Gapped Operations","Konzeption von Repositories, Artefakt-Spiegelung und kontrollierten Update-Abläufen für isolierte oder zeitweise getrennte Netzwerke."],["Edge AI & Local Inference","Lokale KI-Inferenz und GPU-gestützte Workloads dort bereitstellen, wo Daten entstehen und Latenz entscheidend ist."],["GitOps & Progressive Delivery","Deklarative Plattform- und Anwendungsstände, abgestufte Rollouts, Freigaben und Rollback-Konzepte für Edge-Flotten."],["Security & Zero Trust","Identitäten, Netzwerksegmentierung, signierte Artefakte, Policies und nachvollziehbare Zugriffe pro Standort."],["Fleet Observability","Standortübergreifendes Monitoring, Logging, Ereignisse, Ressourcenmetriken und verlässliche Alarmierungswege."],["Industrial & OT Integration","Offene Schnittstellen für Produktionssysteme, industrielle Messaging-Plattformen und lokale Anwendungen unter Berücksichtigung bestehender Netzgrenzen."],["Robotics & Autonomous Systems","Infrastrukturgrundlage für ROS 2, Open-RMF, mobile Robotik und die Integration autonomer Systeme in Industrieprozesse."]],"useTitle":"Entwickelt für verteilte Realitäten.","uses":["Manufacturing & Industrial Automation","Logistics & Warehousing","Robotics & Autonomous Fleets","Energy & Utilities","Retail & Branch Infrastructure","Healthcare & Remote Sites"],"note":"Industrial Edge wird projektspezifisch ausgelegt. Offline-Fähigkeit, Update-Verfahren, Echtzeitverhalten und Integration in OT-Umgebungen müssen anhand von Standortnetz, Hardware und Sicherheitsanforderungen validiert werden.","finalTitle":"Ihre Edge-Flotte. Eine Plattformstrategie.","finalText":"Lassen Sie uns über Standorte, Netzwerkgrenzen, Cluster-Lifecycle und einen realistischen Pilot für OpenKubes Industrial Edge sprechen.","cta":"Industrial-Edge-Projekt besprechen","secondary":"Kontaktmöglichkeiten","related":"OpenKubes Robotics ansehen","back":"Alle Produkte"},"en":{"eyebrow":"OPENKUBES · INDUSTRIAL EDGE","title":"Kubernetes where","accent":"your systems operate.","lead":"OpenKubes Industrial Edge brings distributed Kubernetes, local AI processing and governed platform operations together for factories, logistics, energy and industrial systems.","benefits":["Consistent standards across sites","Controlled updates on limited connections","Edge AI and local data processing","Security and observability across the fleet"],"challenge":"One operating model. Many locations.","challengeText":"Factories, warehouses and remote edge sites need infrastructure that can be operated reliably beyond central data centers. We combine local autonomy with version-controlled configuration, reviewable approvals and fleet-wide visibility without assuming permanent connectivity.","capTitle":"Distributed infrastructure. Clear control.","capabilities":[["Cluster Fleet & Site Management","Standardized cluster and platform configurations across sites, including bootstrap, inventory and lifecycle management."],["Offline & Air-Gapped Operations","Repository design, artifact mirroring and controlled update workflows for isolated or intermittently connected networks."],["Edge AI & Local Inference","Deploy local inference and GPU-enabled workloads where data originates and latency matters."],["GitOps & Progressive Delivery","Declarative platform and application states, staged rollouts, approvals and rollback strategies across edge fleets."],["Security & Zero Trust","Identity, network segmentation, signed artifacts, policies and traceable access at each site."],["Fleet Observability","Fleet-wide monitoring, logging, events, capacity metrics and robust alerting paths."],["Industrial & OT Integration","Open interfaces for production systems, industrial messaging and local workloads within established network boundaries."],["Robotics & Autonomous Systems","Infrastructure foundations for ROS 2, Open-RMF, mobile robots and integration of autonomous systems into industrial processes."]],"useTitle":"Built for distributed reality.","uses":["Manufacturing & Industrial Automation","Logistics & Warehousing","Robotics & Autonomous Fleets","Energy & Utilities","Retail & Branch Infrastructure","Healthcare & Remote Sites"],"note":"Industrial Edge architecture is scoped per deployment. Offline capabilities, update workflows, real-time behavior and OT integration must be validated against network conditions, hardware and security requirements.","finalTitle":"Your edge fleet. One platform strategy.","finalText":"Discuss sites, network boundaries, cluster lifecycle and a realistic OpenKubes Industrial Edge pilot with our engineers.","cta":"Discuss an Industrial Edge project","secondary":"Contact options","related":"Explore OpenKubes Robotics","back":"All products"}}[lang];
+const contact='/'+lang+'/contact/';
+const booking='https://calendly.com/kubernauts/30min';
+---
+<main class="product-detail product-detail--industrial-edge">
+  <section class="product-detail__hero"><div class="wrap product-detail__hero-grid">
+    <div>
+      <p class="eyebrow">{d.eyebrow}</p>
+      <h1>{d.title}<br/><em>{d.accent}</em></h1>
+      <p class="product-detail__lead">{d.lead}</p>
+      <div class="product-detail__actions">
+        <a class="product-detail__primary" href={booking} target="_blank" rel="noopener noreferrer">{d.cta} ↗</a>
+        <a class="product-detail__secondary" href={contact}>{d.secondary} ↗</a>
+      </div>
+    </div>
+    <aside class="product-detail__visual">
+      <span class="product-detail__visual-header">OPENKUBES · DISTRIBUTED EDGE OPERATIONS</span>
+      <div class="industrial-edge__network" aria-hidden="true">
+        <div class="industrial-edge__hub">OPENKUBES<span>CONTROL & GOVERNANCE</span></div>
+        <div class="industrial-edge__site-grid">
+          <div>FACTORY <span>EDGE</span></div><div>LOGISTICS <span>EDGE</span></div><div>ENERGY <span>EDGE</span></div>
+        </div>
+      </div>
+      <span class="product-detail__visual-footer">GITOPS · OBSERVABILITY · SOVEREIGN EDGE</span>
+    </aside>
+  </div></section>
+  <section class="product-detail__problem"><div class="wrap product-detail__problem-grid">
+    <div><p class="eyebrow">THE CHALLENGE</p><h2>{d.challenge}</h2></div><p>{d.challengeText}</p>
+  </div></section>
+  <section class="product-detail__capabilities"><div class="wrap">
+    <p class="eyebrow">OPENKUBES / INDUSTRIAL EDGE CAPABILITIES</p>
+    <h2>{d.capTitle}</h2>
+    <div class="product-detail__cards">{d.capabilities.map(([heading,description],i)=><article>
+      <span>{String(i+1).padStart(2,'0')} / CAPABILITY</span><h3>{heading}</h3><p>{description}</p>
+    </article>)}</div>
+    <p class="product-detail__disclaimer">{d.note}</p>
+  </div></section>
+  <section class="industrial-edge__usecases"><div class="wrap">
+    <p class="eyebrow">INDUSTRIAL · DISTRIBUTED · EDGE</p>
+    <h2>{d.useTitle}</h2>
+    <div class="industrial-edge__usecase-grid">{d.uses.map((use,i)=><div><span>{String(i+1).padStart(2,'0')}</span><strong>{use}</strong></div>)}</div>
+    <a href={'/'+lang+'/products/robotics/'}>{d.related} ↗</a>
+  </div></section>
+  <section class="product-detail__closing"><div class="wrap">
+    <p class="eyebrow">LET'S TALK ENGINEERING</p>
+    <h2>{d.finalTitle}</h2><p>{d.finalText}</p>
+    <div class="product-detail__actions">
+      <a class="product-detail__primary" href={booking} target="_blank" rel="noopener noreferrer">{d.cta} ↗</a>
+      <a class="product-detail__secondary" href={'/'+lang+'/products/'}>{d.back} ↗</a>
+    </div>
+  </div></section>
+</main>

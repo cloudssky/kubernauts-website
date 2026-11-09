@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PlatformDiagram from '../../components/PlatformDiagram.astro';
+import ServicesGrid from '../../components/ServicesGrid.astro';
+import IndustriesGrid from '../../components/IndustriesGrid.astro';
+import AnnouncementBar from '../../components/AnnouncementBar.astro';
+import InnovationPlatforms from '../../components/InnovationPlatforms.astro';
+import FamilyWordmark from '../../components/FamilyWordmark.astro';
+import EngineeringApproach from '../../components/EngineeringApproach.astro';
+import ContactSection from '../../components/ContactSection.astro';
+import SiteNavigation from '../../components/SiteNavigation.astro';
+import CorporateFooter from '../../components/CorporateFooter.astro';
+const t = {"lang":"de","other":"EN","otherPath":"/en/","nav":[["Leistungen","#services"],["Branchen","#industries"],["Plattformen","#platforms"],["Vorgehen","#approach"]],"contact":"Kontakt","eyebrow":"ENTERPRISE CLOUD NATIVE ENGINEERING","hero":["We Engineer.","We Operate.","We Innovate."],"lead":"Enterprise Kubernetes, souveräne Plattformen und AI-native Infrastruktur.","sub":"Von Architektur und Platform Engineering bis zum sicheren Betrieb geschäftskritischer Umgebungen.","explore":"Unsere Leistungen","talk":"Mit unseren Engineers sprechen","micro":"BUILT FOR COMPLEXITY. ENGINEERED FOR TRUST.","ticker":"AUF OFFENEN TECHNOLOGIEN AUFGEBAUT","servicesEyebrow":"01 / UNSERE EXPERTISE","servicesTitle":["Engineering für","die Zukunft."],"servicesIntro":"Wir verbinden moderne Plattformarchitektur mit praktischem Engineering und langjähriger Betriebserfahrung.","services":[["Platform Engineering","Kubernetes-Plattformen in Cloud-, On-Premises- und Edge-Umgebungen entwerfen, aufbauen und automatisieren."],["Enterprise Kubernetes Operations","Observability, Zuverlässigkeit und Kubernetes-Betrieb für komplexe Unternehmensumgebungen."],["AI & MLOps","Souveräne KI-Infrastruktur und produktionsorientierte Workflows für verantwortungsvolle KI."],["Cloud Native Transformation","Modernisierung, GitOps und Security by Design für skalierbare Anwendungen."]],"industriesEyebrow":"02 / GESCHÄFTSKRITISCHE UMGEBUNGEN","industriesTitle":["Entwickelt für Systeme,","auf die es ankommt."],"industriesDesc":"Cloud-Native-Technologien müssen sich im produktiven Einsatz bewähren – von Industrie und Logistik bis zu regulierten Unternehmen.","industries":["Automotive","Industrie","Logistik","Finanzdienstleistungen","Gesundheitswesen","Energie"],"platformEyebrow":"03 / INNOVATION & PLATTFORMEN","platformTitle":["Offene Innovation.","Echtes Engineering."],"openkubes":"Offene, erweiterbare Kubernetes-Plattformarchitektur – souverän und deklarativ gestaltet.","kubernautic":"KI-gestützte Kubernetes Operations Intelligence mit nachvollziehbarer Analyse und menschlicher Kontrolle.","platformLinks":["OpenKubes entdecken","Kubernautic entdecken"],"approachEyebrow":"04 / UNSERE ARBEITSWEISE","approachTitle":["Von der Architektur","bis zum Betrieb."],"steps":["Analysieren","Architektur","Aufbauen","Betreiben","Weiterentwickeln"],"contactEyebrow":"GEMEINSAM WEITERDENKEN","contactTitle":["Bereit für Ihre","nächste Plattform?"],"contactCta":"Kontakt aufnehmen","footer":"Konzeptvorschau · Nicht die produktive Website","title":"Kubernetes Beratung & Platform Engineering | Kubernauts","description":"Kubernauts entwickelt und betreibt sichere Kubernetes-Plattformen: Beratung, Platform Engineering, GitOps und Enterprise Operations für Cloud, On-Premises und Edge."};
+const industryItems = [
+  {
+    "title": "Automotive",
+    "context": "Vernetzte Produktionssysteme, verteilte Anwendungen und hohe Anforderungen an Betrieb und Integration.",
+    "focus": "Industrial Kubernetes · Integration · Reliability",
+    "accent": "blue"
+  },
+  {
+    "title": "Manufacturing",
+    "context": "Plattformen für Produktionsumgebungen, in denen Stabilität, Datenkontrolle und Wiederholbarkeit zählen.",
+    "focus": "On-Premises · Edge · Automation",
+    "accent": "teal"
+  },
+  {
+    "title": "Logistics",
+    "context": "Cloud-native Infrastruktur für verteilte Standorte und betriebsnahe, vernetzte Dienste.",
+    "focus": "Distributed Systems · Operations · Connectivity",
+    "accent": "orange"
+  },
+  {
+    "title": "Financial Services",
+    "context": "Architektur und Betriebsmodelle für regulierte und sicherheitskritische IT-Landschaften.",
+    "focus": "Security · Governance · Resilience",
+    "accent": "green"
+  },
+  {
+    "title": "Healthcare",
+    "context": "Kontrollierbare Infrastrukturkonzepte für Umgebungen mit hohen Datenschutz- und Verfügbarkeitsansprüchen.",
+    "focus": "Data Sovereignty · Auditability · Availability",
+    "accent": "blue"
+  },
+  {
+    "title": "Energy & Utilities",
+    "context": "Plattformansätze für verteilte, langlebige und zunehmend digitalisierte Infrastruktur.",
+    "focus": "Edge · Lifecycle · Observability",
+    "accent": "teal"
+  }
+];
+const serviceItems = [
+  {
+    "number": "01",
+    "title": "Platform Engineering",
+    "description": "Wir konzipieren und automatisieren Kubernetes-Plattformen für Cloud, On-Premises und Edge – vom Architekturentwurf bis zum produktiven Betrieb.",
+    "capabilities": [
+      "Kubernetes-Architektur",
+      "Cluster Lifecycle",
+      "GitOps & IaC"
+    ],
+    "outcome": "Wiederholbare Plattformen statt individueller Cluster-Silos.",
+    "accent": "blue",
+    "href": "/de/contact/",
+    "detailHref": "/de/kubernauts-kubernetes-services/platform-engineering/"
+  },
+  {
+    "number": "02",
+    "title": "Enterprise Kubernetes Operations",
+    "description": "Wir betreiben und optimieren geschäftskritische Kubernetes-Umgebungen mit Fokus auf Verfügbarkeit, Transparenz und verlässliche Prozesse.",
+    "capabilities": [
+      "SRE & Observability",
+      "Security & Hardening",
+      "Incident & Change"
+    ],
+    "outcome": "Betriebsfähigkeit, die auch im Ernstfall trägt.",
+    "accent": "teal",
+    "href": "/de/contact/",
+    "detailHref": "/de/kubernauts-kubernetes-services/index.html"
+  },
+  {
+    "number": "03",
+    "title": "AI & MLOps",
+    "description": "Wir schaffen Infrastruktur und Betriebsprozesse für private KI, Modellbereitstellung und ML-Workloads unter kontrollierten Rahmenbedingungen.",
+    "capabilities": [
+      "Private AI",
+      "GPU & Kubernetes",
+      "Model Operations"
+    ],
+    "outcome": "KI-Workloads auf nachvollziehbarer, souveräner Infrastruktur.",
+    "accent": "green",
+    "href": "/de/contact/",
+    "detailHref": "/de/kubernauts-kubernetes-services/ai-mlops-services/"
+  },
+  {
+    "number": "04",
+    "title": "Cloud Native Transformation",
+    "description": "Wir modernisieren Workloads und Lieferprozesse mit Containern, GitOps und automatisierter Infrastruktur – in sinnvollen, kontrollierten Schritten.",
+    "capabilities": [
+      "Modernisierung",
+      "CI/CD & GitOps",
+      "Security by Design"
+    ],
+    "outcome": "Weniger Betriebsaufwand, klare Migrationspfade.",
+    "accent": "orange",
+    "href": "/de/contact/",
+    "detailHref": "/de/kubernauts-kubernetes-services/cloud-native-transformation/"
+  }
+];
+---
+<BaseLayout lang="de" title={t.title} description={t.description}>
+<AnnouncementBar lang="de" />
+<header class="site-header"><div class="header wrap"><a class="logo brand-logo" href="/de/" aria-label="Kubernauts"><img src="/brand/kubernauts-hexagon-light.svg" alt="" width="44" height="44" /><span class="brand-type"><FamilyWordmark name="kubernauts" theme="dark" /></span></a><SiteNavigation lang="de" /><div class="header-right"><a class="lang" lang="en" href={t.otherPath}>{t.other}</a><a class="btn outline" href="/de/contact/">{t.contact} ↗</a></div></div></header>
+<main>
+<section class="hero"><div class="wrap hero-inner"><div class="hero-copy"><p class="eyebrow">● &nbsp;{t.eyebrow}</p><h1>{t.hero[0]}<br />{t.hero[1]}<br /><em>{t.hero[2]}</em></h1><p class="lead">{t.lead}</p><p class="sublead">{t.sub}</p><div class="buttons"><a class="btn primary" href="#services">{t.explore} ↗</a><a class="btn outline" href="/de/contact/">{t.talk} ↗</a></div><p class="minor">{t.micro}</p></div><PlatformDiagram lang="de" /></div></section>
+<div class="ticker"><div class="wrap"><span>{t.ticker}</span><b>KUBERNETES</b><b>OPEN SOURCE</b><b>GITOPS</b><b>PLATFORM ENGINEERING</b></div></div>
+<section id="services" class="section light"><div class="wrap"><div class="section-title"><div><p class="eyebrow">{t.servicesEyebrow}</p><h2>{t.servicesTitle[0]}<br /><em>{t.servicesTitle[1]}</em></h2></div><p>{t.servicesIntro}</p></div><ServicesGrid lang="de" items={serviceItems} /></div></section>
+<section id="industries" class="section dark industries-section"><div class="wrap"><div class="industries-intro"><div><p class="eyebrow">{t.industriesEyebrow}</p><h2>{t.industriesTitle[0]}<br /><em>{t.industriesTitle[1]}</em></h2></div><p class="muted">Architektur und Betrieb für anspruchsvolle Umgebungen – wo Sicherheitsanforderungen, Verfügbarkeit und technische Integration zusammenkommen.</p></div><IndustriesGrid lang="de" industries={industryItems}/></div></section>
+<section id="platforms" class="section light innovation-section"><div class="wrap"><p class="eyebrow">{t.platformEyebrow}</p><h2>{t.platformTitle[0]}<br /><em>{t.platformTitle[1]}</em></h2><InnovationPlatforms lang="de"/></div></section>
+<section id="approach" class="section dark approach-section"><div class="wrap"><p class="eyebrow">{t.approachEyebrow}</p><h2>{t.approachTitle[0]}<br /><em>{t.approachTitle[1]}</em></h2><EngineeringApproach lang="de" /></div></section>
+<ContactSection lang="de" />
+</main>
+<CorporateFooter lang="de" />
+</BaseLayout>

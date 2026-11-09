@@ -1,0 +1,44 @@
+---
+import FamilyWordmark from './FamilyWordmark.astro';
+interface Props { lang:'de'|'en'; }
+const {lang}=Astro.props;
+const de=lang==='de';
+const groups=[
+  {name:de?'Leistungen':'Services',links:[{label:'Platform Engineering',href:`/${lang}/#services`},{label:'Kubernetes Operations',href:`/${lang}/kubernauts-kubernetes-services/index.html`},{label:'AI & MLOps',href:`/${lang}/kubernauts-kubernetes-services/ai-mlops-services/`},{label:'Enterprise AI Engineering',href:`/${lang}/services/enterprise-ai-engineering/`},{label:'Sovereign Agentic AI Operations',href:`/${lang}/kubernauts-kubernetes-services/sovereign-agentic-ai-operations/`},{label:de?'Branchen':'Industries',href:`/${lang}/#industries`}]},
+  {name:de?'Plattformen':'Platforms',links:[{label:'OpenKubes',href:'https://openkubes.org'},{label:'Kubernautic',href:`/${lang}/kubernautic/`},{label:'Insights',href:`/${lang}/insights/`},{label:de?'Unser Vorgehen':'Our Approach',href:`/${lang}/#approach`},{label:de?'Karriere':'Careers',href:`/${lang}/careers/`}]},
+];
+const legal=de?'/de/impressum/':'/en/imprint/';
+const privacy=de?'/de/datenschutz/':'/en/privacy/';
+---
+<footer class="corporate-footer">
+  <div class="wrap corporate-footer__grid">
+    <div class="corporate-footer__identity">
+      <a class="brand-logo footer-brand" href={`/${lang}/`} aria-label="Kubernauts Startseite">
+        <img src="/brand/kubernauts-hexagon.svg" width="48" height="48" alt="" />
+        <span class="brand-type"><FamilyWordmark name="kubernauts" theme="dark" /></span>
+      </a>
+      <p>{de?'Enterprise Kubernetes, Platform Engineering und souveräne KI-Infrastruktur.':'Enterprise Kubernetes, platform engineering and sovereign AI infrastructure.'}</p>
+      <span class="corporate-footer__office">Kubernauts GmbH · Köln, Deutschland</span>
+    </div>
+    {groups.map(group=><nav class="corporate-footer__column" aria-label={group.name}>
+      <h3>{group.name}</h3>
+      {group.links.map(link=><a href={link.href} target={link.href.startsWith('https')?'_blank':undefined} rel={link.href.startsWith('https')?'noopener noreferrer':undefined}>{link.label}</a>)}
+    </nav>)}
+    <div class="corporate-footer__column">
+      <h3>{de?'Kontakt':'Contact'}</h3>
+      <a href="mailto:contact@kubernauts.de">contact@kubernauts.de</a>
+      <a href="tel:+4922137990680">+49 221 379 90 680</a>
+      <span>Im Mediapark 4C<br/>50670 Köln</span>
+    </div>
+  </div>
+  <div class="wrap corporate-footer__bottom">
+    <span>© {new Date().getFullYear()} Kubernauts GmbH</span>
+    <nav aria-label={de?'Rechtliches':'Legal'}>
+      <a href={legal}>{de?'Impressum':'Legal notice'}</a>
+      <a href={privacy}>{de?'Datenschutz':'Privacy policy'}</a>
+      <button type="button" class="footer-consent-settings" data-open-consent>{de?'Cookie-Einstellungen':'Cookie settings'}</button>
+      <a href={de?'/en/':'/de/'} lang={de?'en':'de'}>{de?'English':'Deutsch'}</a>
+    </nav>
+    <span class="corporate-footer__signature">ENGINEER · OPERATE · INNOVATE</span>
+  </div>
+</footer>

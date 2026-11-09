@@ -1,0 +1,79 @@
+---
+import OpenKubesWordmark from './OpenKubesWordmark.astro';
+import FamilyWordmark from './FamilyWordmark.astro';
+interface Props { lang: 'de'|'en'; }
+const { lang } = Astro.props;
+const de = lang === 'de';
+const copy = de ? {
+ eyebrow:'ZWEI PRODUKTE · EINE ENGINEERING-DNA',
+ intro:'Unsere Arbeit endet nicht bei Beratung und Betrieb. Mit OpenKubes entwickeln wir offene Plattformarchitektur. Mit Kubernautic erforschen wir KI-gestützte Operations — unabhängig positioniert, technisch verbunden.',
+ foundation:'OPEN SOURCE · SOVEREIGN PLATFORMS',
+ okName:'Das Framework für Kubernetes-Plattformen',
+ okDesc:'OpenKubes definiert einen offenen Ansatz für den Aufbau souveräner, kontrollierbarer Kubernetes-Distributionen — mit Architekturentscheidungen, deklarativen Verträgen und nachvollziehbarer Governance.',
+ okTags:['Contracts First','Architecture as Code','Human Governance'],
+ okAction:'OpenKubes entdecken',
+ aiName:'Intelligence für Kubernetes Operations',
+ aiDesc:'Kubernautic verbindet Observability, kontextbasierte Analyse und kontrollierte Handlungsempfehlungen zu einem AI-nativen Operations-Konzept — mit Menschen in der Entscheidungsschleife.',
+ aiTags:['Observe & Reason','Governed Actions','Human in Control'],
+ aiAction:'Kubernautic entdecken',
+ note:'OpenKubes ist unser offenes Plattform-Framework. Kubernautic ist unsere eigenständige Agentic-AI-Produktinitiative.'
+} : {
+ eyebrow:'TWO PRODUCTS · ONE ENGINEERING DNA',
+ intro:'Our work goes beyond consulting and operations. With OpenKubes, we develop open platform architecture. With Kubernautic, we explore AI-assisted operations — independently positioned, technically connected.',
+ foundation:'OPEN SOURCE · SOVEREIGN PLATFORMS',
+ okName:'The framework for Kubernetes platforms',
+ okDesc:'OpenKubes defines an open approach for building sovereign, controllable Kubernetes distributions — using architecture decisions, declarative contracts and evidence-driven governance.',
+ okTags:['Contracts First','Architecture as Code','Human Governance'],
+ okAction:'Explore OpenKubes',
+ aiName:'Intelligence for Kubernetes operations',
+ aiDesc:'Kubernautic brings together observability, contextual analysis and governed recommendations in an AI-native operations concept — keeping humans in the decision loop.',
+ aiTags:['Observe & Reason','Governed Actions','Human in Control'],
+ aiAction:'Explore Kubernautic',
+ note:'OpenKubes is our open platform framework. Kubernautic is our distinct agentic AI product initiative.'
+};
+---
+<div class="innovation-intro">
+  <p class="innovation-intro__eyebrow">{copy.eyebrow}</p>
+  <p>{copy.intro}</p>
+</div>
+<div class="innovation-grid">
+  <article class="innovation-card innovation-card--openkubes">
+    <div class="innovation-art innovation-art--openkubes" aria-hidden="true">
+      <div class="innovation-art__mesh"></div>
+      <img class="innovation-art__product-logo innovation-art__product-logo--openkubes" src="/brand/openkubes-cube-v2.svg" alt="" width="230" height="230" loading="lazy" />
+      <span class="innovation-art__stamp innovation-art__stamp--first">OPEN · DECLARATIVE</span>
+      <span class="innovation-art__stamp innovation-art__stamp--second">SOVEREIGN BY DESIGN</span>
+    </div>
+    <div class="innovation-card__body">
+      <p class="innovation-card__kicker">{copy.foundation}</p>
+      <h3 class="innovation-brand-lockup innovation-brand-lockup--openkubes">
+        <img class="innovation-brand-lockup__signet innovation-brand-lockup__signet--openkubes" src="/brand/openkubes-cube-v2.svg" width="38" height="38" alt="" />
+        <OpenKubesWordmark theme="dark"/>
+      </h3>
+      <h4>{copy.okName}</h4>
+      <p>{copy.okDesc}</p>
+      <ul>{copy.okTags.map(tag=><li>{tag}</li>)}</ul>
+      <a href="https://openkubes.org" target="_blank" rel="noopener noreferrer">{copy.okAction} <span aria-hidden="true">↗</span></a>
+    </div>
+  </article>
+  <article class="innovation-card innovation-card--kubernautic">
+    <div class="innovation-art innovation-art--kubernautic" aria-hidden="true">
+      <div class="innovation-art__mesh"></div>
+      <div class="innovation-art__ai-rings"><img class="innovation-art__product-logo innovation-art__product-logo--kubernautic" src="/brand/kubernautic-mark-original.svg" alt="" width="150" height="150" loading="lazy" /></div>
+      <span class="innovation-art__stamp innovation-art__stamp--first">OBSERVE · REASON</span>
+      <span class="innovation-art__stamp innovation-art__stamp--second">HUMAN IN CONTROL</span>
+    </div>
+    <div class="innovation-card__body">
+      <p class="innovation-card__kicker">AGENTIC AI · OPERATIONS</p>
+      <h3 class="innovation-brand-lockup innovation-brand-lockup--kubernautic">
+        <img class="innovation-brand-lockup__signet innovation-brand-lockup__signet--kubernautic" src="/brand/kubernautic-mark-original.svg" width="38" height="38" alt="" />
+        <FamilyWordmark name="kubernautic" theme="dark" />
+      </h3>
+      <h4>{copy.aiName}</h4>
+      <p>{copy.aiDesc}</p>
+      <ul>{copy.aiTags.map(tag=><li>{tag}</li>)}</ul>
+      <a href={'/'+lang+'/kubernautic/'} target="_blank" rel="noopener noreferrer">{copy.aiAction} <span aria-hidden="true">↗</span></a>
+    </div>
+  </article>
+</div>
+<p class="innovation-note">{copy.note}</p>

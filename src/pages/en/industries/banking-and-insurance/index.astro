@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import FamilyWordmark from '../../../../components/FamilyWordmark.astro';
+import AnnouncementBar from '../../../../components/AnnouncementBar.astro';
+import SiteNavigation from '../../../../components/SiteNavigation.astro';
+import CorporateFooter from '../../../../components/CorporateFooter.astro';
+import IndustryLanding from '../../../../components/IndustryLanding.astro';
+const lang='en';
+---
+<BaseLayout lang={lang} title="Banking & Insurance | Kubernauts" description="Enterprise Kubernetes, Platform Engineering and AI integration for mission-critical environments." canonicalPath="/en/industries/banking-and-insurance/">
+<AnnouncementBar lang={lang}/><header class="site-header"><div class="header wrap"><a class="logo brand-logo" href="/en/"><img src="/brand/kubernauts-hexagon-light.svg" width="44" height="44" alt=""/><span class="brand-type"><FamilyWordmark name="kubernauts" theme="dark"/></span></a><SiteNavigation lang={lang}/><div class="header-right"><a class="lang" href="/de/industries/">DE</a><a class="btn outline" href="/en/contact/">Contact ↗</a></div></div></header>
+<IndustryLanding lang={lang} type="finance"/><CorporateFooter lang={lang}/></BaseLayout>

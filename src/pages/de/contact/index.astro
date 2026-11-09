@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import FamilyWordmark from '../../../components/FamilyWordmark.astro';
+import SiteNavigation from '../../../components/SiteNavigation.astro';
+import CorporateFooter from '../../../components/CorporateFooter.astro';
+import AnnouncementBar from '../../../components/AnnouncementBar.astro';
+const t={"heading":"Sprechen Sie mit unseren Kubernetes-Experten.","sub":"Ob Architektur, Platform Engineering, Kubernetes-Betrieb oder AI-Infrastruktur: Wir helfen Ihnen, den nächsten Schritt zu planen.","details":"DIREKTER KONTAKT","address":"UNSER STANDORT","meeting":"Kubernetes-Projekt besprechen","meetingText":"Vereinbaren Sie ein unverbindliches 30-minütiges Erstgespräch mit unseren Kubernetes- und Platform-Engineering-Experten.","features":["30 Minuten","Online via Zoom","Unverbindlich"],"cta":"Projektgespräch vereinbaren","calendly":"Die Terminbuchung erfolgt über Calendly in einem neuen Browser-Tab.","community":"KUBERNAUTS COMMUNITY","communityHead":"Kubernauts Worldwide Meetup","communityText":"Open-Source-Wissen teilen, spannende Projekte diskutieren und gemeinsam die Cloud-Native-Community stärken.","communityLink":"Zur Community","email":"Alternativ können Sie uns direkt eine E-Mail schreiben.","back":"Startseite","nav":["Leistungen","Branchen","Plattformen","Vorgehen"],"contact":"Kontakt","note":"Persönlich. Technisch fundiert. Unverbindlich."};
+const lang='de';
+const navIds=["services","industries","platforms","approach"];
+---
+<BaseLayout lang={lang} title={`${t.contact} | Kubernauts GmbH`} description={t.sub} canonicalPath="/de/contact/">
+  <AnnouncementBar lang={lang}/>
+  <header class="site-header">
+    <div class="header wrap">
+      <a class="logo brand-logo" href="/de/" aria-label="Kubernauts">
+        <img src="/brand/kubernauts-hexagon-light.svg" alt="" width="44" height="44"/>
+        <span class="brand-type"><FamilyWordmark name="kubernauts" theme="dark" /></span>
+      </a>
+      <SiteNavigation lang="de" />
+      <div class="header-right"><a class="lang" lang="en" href="/en/contact/">EN</a><a class="btn outline" href="/de/contact/" aria-current="page">{t.contact} ↗</a></div>
+    </div>
+  </header>
+  <main class="contact-page">
+    <section class="contact-page__hero">
+      <div class="wrap contact-page__intro">
+        <div>
+          <p class="eyebrow">LET'S TALK ENGINEERING</p>
+          <h1>{t.heading}</h1>
+          <p>{t.sub}</p>
+        </div>
+        <div class="contact-page__badge"><span aria-hidden="true">✳</span> PLATFORM ENGINEERING · KUBERNETES · AI</div>
+      </div>
+    </section>
+    <section class="wrap contact-page__grid" aria-label={t.contact}>
+      <div class="contact-page__primary">
+        <div class="contact-page__direct">
+          <p class="contact-page__overline">{t.details}</p>
+          <h2>Kubernauts GmbH</h2>
+          <div class="contact-page__direct-grid">
+            <div><span>{t.address}</span><address>Im Mediapark 4C<br/>50670 Köln<br/>Deutschland</address></div>
+            <div><span>{t.contact}</span><a href="tel:+4922137990680">+49 221 379 90 680</a><a href="mailto:support@kubernauts.de">support@kubernauts.de</a></div>
+          </div>
+        </div>
+        <article class="contact-booking">
+          <div class="contact-booking__top"><span>01 / PROJECT DISCOVERY</span><span aria-hidden="true">↗</span></div>
+          <h2>{t.meeting}</h2>
+          <p>{t.meetingText}</p>
+          <div class="contact-booking__features">{t.features.map(feature=><span>{feature}</span>)}</div>
+          <a class="contact-booking__button" href="https://calendly.com/kubernauts/30min" target="_blank" rel="noopener noreferrer">{t.cta} <span aria-hidden="true">↗</span></a>
+          <p class="contact-booking__note">{t.calendly}</p>
+        </article>
+      </div>
+      <aside class="contact-page__side">
+        <div class="contact-page__side-label">{t.community}</div>
+        <h2>{t.communityHead}</h2>
+        <p>{t.communityText}</p>
+        <a href="https://www.meetup.com/kubernauts/" target="_blank" rel="noopener noreferrer">{t.communityLink} ↗</a>
+        <div class="contact-page__side-foot"><p>{t.email}</p><a href="mailto:support@kubernauts.de">support@kubernauts.de ↗</a></div>
+      </aside>
+    </section>
+  </main>
+  <CorporateFooter lang={lang}/>
+</BaseLayout>

@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import FamilyWordmark from '../../../../components/FamilyWordmark.astro';
+import AnnouncementBar from '../../../../components/AnnouncementBar.astro';
+import SiteNavigation from '../../../../components/SiteNavigation.astro';
+import CorporateFooter from '../../../../components/CorporateFooter.astro';
+import AiMlopsLanding from '../../../../components/AiMlopsLanding.astro';
+const lang='de';
+const nav=[["Leistungen","services"],["Branchen","industries"],["Plattformen","platforms"],["Vorgehen","approach"]];
+const contact='Kontakt';
+const other='EN';
+---
+<BaseLayout lang={lang}
+ title="AI & MLOps Services | Private AI & GPU Plattformen | Kubernauts"
+ description="AI & MLOps: Private AI, Kubernetes GPU-Infrastruktur, MLOps-Pipelines, KI-Governance, Edge AI und Model Operations."
+ canonicalPath="/de/kubernauts-kubernetes-services/ai-mlops-services/">
+ <AnnouncementBar lang={lang}/>
+ <header class="site-header"><div class="header wrap">
+  <a class="logo brand-logo" href="/de/" aria-label="Kubernauts"><img src="/brand/kubernauts-hexagon-light.svg" alt="" width="44" height="44"/><span class="brand-type"><FamilyWordmark name="kubernauts" theme="dark" /></span></a>
+  <SiteNavigation lang="de" />
+  <div class="header-right"><a class="lang" lang="en" href="/en/kubernauts-kubernetes-services/ai-mlops-services/">{other.toUpperCase()}</a><a class="btn outline" href="/de/contact/">{contact} ↗</a></div>
+ </div></header>
+ <AiMlopsLanding lang={lang}/>
+ <CorporateFooter lang={lang}/>
+</BaseLayout>

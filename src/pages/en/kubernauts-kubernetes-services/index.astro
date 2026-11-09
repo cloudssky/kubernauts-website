@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import FamilyWordmark from '../../../components/FamilyWordmark.astro';
+import AnnouncementBar from '../../../components/AnnouncementBar.astro';
+import SiteNavigation from '../../../components/SiteNavigation.astro';
+import CorporateFooter from '../../../components/CorporateFooter.astro';
+import KubernetesServicesLanding from '../../../components/KubernetesServicesLanding.astro';
+const lang='en';
+const nav=[["Services","services"],["Industries","industries"],["Platforms","platforms"],["Approach","approach"]];
+const contact='Contact';
+const other='DE';
+---
+<BaseLayout lang={lang}
+ title="Kubernetes Consulting & Enterprise Operations | Kubernauts"
+ description="Enterprise Kubernetes consulting for architecture, implementation, security, GitOps and managed operations. Talk directly to our engineers."
+ canonicalPath="/en/kubernauts-kubernetes-services/index.html">
+ <AnnouncementBar lang={lang}/>
+ <header class="site-header"><div class="header wrap">
+  <a class="logo brand-logo" href="/en/" aria-label="Kubernauts"><img src="/brand/kubernauts-hexagon-light.svg" alt="" width="44" height="44"/><span class="brand-type"><FamilyWordmark name="kubernauts" theme="dark" /></span></a>
+  <SiteNavigation lang="en" />
+  <div class="header-right"><a class="lang" lang="de" href="/de/kubernauts-kubernetes-services/index.html">{other.toUpperCase()}</a><a class="btn outline" href="/en/contact/">{contact} ↗</a></div>
+ </div></header>
+ <KubernetesServicesLanding lang={lang}/>
+ <CorporateFooter lang={lang}/>
+</BaseLayout>

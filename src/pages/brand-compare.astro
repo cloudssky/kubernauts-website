@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const variants=[
+ {id:'v1',label:'V1 · Originalnahe Farbverteilung',src:'/brand/openkubes-cube-illustration.svg',description:'Die aktuelle Farbverteilung aus der Kubernauts-Website.'},
+ {id:'v2',label:'V2 · Acht OpenKubes-Farben',src:'/brand/openkubes-cube-v2.svg',description:'Alle acht Flächen erhalten abgestimmte Töne aus der OpenKubes-Palette.'}
+];
+---
+<BaseLayout lang="de" title="OpenKubes Cube — V1 / V2 Vergleich" description="Interner Markenvergleich für das OpenKubes Cube Signet." canonicalPath="/brand-compare/">
+<main class="brand-study">
+<div class="brand-study__inner">
+<a class="brand-study__back" href="/de/#platforms">← Zur Kubernauts-Website</a>
+<p class="brand-study__eyebrow">BRAND SYSTEM V2 / DESIGN REVIEW</p>
+<h1>OpenKubes Cube <span>V1 vs. V2</span></h1>
+<p>Beide Varianten verwenden exakt dieselbe Geometrie. Nur die acht Farbflächen wurden verändert. Die aktuelle Produktdarstellung bleibt vorerst bei V1.</p>
+<div class="brand-study__grid">
+{variants.map(item=><article class="brand-study__card">
+<div class="brand-study__art"><img src={item.src} width="270" height="270" alt={item.label}/></div>
+<div class="brand-study__caption"><h2>{item.label}</h2><p>{item.description}</p><a href={item.src} target="_blank" rel="noopener noreferrer">SVG einzeln ansehen ↗</a></div>
+<div class="brand-study__small"><img src={item.src} width="48" height="48" alt=""/><span>48 px · Logo-Größe</span></div>
+</article>)}
+</div>
+<p class="brand-study__note">Nur Entwicklungsvergleich. Nicht zur Veröffentlichung auf der produktiven Website vorgesehen.</p>
+</div>
+</main>
+</BaseLayout>
+<style>
+.brand-study{min-height:100vh;background:#eff5f8;color:#142a3d;padding:60px 24px 90px;font-family:Inter,system-ui,sans-serif}
+.brand-study__inner{max-width:1100px;margin:auto}
+.brand-study__back{font-size:13px;color:#087b89;font-weight:700}
+.brand-study__eyebrow{letter-spacing:.18em;font-size:10px;color:#198b96;font-weight:800;margin-top:52px}
+.brand-study h1{font-size:clamp(32px,5vw,56px);letter-spacing:-.05em;margin:12px 0}
+.brand-study h1 span{color:#1caeab}
+.brand-study__inner>p:not(.brand-study__eyebrow){line-height:1.75;max-width:760px;color:#546d7f}
+.brand-study__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:36px}
+.brand-study__card{border:1px solid #d6e3ec;border-radius:12px;background:white;overflow:hidden}
+.brand-study__art{display:grid;place-items:center;height:340px;background:radial-gradient(ellipse at center,#14435b,#071421 70%)}
+.brand-study__art img{max-width:66%;height:auto;filter:drop-shadow(0 14px 22px #00daca2c)}
+.brand-study__caption{padding:24px 28px}
+.brand-study__caption h2{margin:0 0 7px;font-size:23px;letter-spacing:-.03em}
+.brand-study__caption p{margin:0 0 17px;font-size:13px;color:#5c7181;line-height:1.6}
+.brand-study__caption a{font-size:13px;color:#087b89;font-weight:800}
+.brand-study__small{display:flex;align-items:center;gap:12px;padding:14px 28px;background:#f5f9fb;font-size:12px;color:#657c8c;border-top:1px solid #e2ecf1}
+.brand-study__note{margin-top:24px;font-size:12px}
+@media(max-width:750px){.brand-study__grid{grid-template-columns:1fr}.brand-study__art{height:260px}}
+</style>

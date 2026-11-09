@@ -1,0 +1,27 @@
+---
+import {insightBySlug} from '../data/insights';
+interface Props {lang:'de'|'en';slug:string}
+const {lang,slug}=Astro.props;
+const insight=insightBySlug(slug);
+if(!insight) throw new Error('Unknown insight '+slug);
+const de=lang==='de';
+const related=slug==='beyond-chatbots'?'/'+lang+'/services/enterprise-ai-engineering/':'/'+lang+'/kubernauts-kubernetes-services/platform-engineering/';
+const source=insight.source?.startsWith('https://kubernauts.de/')?related:insight.source;
+const cta=slug==='meet-oki'?'Oki':slug==='meet-aia'?'Aia':de?'Technischen Hintergrund entdecken':'Explore technical background';
+---
+<main class="insight-article">
+ <section class="insight-article__hero"><div class="wrap insight-article__head">
+  <a class="insight-article__back" href={'/'+lang+'/insights/'}>← {de?'Alle Insights':'All insights'}</a>
+  <p class="eyebrow">{insight.category} · {insight.readTime.toUpperCase()} {de?'LESEZEIT':'READ TIME'}</p>
+  <h1>{insight.title[lang]}</h1>
+  <p>{insight.subtitle[lang]}</p>
+ </div></section>
+ <section class="insight-article__content"><div class="wrap insight-article__layout">
+ <article>
+  {insight.paragraphs[lang].map((paragraph,i)=><p class:list={{'insight-article__opening':i===0}}>{paragraph}</p>)}
+  <div class="insight-article__takeaway"><span>{de?'UNSER GRUNDSATZ':'OUR PRINCIPLE'}</span><p>{slug==='ai-thinks-evidence-proves'?'AI may propose; humans and policy authorize; evidence verifies.':slug==='adrs-contracts'?'Own the contracts, not the components.':de?'Klare Entscheidungen. Kontrollierte Umsetzung. Überprüfbare Ergebnisse.':'Explicit decisions. Governed execution. Verifiable outcomes.'}</p></div>
+  {source&&<a class="insight-article__source" href={source} target="_blank" rel="noopener noreferrer">{cta} ↗</a>}
+ </article>
+ <aside><p class="eyebrow">KUBERNAUTS INSIGHTS</p><h2>{de?'Ideen in die Praxis bringen.':'Turn principles into practice.'}</h2><p>{de?'Wir begleiten Architektur, Engineering und kontrollierte AI-Integration – von der ersten Entscheidung bis zum produktiven Betrieb.':'We help with architecture, engineering and governed AI integration — from the first decision through production operations.'}</p><a href={'/'+lang+'/contact/'}>{de?'Mit uns sprechen':'Talk to us'} ↗</a></aside>
+ </div></section>
+</main>
