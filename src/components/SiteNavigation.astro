@@ -92,6 +92,25 @@ const nav=[
   </nav>
 </details>
 
+
+<style is:inline>
+/* Inline delivery prevents a stale globally cached stylesheet from turning this dropdown into inline links. */
+.main-navigation .nav-industries{position:relative;z-index:100;flex:none}
+.main-navigation .nav-industries>summary{display:flex;align-items:center;gap:6px;cursor:pointer;list-style:none;font-size:13px;font-weight:650;padding:14px 0;white-space:nowrap}
+.main-navigation .nav-industries>summary::-webkit-details-marker{display:none}
+.main-navigation .nav-industries>summary:focus-visible{outline:2px solid #20b9b4;outline-offset:5px}
+.main-navigation .nav-industries[open] .nav-services__chevron{transform:rotate(180deg)}
+.main-navigation .nav-industries__menu{position:absolute;display:flex;flex-direction:column;top:100%;left:-25px;z-index:155;width:min(325px,calc(100vw - 30px));border:1px solid #d5e5ed;border-radius:9px;background:#fff;padding:9px;box-shadow:0 18px 48px #061c2b35;white-space:normal}
+.main-navigation .nav-industries:not([open]) .nav-industries__menu{display:none}
+.main-navigation .nav-industries__menu>a{display:block;padding:13px 12px;color:#153248!important;font-size:12px;line-height:1.4;border-radius:5px;text-decoration:none}
+.main-navigation .nav-industries__menu>a:hover,.main-navigation .nav-industries__menu>a:focus-visible{background:#ebf6f8;color:#0b8187!important}
+.main-navigation .nav-industries__menu>a+a{border-top:1px solid #eaf0f4}
+.main-navigation .nav-industries__menu strong{display:block;font-size:13px}
+.main-navigation .nav-industries__menu small{display:block;color:#6b8393;margin-top:5px;font-size:11px}
+.main-navigation .nav-industries__menu .nav-industries__all{display:flex;align-items:center;justify-content:space-between;background:#e9f4f6;font-weight:850;color:#0b7080!important;margin-bottom:4px}
+.site-header .main-navigation .nav-industries>summary:hover,.site-header .main-navigation .nav-industries[open]>summary{color:#62e2d8}
+</style>
+
 <script>
   document.querySelectorAll<HTMLDetailsElement>('.nav-services, .nav-products, .nav-industries').forEach((menu) => {
     let openedByHover = false;
