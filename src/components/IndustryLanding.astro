@@ -1,0 +1,43 @@
+---
+interface Props {lang:'de'|'en';type:'hub'|'manufacturing'|'finance'|'cases'}
+const {lang,type}=Astro.props;
+const de=lang==='de';
+const base='/'+lang+'/industries/';
+const data={
+ manufacturing:{
+  tag:'INDUSTRIAL MANUFACTURING',en:'Engineering for connected factories.',de:'Engineering für vernetzte Fabriken.',
+  enLead:'Industrial Kubernetes, OT/IT integration and reliable edge platforms — built for the realities of production environments.',deLead:'Industrial Kubernetes, OT-/IT-Integration und robuste Edge-Plattformen – entwickelt für die Anforderungen produktiver Fertigungsumgebungen.',
+  topics:[['Industrial Edge','On-premises clusters, lifecycle automation and local data processing'],['OT/IT Integration','Messaging, API integration and secure boundaries between plant and enterprise systems'],['Factory AI','Controlled AI inference, quality analytics and data platforms'],['Reliability','Observability, recovery design and operational governance']]
+ },
+ finance:{
+  tag:'BANKING & INSURANCE',en:'Modern platforms for regulated operations.',de:'Moderne Plattformen für regulierte Umgebungen.',
+  enLead:'Architecture and engineering for security-conscious, observable and resilient financial services systems.',deLead:'Architektur und Engineering für sicherheitsbewusste, beobachtbare und ausfallsichere Systeme im Finanzsektor.',
+  topics:[['Security by Design','Identity, policy boundaries and least-privilege access'],['Operational Resilience','Recovery planning, observability and controlled changes'],['Data & AI','Governed enterprise integration and privacy-conscious workflows'],['Platform Engineering','Reproducible architecture, GitOps and audit-ready decisions']]
+ },
+ cases:{
+  tag:'ENGINEERING USE CASES',en:'Real problems. Clear architecture.',de:'Reale Herausforderungen. Klare Architektur.',
+  enLead:'Representative application scenarios showing how cloud-native and AI engineering can solve complex operational problems.',deLead:'Typische Anwendungsszenarien, die zeigen, wie Cloud-Native- und KI-Engineering komplexe Betriebsanforderungen adressieren können.',
+  topics:[['Connected Manufacturing','Local data processing, industrial messaging and edge lifecycle'],['Logistics & Automation','Event-driven systems, fleet interfaces and distributed orchestration'],['Financial Services','Governed document processing and resilient workloads'],['Enterprise AI','Agentic workflows connecting business applications with explicit approvals']]
+ }
+};
+const item=type==='hub'?null:data[type];
+const title=type==='hub'?(de?'Entwickelt für Systeme, auf die es ankommt.':'Engineered for systems that matter.'):de?item!.de:item!.en;
+const lead=type==='hub'?(de?'Wir verbinden Kubernetes, Integration, Security und AI mit den Anforderungen komplexer Unternehmens- und Produktionsumgebungen.':'We combine Kubernetes, integration, security and AI with the realities of enterprise and industrial systems.'):de?item!.deLead:item!.enLead;
+const hubs=[
+{slug:'industrial-manufacturing/',name:de?'Industrie & Fertigung':'Manufacturing',desc:de?'Industrial Kubernetes · OT/IT · Edge AI':'Industrial Kubernetes · OT/IT · Edge AI'},
+{slug:'banking-and-insurance/index.html',name:de?'Banken & Versicherungen':'Banking & Insurance',desc:de?'Resilience · Governance · Security':'Resilience · Governance · Security'},
+{slug:'use-cases-and-success-stories/',name:de?'Anwendungsfälle':'Use Cases',desc:de?'Praxisszenarien statt unbelegter Erfolgszahlen':'Scenarios rather than unverified success metrics'}
+];
+---
+<main class="sector-page">
+ <section class="sector-hero"><div class="wrap"><p class="eyebrow">{type==='hub'?'KUBERNAUTS / INDUSTRIES':item!.tag}</p><h1>{title}</h1><p>{lead}</p><a href={'/'+lang+'/contact/'} class="sector-cta">{de?'Mit unseren Engineers sprechen':'Talk to our engineers'} ↗</a></div></section>
+ <section class="sector-content"><div class="wrap">
+  <p class="eyebrow">{type==='hub'?(de?'BRANCHEN & ANWENDUNGEN':'INDUSTRIES & USE CASES'):(de?'ENGINEERING-KOMPETENZEN':'ENGINEERING CAPABILITIES')}</p>
+  <div class="sector-grid">
+  {type==='hub'?hubs.map((h,i)=><article><span>0{i+1} / SECTOR</span><h2>{h.name}</h2><p>{h.desc}</p><a href={base+h.slug}>{de?'Mehr entdecken':'Explore'} ↗</a></article>):
+  item!.topics.map(([name,desc],i)=><article><span>0{i+1} / ENGINEERING</span><h2>{name}</h2><p>{desc}</p></article>)}
+  </div>
+  {type==='cases'&&<p class="sector-note">{de?'Die Beispiele beschreiben typische technische Lösungsmuster und sind keine behaupteten Kundenreferenzen oder zugesicherten Projektergebnisse.':'These are representative technical solution patterns, not claims of completed customer projects or guaranteed results.'}</p>}
+  {type!=='hub'&&<a class="sector-back" href={base}>← {de?'Alle Branchen':'All industries'}</a>}
+ </div></section>
+</main>
