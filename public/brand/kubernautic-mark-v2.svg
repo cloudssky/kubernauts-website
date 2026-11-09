@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Kubernautic – OpenKubes family signet</title>
+  <desc id="desc">Open multicolor hexagon with a large turquoise letter K and gently curved, pointed diagonal arms.</desc>
+  <defs>
+    <linearGradient id="top" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#26ACF2"/><stop offset="1" stop-color="#087FE7"/></linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2FD886"/><stop offset="1" stop-color="#16B75A"/></linearGradient>
+    <linearGradient id="lowerBlue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#297DE4"/><stop offset="1" stop-color="#1355B9"/></linearGradient>
+    <linearGradient id="amber" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFC043"/><stop offset="1" stop-color="#F39B1F"/></linearGradient>
+    <linearGradient id="orange" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FF8B1A"/><stop offset="1" stop-color="#F46A10"/></linearGradient>
+    <linearGradient id="kColor" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#48F2CB"/><stop offset=".52" stop-color="#1EE9E3"/><stop offset="1" stop-color="#13B0EF"/></linearGradient>
+  </defs>
+  <!-- Five separate faces of the OpenKubes cube silhouette; gaps remain transparent. -->
+  <path fill="url(#green)" d="M4 165 Q4 150 19 141 L123 66 V155 L77 180 V273 L4 304Z"/>
+  <path fill="url(#top)" d="M144 56 226 10 Q240 2 253 10L463 121 383 164 241 92 144 143Z"/>
+  <path fill="url(#amber)" d="M403 182 478 142V299L403 269Z"/>
+  <path fill="url(#lowerBlue)" d="M4 329 77 297V342L227 417V503Q223 508 217 504L19 404Q4 397 4 378Z"/>
+  <path fill="url(#orange)" d="M255 418 403 343V294L478 327V383Q478 396 462 404L266 505Q255 511 255 497Z"/>
+  <!-- Clean one-piece K: elegant, curved upper spike and swept lower leg. -->
+  <path fill="url(#kColor)" d="M162 181H215V247L274 188Q284 178 302 177L366 176Q327 203 304 225L268 258L366 334H308Q284 334 272 324L215 275V334H162Z"/>
+</svg>
