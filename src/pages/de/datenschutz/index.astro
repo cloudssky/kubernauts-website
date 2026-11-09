@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import CorporateFooter from '../../../components/CorporateFooter.astro';
+import FamilyWordmark from '../../../components/FamilyWordmark.astro';
 const lang = 'de';
 const sections = [
   {title:'1. Verantwortlicher',body:['Verantwortlich für die Verarbeitung personenbezogener Daten auf dieser Website ist die Kubernauts GmbH, Im Mediapark 4C, 50670 Köln, Deutschland.', 'E-Mail: support@kubernauts.de · Telefon: +49 221 379 90 680. Vertretungsberechtigte Person: Arash Kaffamanesh.']},
@@ -23,7 +24,7 @@ const sections = [
 ];
 ---
 <BaseLayout lang="de" title="Datenschutzerklärung | Kubernauts GmbH" description="Datenschutzhinweise der Kubernauts GmbH" canonicalPath="/de/datenschutz/">
-  <header class="legal-header"><div class="wrap"><a class="legal-back" href="/de/">← Zurück zur Startseite</a><a class="legal-home" href="/de/"><img src="/brand/kubernauts-hexagon-light.svg" width="38" height="38" alt=""/>KUBERNAUTS</a></div></header>
+  <header class="legal-header"><div class="wrap"><a class="legal-back" href="/de/">← Zurück zur Startseite</a><a class="legal-home" href="/de/"><img src="/brand/kubernauts-hexagon-light.svg" width="38" height="38" alt=""/><FamilyWordmark name="kubernauts" theme="light" /></a></div></header>
   <main class="legal-page">
     <div class="wrap legal-page__inner">
       <p class="eyebrow">KUBERNAUTS GMBH · PRIVACY</p>
