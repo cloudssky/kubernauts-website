@@ -1157,3 +1157,18 @@ section[id]{scroll-margin-top:100px}
 .industries-explore{display:flex;justify-content:center;margin-top:34px}
 .industries-explore__link{display:inline-flex;align-items:center;gap:12px;padding:14px 20px;border:1px solid #52cfc7;border-radius:6px;color:#83eee4;font-size:13px;font-weight:800;transition:background .2s ease,border-color .2s ease}
 .industries-explore__link:hover,.industries-explore__link:focus-visible{background:#153a48;border-color:#83eee4}
+
+/* Industries dropdown matches the existing light desktop menus. */
+.nav-industries{position:relative;z-index:100}
+.nav-industries>summary{display:flex;align-items:center;gap:6px;cursor:pointer;list-style:none;font-size:13px;font-weight:650;padding:14px 0}
+.nav-industries>summary::-webkit-details-marker{display:none}
+.nav-industries>summary:focus-visible{outline:2px solid #20b9b4;outline-offset:5px}
+.nav-industries[open] .nav-services__chevron{transform:rotate(180deg)}
+.nav-industries__menu{position:absolute;top:100%;left:-25px;z-index:155;width:min(325px,calc(100vw - 30px));border:1px solid #d5e5ed;border-radius:9px;background:#fff;padding:9px;box-shadow:0 18px 48px #061c2b35}
+.nav-industries__menu>a{display:block;padding:13px 12px;color:#153248;font-size:12px;border-radius:5px}
+.nav-industries__menu>a:hover,.nav-industries__menu>a:focus-visible{background:#ebf6f8;color:#0b8187}
+.nav-industries__menu>a+a{border-top:1px solid #eaf0f4}
+.nav-industries__menu strong{display:block;font-size:13px}
+.nav-industries__menu small{display:block;color:#6b8393;margin-top:5px;font-size:11px}
+.nav-industries__menu .nav-industries__all{display:flex;justify-content:space-between;background:#e9f4f6;font-weight:850;color:#0b7080;margin-bottom:4px}
+.site-header .nav-industries>summary:hover,.site-header .nav-industries[open]>summary{color:#62e2d8}
