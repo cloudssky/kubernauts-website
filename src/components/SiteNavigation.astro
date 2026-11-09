@@ -12,9 +12,7 @@ const items=[
  {label:'Sovereign Agentic AI Operations',detail:de?'AI Diagnostics · Governance · Human Approval':'AI Diagnostics · Governance · Human Approval',url:base+'kubernauts-kubernetes-services/sovereign-agentic-ai-operations/',icon:'brain'}
 ];
 const nav=[
- {label:de?'Branchen':'Industries',href:base+'industries/'},
-
- {label:'Insights',href:base+'insights/'},
+{label:'Insights',href:base+'insights/'},
  {label:de?'Vorgehen':'Approach',href:base+'#approach'},
  {label:de?'Karriere':'Careers',href:base+'careers/'}
 ];
@@ -45,6 +43,15 @@ const nav=[
       </a>)}
     </div>
   </details>
+  <details class="nav-industries">
+    <summary>{de?'Branchen':'Industries'} <span class="nav-services__chevron" aria-hidden="true">⌄</span></summary>
+    <div class="nav-industries__menu">
+      <a class="nav-industries__all" href={base+'industries/'}>{de?'Alle Branchen':'All industries'} <span aria-hidden="true">↗</span></a>
+      <a href={base+'industries/industrial-manufacturing/'}><strong>{de?'Industrie & Fertigung':'Industrial Manufacturing'}</strong><small>Industrial Kubernetes · OT/IT · Edge AI</small></a>
+      <a href={base+'industries/banking-and-insurance/'}><strong>{de?'Banken & Versicherungen':'Banking & Insurance'}</strong><small>Security · Governance · Resilience</small></a>
+      <a href={base+'industries/use-cases-and-success-stories/'}><strong>{de?'Anwendungsfälle':'Use Cases'}</strong><small>{de?'Architekturmuster & Szenarien':'Architecture patterns & scenarios'}</small></a>
+    </div>
+  </details>
   {nav.map(item=><a href={item.href}>{item.label}</a>)}
 </nav>
 <details class="mobile-menu">
@@ -71,13 +78,22 @@ const nav=[
         {items.map(item=><a href={item.url}>{item.label}</a>)}
       </div>
     </details>
+    <details class="mobile-services">
+      <summary>{de?'Branchen':'Industries'} <span aria-hidden="true">⌄</span></summary>
+      <div class="mobile-services__links">
+        <a href={base+'industries/'}>{de?'Alle Branchen':'All industries'}</a>
+        <a href={base+'industries/industrial-manufacturing/'}>{de?'Industrie & Fertigung':'Industrial Manufacturing'}</a>
+        <a href={base+'industries/banking-and-insurance/'}>{de?'Banken & Versicherungen':'Banking & Insurance'}</a>
+        <a href={base+'industries/use-cases-and-success-stories/'}>{de?'Anwendungsfälle':'Use Cases'}</a>
+      </div>
+    </details>
     {nav.map(item=><a href={item.href}>{item.label}</a>)}
     <a href={base+'contact/'}>{de?'Kontakt':'Contact'} ↗</a>
   </nav>
 </details>
 
 <script>
-  document.querySelectorAll<HTMLDetailsElement>('.nav-services, .nav-products').forEach((menu) => {
+  document.querySelectorAll<HTMLDetailsElement>('.nav-services, .nav-products, .nav-industries').forEach((menu) => {
     let openedByHover = false;
     menu.addEventListener('pointerenter', (event) => {
       if (event.pointerType === 'mouse' && window.matchMedia('(min-width: 1021px)').matches) {
