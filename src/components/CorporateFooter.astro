@@ -4,7 +4,7 @@ interface Props { lang:'de'|'en'; }
 const {lang}=Astro.props;
 const de=lang==='de';
 const groups=[
-  {name:de?'Leistungen':'Services',links:[{label:'Platform Engineering',href:`/${lang}/#services`},{label:'Kubernetes Operations',href:`/${lang}/kubernauts-kubernetes-services/index.html`},{label:'AI & MLOps',href:`/${lang}/kubernauts-kubernetes-services/ai-mlops-services/`},{label:'Enterprise AI Engineering',href:`/${lang}/services/enterprise-ai-engineering/`},{label:'Sovereign Agentic AI Operations',href:`/${lang}/kubernauts-kubernetes-services/sovereign-agentic-ai-operations/`},{label:de?'Branchen':'Industries',href:`/${lang}/#industries`}]},
+  {name:de?'Leistungen':'Services',links:[{label:'Platform Engineering',href:`/${lang}/#services`},{label:'Kubernetes Operations',href:`/${lang}/kubernauts-kubernetes-services/index.html`},{label:'AI & MLOps',href:`/${lang}/kubernauts-kubernetes-services/ai-mlops-services/`},{label:'Enterprise AI Engineering',href:`/${lang}/services/enterprise-ai-engineering/`},{label:'Sovereign Agentic AI Operations',href:`/${lang}/kubernauts-kubernetes-services/sovereign-agentic-ai-operations/`},{label:de?'Branchen':'Industries',href:`/${lang}/industries/`}]},
   {name:de?'Plattformen':'Platforms',links:[{label:'OpenKubes',href:'https://openkubes.org'},{label:'Kubernautic',href:`/${lang}/kubernautic/`},{label:'Insights',href:`/${lang}/insights/`},{label:de?'Unser Vorgehen':'Our Approach',href:`/${lang}/#approach`},{label:de?'Karriere':'Careers',href:`/${lang}/careers/`}]},
 ];
 const legal=de?'/de/impressum/':'/en/imprint/';
