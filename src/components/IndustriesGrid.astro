@@ -7,10 +7,11 @@ interface Industry {
 }
 interface Props {lang:'de'|'en'; industries:Industry[];}
 const {lang,industries}=Astro.props;
+const industryHref=(index:number)=>index===1?`/${lang}/industries/industrial-manufacturing/`:index===3?`/${lang}/industries/banking-and-insurance/`:`/${lang}/industries/`;
 ---
 <div class="industries-grid">
   {industries.map((industry,index)=>
-    <article class={`industry-tile industry-tile--${industry.accent}`}>
+    <a href={industryHref(index)} class={`industry-tile industry-tile--${industry.accent}`} aria-label={`${industry.title} — ${lang==='de'?'Mehr erfahren':'Learn more'}`}>
       <div class="industry-tile__top">
         <span class="industry-tile__number">{String(index+1).padStart(2,'0')}</span>
         <span class="industry-tile__glyph" aria-hidden="true">
@@ -25,6 +26,6 @@ const {lang,industries}=Astro.props;
       <h3>{industry.title}</h3>
       <p>{industry.context}</p>
       <div class="industry-tile__focus"><span>{lang==='de'?'FOKUS':'FOCUS'}</span>{industry.focus}</div>
-    </article>
+    </a>
   )}
 </div>
