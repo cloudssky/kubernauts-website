@@ -4,7 +4,8 @@ import FamilyWordmark from '../../../components/FamilyWordmark.astro';
 import SiteNavigation from '../../../components/SiteNavigation.astro';
 import CorporateFooter from '../../../components/CorporateFooter.astro';
 import AnnouncementBar from '../../../components/AnnouncementBar.astro';
-const t={"heading":"Sprechen Sie mit unseren Kubernetes-Experten.","sub":"Ob Architektur, Platform Engineering, Kubernetes-Betrieb oder AI-Infrastruktur: Wir helfen Ihnen, den nächsten Schritt zu planen.","details":"DIREKTER KONTAKT","address":"UNSER STANDORT","meeting":"Kubernetes-Projekt besprechen","meetingText":"Vereinbaren Sie ein unverbindliches 30-minütiges Erstgespräch mit unseren Kubernetes- und Platform-Engineering-Experten.","features":["30 Minuten","Online via Zoom","Unverbindlich"],"cta":"Projektgespräch vereinbaren","calendly":"Die Terminbuchung erfolgt über Calendly in einem neuen Browser-Tab.","community":"KUBERNAUTS COMMUNITY","communityHead":"Kubernauts Worldwide Meetup","communityText":"Open-Source-Wissen teilen, spannende Projekte diskutieren und gemeinsam die Cloud-Native-Community stärken.","communityLink":"Zur Community","email":"Alternativ können Sie uns direkt eine E-Mail schreiben.","back":"Startseite","nav":["Leistungen","Branchen","Plattformen","Vorgehen"],"contact":"Kontakt","note":"Persönlich. Technisch fundiert. Unverbindlich."};
+import CalendlyBooking from '../../../components/CalendlyBooking.astro';
+const t={"heading":"Sprechen Sie mit unseren Kubernetes-Experten.","sub":"Ob Architektur, Platform Engineering, Kubernetes-Betrieb oder AI-Infrastruktur: Wir helfen Ihnen, den nächsten Schritt zu planen.","details":"DIREKTER KONTAKT","address":"UNSER STANDORT","meeting":"Kubernetes-Projekt besprechen","meetingText":"Vereinbaren Sie ein unverbindliches 30-minütiges Erstgespräch mit unseren Kubernetes- und Platform-Engineering-Experten.","features":["30 Minuten","Online via Zoom","Unverbindlich"],"cta":"Projektgespräch vereinbaren","calendly":"Das Calendly-Buchungsfenster öffnet sich, sobald Sie auf den Button klicken.","community":"KUBERNAUTS COMMUNITY","communityHead":"Kubernauts Worldwide Meetup","communityText":"Open-Source-Wissen teilen, spannende Projekte diskutieren und gemeinsam die Cloud-Native-Community stärken.","communityLink":"Zur Community","email":"Alternativ können Sie uns direkt eine E-Mail schreiben.","back":"Startseite","nav":["Leistungen","Branchen","Plattformen","Vorgehen"],"contact":"Kontakt","note":"Persönlich. Technisch fundiert. Unverbindlich."};
 const lang='de';
 const navIds=["services","industries","platforms","approach"];
 ---
@@ -46,7 +47,7 @@ const navIds=["services","industries","platforms","approach"];
           <h2>{t.meeting}</h2>
           <p>{t.meetingText}</p>
           <div class="contact-booking__features">{t.features.map(feature=><span>{feature}</span>)}</div>
-          <a class="contact-booking__button" href="https://calendly.com/kubernauts/30min" target="_blank" rel="noopener noreferrer">{t.cta} <span aria-hidden="true">↗</span></a>
+          <a class="contact-booking__button" href="https://calendly.com/kubernauts/30min" data-calendly-booking target="_blank" rel="noopener noreferrer">{t.cta} <span aria-hidden="true">↗</span></a>
           <p class="contact-booking__note">{t.calendly}</p>
         </article>
       </div>
@@ -59,5 +60,6 @@ const navIds=["services","industries","platforms","approach"];
       </aside>
     </section>
   </main>
+  <CalendlyBooking/>
   <CorporateFooter lang={lang}/>
 </BaseLayout>
