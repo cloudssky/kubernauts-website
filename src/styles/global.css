@@ -1150,3 +1150,10 @@ section[id]{scroll-margin-top:100px}
 .site-header .mobile-menu-panel{color:#15283b}
 .site-header .mobile-menu-panel summary{color:#15283b;background:transparent}
 .site-header .mobile-menu-panel a{color:#15283b}
+
+/* Homepage industry discovery: accessible cards and a consistent hub CTA. */
+.industry-tile{color:inherit;text-decoration:none}
+.industry-tile:focus-visible{outline:2px solid #62e2d8;outline-offset:4px}
+.industries-explore{display:flex;justify-content:center;margin-top:34px}
+.industries-explore__link{display:inline-flex;align-items:center;gap:12px;padding:14px 20px;border:1px solid #52cfc7;border-radius:6px;color:#83eee4;font-size:13px;font-weight:800;transition:background .2s ease,border-color .2s ease}
+.industries-explore__link:hover,.industries-explore__link:focus-visible{background:#153a48;border-color:#83eee4}
