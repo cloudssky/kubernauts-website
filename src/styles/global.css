@@ -1133,3 +1133,20 @@ section[id]{scroll-margin-top:100px}
 .sector-grid a,.sector-back{display:inline-block;margin-top:15px;font-size:13px;font-weight:850;color:#087f8c;border-bottom:1px solid #4bbdb9;padding-bottom:5px}
 .sector-note{color:#718796;font-size:12px;line-height:1.7}
 @media(max-width:690px){.sector-hero,.sector-content{padding:60px 0}.sector-grid{grid-template-columns:1fr}.sector-grid article{padding:25px}}
+
+
+/* Corporate dark navigation: carries the same deep navy as the footer.
+   Dropdown panels deliberately stay light for readability. */
+.site-header{background:#071321;box-shadow:0 1px 0 rgba(91,225,221,.17)}
+.site-header .header{background:transparent}
+.site-header .navigation,.site-header .header .lang{color:#ecf7ff}
+.site-header .navigation>a:hover,.site-header .header .lang:hover,
+.site-header .nav-products>summary:hover,.site-header .nav-products[open]>summary,
+.site-header .nav-services>summary:hover,.site-header .nav-services[open]>summary{color:#62e2d8}
+.site-header .header .btn.outline{color:#f5fbff;border-color:#547083;background:rgba(255,255,255,.04)}
+.site-header .header .btn.outline:hover{background:#143347;border-color:#62e2d8}
+.site-header .mobile-menu>summary{color:#f5fbff;border-color:#547083;background:rgba(255,255,255,.04)}
+.site-header .mobile-menu>summary:hover{border-color:#62e2d8}
+.site-header .mobile-menu-panel{color:#15283b}
+.site-header .mobile-menu-panel summary{color:#15283b;background:transparent}
+.site-header .mobile-menu-panel a{color:#15283b}
