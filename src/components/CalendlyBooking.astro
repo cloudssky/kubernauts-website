@@ -1,0 +1,65 @@
+---
+/* Calendly is loaded only after a visitor explicitly requests a booking. */
+---
+<script is:inline>
+(() => {
+  const link = document.querySelector('[data-calendly-booking]');
+  if (!link) return;
+  let widgetPromise = null;
+  let bookingOpen = false;
+  let recorded = false;
+
+  function ensureWidget() {
+    if (window.Calendly?.initPopupWidget) return Promise.resolve();
+    if (widgetPromise) return widgetPromise;
+    widgetPromise = new Promise((resolve, reject) => {
+      if (!document.querySelector('link[data-calendly-styles]')) {
+        const css = document.createElement('link');
+        css.rel = 'stylesheet';
+        css.href = 'https://assets.calendly.com/assets/external/widget.css';
+        css.setAttribute('data-calendly-styles', '');
+        document.head.appendChild(css);
+      }
+      const script = document.createElement('script');
+      script.src = 'https://assets.calendly.com/assets/external/widget.js';
+      script.async = true;
+      script.onload = () => window.Calendly?.initPopupWidget ? resolve() : reject(new Error('Calendly widget unavailable'));
+      script.onerror = () => reject(new Error('Calendly widget could not load'));
+      document.head.appendChild(script);
+    });
+    return widgetPromise;
+  }
+
+  link.addEventListener('click', async (event) => {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    link.setAttribute('aria-busy', 'true');
+    try {
+      await ensureWidget();
+      recorded = false;
+      bookingOpen = true;
+      window.Calendly.initPopupWidget({ url: link.href });
+    } catch (_) {
+      bookingOpen = false;
+      // Preserve the original booking journey if Calendly's embed cannot load.
+      window.location.assign(link.href);
+    } finally {
+      link.removeAttribute('aria-busy');
+    }
+  });
+
+  window.addEventListener('message', (event) => {
+    if (event.origin !== 'https://calendly.com') return;
+    if (!event.data || typeof event.data !== 'object') return;
+    if (event.data.event !== 'calendly.event_scheduled' || !bookingOpen || recorded) return;
+    recorded = true;
+    bookingOpen = false;
+    // No invitee names, email addresses or Calendly IDs are sent to GA4.
+    if (window.kubernautsConsent?.analytics !== true || typeof window.gtag !== 'function') return;
+    window.gtag('event', 'conversion_event_book_appointment', {
+      booking_channel: 'calendly_embed',
+      transport_type: 'beacon'
+    });
+  });
+})();
+</script>
