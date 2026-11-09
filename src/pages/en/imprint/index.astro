@@ -1,10 +1,11 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import CorporateFooter from '../../../components/CorporateFooter.astro';
+import FamilyWordmark from '../../../components/FamilyWordmark.astro';
 const t = {"title":"Legal Notice | Kubernauts GmbH","heading":"Legal Notice","subtitle":"Company information pursuant to Section 5 DDG (Germany)","company":"Provider","represented":"Represented by","registry":"Commercial register","contact":"Contact","tax":"Tax details","taxBody":"The VAT identification number must be verified against the company's records and added before production release.","note":"Relaunch draft – all statutory details require final review before publication.","back":"Back to homepage","privacy":"Privacy policy"};
 ---
 <BaseLayout lang="en" title={t.title} description={t.heading} canonicalPath="/en/imprint/">
-  <header class="legal-header"><div class="wrap"><a href="/en/" class="legal-back">← {t.back}</a><a class="legal-home" href="/en/"><img src="/brand/kubernauts-hexagon-light.svg" alt="" width="38" height="38"/>KUBERNAUTS</a></div></header>
+  <header class="legal-header"><div class="wrap"><a href="/en/" class="legal-back">← {t.back}</a><a class="legal-home" href="/en/"><img src="/brand/kubernauts-hexagon-light.svg" alt="" width="38" height="38"/><FamilyWordmark name="kubernauts" theme="light" /></a></div></header>
   <main class="legal-page">
     <div class="wrap legal-page__inner">
       <p class="eyebrow">KUBERNAUTS GMBH</p>
