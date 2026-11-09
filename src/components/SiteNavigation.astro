@@ -109,9 +109,49 @@ const nav=[
 .main-navigation .nav-industries__menu small{display:block;color:#6b8393;margin-top:5px;font-size:11px}
 .main-navigation .nav-industries__menu .nav-industries__all{display:flex;align-items:center;justify-content:space-between;background:#e9f4f6;font-weight:850;color:#0b7080!important;margin-bottom:4px}
 .site-header .main-navigation .nav-industries>summary:hover,.site-header .main-navigation .nav-industries[open]>summary{color:#62e2d8}
+
+/* Current-page affordance shared by all three dropdowns and mobile navigation. */
+.site-header .main-navigation details.is-current-section>summary{color:#62e2d8;font-weight:800}
+.site-header .main-navigation .nav-products__menu>a.is-current,
+.site-header .main-navigation .nav-services__menu>a.is-current,
+.site-header .main-navigation .nav-industries__menu>a.is-current{
+  background:#def8f4!important;color:#075f70!important;
+  box-shadow:inset 3px 0 0 #11bdb1;
+}
+.site-header .main-navigation a.is-current:not(.nav-services__item){color:#075f70!important}
+.site-header .main-navigation>a.is-current{color:#62e2d8!important;text-decoration:underline;text-underline-offset:6px}
+.site-header .mobile-menu-panel a.is-current{
+  background:#def8f4!important;color:#075f70!important;
+  box-shadow:inset 3px 0 0 #11bdb1;font-weight:800;
+}
+.site-header .mobile-menu-panel details.is-current-section>summary{color:#075f70!important;font-weight:850!important}
 </style>
 
 <script>
+
+  // Highlight the page being viewed, not the last item clicked.
+  // This also works when a page is opened directly, refreshed, or shared.
+  const currentPath = window.location.pathname.replace(/\/+$/, '') || '/';
+  const currentHash = window.location.hash;
+  document.querySelectorAll<HTMLAnchorElement>('.main-navigation a[href], .mobile-menu-panel a[href]').forEach((link) => {
+    const target = new URL(link.href, window.location.href);
+    if (target.origin !== window.location.origin) return;
+    const targetPath = target.pathname.replace(/\/+$/, '') || '/';
+    const isCurrent = targetPath === currentPath && (target.hash ? target.hash === currentHash : true);
+    if (!isCurrent) return;
+    link.classList.add('is-current');
+    link.setAttribute('aria-current', 'page');
+    link.closest('details')?.classList.add('is-current-section');
+  });
+
+  const category = [
+    { selector: '.nav-products', test: /^\/(de|en)\/(products|openkubes|kubernautic)(\/|$)/ },
+    { selector: '.nav-services', test: /^\/(de|en)\/(kubernauts-kubernetes-services|services)(\/|$)/ },
+    { selector: '.nav-industries', test: /^\/(de|en)\/industries(\/|$)/ }
+  ];
+  category.forEach(({selector,test}) => {
+    if (test.test(currentPath)) document.querySelectorAll(selector).forEach(el => el.classList.add('is-current-section'));
+  });
   document.querySelectorAll<HTMLDetailsElement>('.nav-services, .nav-products, .nav-industries').forEach((menu) => {
     let openedByHover = false;
     menu.addEventListener('pointerenter', (event) => {
