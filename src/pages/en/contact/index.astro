@@ -4,7 +4,8 @@ import FamilyWordmark from '../../../components/FamilyWordmark.astro';
 import SiteNavigation from '../../../components/SiteNavigation.astro';
 import CorporateFooter from '../../../components/CorporateFooter.astro';
 import AnnouncementBar from '../../../components/AnnouncementBar.astro';
-const t={"heading":"Talk to our Kubernetes experts.","sub":"From architecture and platform engineering to Kubernetes operations and AI infrastructure: let's plan your next step together.","details":"DIRECT CONTACT","address":"OUR OFFICE","meeting":"Discuss your Kubernetes project","meetingText":"Book a no-obligation 30-minute introductory conversation with our Kubernetes and platform engineering experts.","features":["30 minutes","Online via Zoom","No obligation"],"cta":"Schedule a project conversation","calendly":"Booking takes place through Calendly in a new browser tab.","community":"KUBERNAUTS COMMUNITY","communityHead":"Kubernauts Worldwide Meetup","communityText":"Share open-source expertise, discuss practical engineering challenges, and connect with the cloud-native community.","communityLink":"Explore the community","email":"Or reach us directly by email.","back":"Homepage","nav":["Services","Industries","Platforms","Approach"],"contact":"Contact","note":"Personal. Technical. No obligation."};
+import CalendlyBooking from '../../../components/CalendlyBooking.astro';
+const t={"heading":"Talk to our Kubernetes experts.","sub":"From architecture and platform engineering to Kubernetes operations and AI infrastructure: let's plan your next step together.","details":"DIRECT CONTACT","address":"OUR OFFICE","meeting":"Discuss your Kubernetes project","meetingText":"Book a no-obligation 30-minute introductory conversation with our Kubernetes and platform engineering experts.","features":["30 minutes","Online via Zoom","No obligation"],"cta":"Schedule a project conversation","calendly":"The Calendly booking window opens when you click the button.","community":"KUBERNAUTS COMMUNITY","communityHead":"Kubernauts Worldwide Meetup","communityText":"Share open-source expertise, discuss practical engineering challenges, and connect with the cloud-native community.","communityLink":"Explore the community","email":"Or reach us directly by email.","back":"Homepage","nav":["Services","Industries","Platforms","Approach"],"contact":"Contact","note":"Personal. Technical. No obligation."};
 const lang='en';
 const navIds=["services","industries","platforms","approach"];
 ---
@@ -46,7 +47,7 @@ const navIds=["services","industries","platforms","approach"];
           <h2>{t.meeting}</h2>
           <p>{t.meetingText}</p>
           <div class="contact-booking__features">{t.features.map(feature=><span>{feature}</span>)}</div>
-          <a class="contact-booking__button" href="https://calendly.com/kubernauts/30min" target="_blank" rel="noopener noreferrer">{t.cta} <span aria-hidden="true">↗</span></a>
+          <a class="contact-booking__button" href="https://calendly.com/kubernauts/30min" data-calendly-booking target="_blank" rel="noopener noreferrer">{t.cta} <span aria-hidden="true">↗</span></a>
           <p class="contact-booking__note">{t.calendly}</p>
         </article>
       </div>
@@ -59,5 +60,6 @@ const navIds=["services","industries","platforms","approach"];
       </aside>
     </section>
   </main>
+  <CalendlyBooking/>
   <CorporateFooter lang={lang}/>
 </BaseLayout>
