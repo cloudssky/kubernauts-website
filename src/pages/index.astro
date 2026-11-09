@@ -1,4 +1,37 @@
 ---
 const title = 'Kubernauts — Enterprise Engineering';
 ---
-<!doctype html><html lang="de"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,follow"/><title>{title}</title><style>body{min-height:100vh;margin:0;display:grid;place-items:center;background:#071421;color:#effbff;font:16px system-ui}main{text-align:center;padding:24px}a{color:#64dfd6;margin:18px;font-weight:700}</style></head><body><main><h1>KUBERNAUTS</h1><p>Enterprise Engineering · Open Innovation</p><a href="/de/">Deutsch</a><a href="/en/">English</a></main></body></html>
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,follow" />
+    <title>{title}</title>
+    <style>
+      :root { color-scheme: dark; }
+      body { min-height: 100vh; margin: 0; display: grid; place-items: center; background: #071421; color: #effbff; font: 16px system-ui, sans-serif; }
+      main { text-align: center; padding: 24px; }
+      a { color: #64dfd6; margin: 18px; font-weight: 700; }
+    </style>
+    <script is:inline>
+      (() => {
+        // GitHub Pages is static: this is a browser navigation, not a server-side HTTP redirect.
+        // Respect the first explicitly preferred German or English browser language.
+        const preferred = navigator.languages?.length ? navigator.languages : [navigator.language || 'de'];
+        const match = preferred.map(value => String(value).toLowerCase().split('-')[0]).find(value => value === 'de' || value === 'en');
+        const target = match === 'en' ? '/en/' : '/de/';
+        window.location.replace(target + window.location.search + window.location.hash);
+      })();
+    </script>
+  </head>
+  <body>
+    <main>
+      <h1>KUBERNAUTS</h1>
+      <p>Enterprise Engineering · Open Innovation</p>
+      <p>Choose your language / Sprache auswählen:</p>
+      <a href="/de/">Deutsch</a>
+      <a href="/en/">English</a>
+    </main>
+  </body>
+</html>
