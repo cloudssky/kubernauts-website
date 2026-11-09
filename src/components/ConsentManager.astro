@@ -13,7 +13,7 @@ const url=de?'/de/datenschutz/':'/en/privacy/';
       <label class="consent-choice"><input id="consent-analytics" type="checkbox" /><span>{de?'Statistik – Google Analytics':'Analytics – Google Analytics'}</span></label>
       <label class="consent-choice"><input id="consent-marketing" type="checkbox" /><span>{de?'Marketing – Google Ads, LinkedIn & OpenAI Ads':'Marketing – Google Ads, LinkedIn & OpenAI Ads'}</span></label>
     </div>
-    <p class="consent-explainer">{de?'Die Einwilligung wird lokal gespeichert. Sie können die Auswahl jederzeit ändern. Die genannten Dienste werden erst integriert, wenn die jeweiligen Tags technisch freigegeben wurden.':'Your choice is stored locally and may be changed at any time. The listed services are only activated once their tags are separately integrated.'}</p>
+    <p class="consent-explainer">{de?'Die Einwilligung wird lokal gespeichert. Sie können die Auswahl jederzeit ändern. Google Analytics wird nur nach Ihrer Statistik-Einwilligung geladen. Marketing-Tags sind derzeit nicht aktiviert.':'Your choice is stored locally and may be changed at any time. Google Analytics loads only after your analytics consent. Marketing tags are not currently enabled.'}</p>
     <a class="consent-privacy-link" href={url}>{de?'Weitere Informationen: Datenschutzerklärung lesen':'More information: read our privacy policy'}</a>
     <div class="consent-actions">
       <button type="button" data-consent-action="reject">{de?'Alle ablehnen':'Reject all'}</button>
@@ -82,6 +82,37 @@ const url=de?'/de/datenschutz/':'/en/privacy/';
     const first = nodes[0], last = nodes[nodes.length - 1];
     if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
     else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+  });
+  // GA4 is not requested until analytics consent is explicitly granted.
+  const measurementId = 'G-MG8KC9GEPJ';
+  let analyticsLoaded = false;
+  function applyAnalyticsConsent(state) {
+    const granted = state && state.analytics === true;
+    window['ga-disable-' + measurementId] = !granted;
+    if (!granted || analyticsLoaded) return;
+    analyticsLoaded = true;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', measurementId, { send_page_view: true });
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(measurementId);
+    document.head.appendChild(script);
+  }
+  window.addEventListener('kubernauts:consent', event => applyAnalyticsConsent(event.detail));
+  // A Calendly link click is an exploratory interaction, NOT a confirmed booking.
+  document.addEventListener('click', event => {
+    if (window.kubernautsConsent?.analytics !== true || !analyticsLoaded) return;
+    const link = event.target.closest?.('a[href]');
+    if (!link) return;
+    const url = new URL(link.href, window.location.href);
+    if (url.hostname !== 'calendly.com' || !url.pathname.startsWith('/kubernauts/')) return;
+    window.gtag?.('event', 'calendly_booking_link_click', {
+      event_category: 'engagement',
+      link_url: url.origin + url.pathname,
+      transport_type: 'beacon'
+    });
   });
   const current = readConsent();
   if (current) notify(current);
