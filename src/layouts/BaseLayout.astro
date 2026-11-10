@@ -72,9 +72,9 @@ const structuredData = JSON.stringify(ld).replace(/</g, '\\u003c');
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:url" content={absoluteCanonical} />
-  <meta property="og:image" content={site + '/og-image.svg'} />
+  <meta property="og:image" content={site + '/og-image.png'} />
   <meta property="og:image:alt" content="Kubernauts — We Engineer. We Operate. We Innovate." />
-  <meta name="twitter:image" content={site + '/og-image.svg'} />
+  <meta name="twitter:image" content={site + '/og-image.png'} />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   {ld.length > 0 && <script type="application/ld+json" set:html={structuredData} />}
